@@ -1,0 +1,1697 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="dc.description" content="This is the United Nations Treaty Collection homepage. Here you will find related information and links." /><meta name="dc.title" content="United Nations Treaty Collection" /><meta name="dc.subject" content="UN, United Nations, UN Treaties, Treaties" /><meta name="keywords" content="treaty law, international law, registration and publication of treaties, treaty, agreements, signatures, capacity building, UN training, UNITAR, UN treaties" /><meta name="description" content="This is the United Nations Treaty Collection homepage. Here you will find related information and links." /><meta name="dc.language" content="EN" /><meta name="dc.description" content="Ceci est la page d&#39;accueil de la Collection des traités des Nations Unies." /><meta name="dc.title" content="Collection des traités des Nations Unies" /><meta name="dc.subject" content="ONU, Nations Unies, Traités des Nations Unies, Traités" /><meta name="keywords" content="droit des traités, enregistrement et publication des traités, conventions internationales, ratifications, signatures, accords, UNITAR" /><meta name="description" content="Ceci est la page d&#39;accueil de la Collection des traités des Nations Unies." /><meta name="dc.language" content="FR" /><title>
+	United Nations Treaty Collection
+</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TLLHMXN');</script>
+    <!-- End Google Tag Manager -->
+
+	<link rel="stylesheet" href="css/bootstrap-5.3.0.min.css" type="text/css" /><link rel="stylesheet" href="css/styles.css" type="text/css" /><link rel="stylesheet" href="css/scrollbar.css" type="text/css" /><link rel="stylesheet" href="css/font-awesome.css" type="text/css" />
+    
+    <script src="js/jquery-3.7.0.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap-5.3.0.bundle.min.js" type="text/javascript"></script>
+    
+    
+    <link rel="stylesheet" href="../css/prettyphoto.css" type="text/css" />
+    <link rel="shortcut icon" href="#" />
+
+    <link rel="stylesheet" href="../Css/jquery-ui-1.13.2.min.css"/>
+    <script src="../Js/jquery-ui-1.13.2.min.js"></script>
+
+     <script type="text/javascript">
+         
+         $(document).ready(
+
+             function()
+             {                 
+                 var cultureI = '_en';
+                 if (cultureI == "_en") {
+                     //$('img:not([alt])').attr('alt', 'Alternative text');
+                     $('#imgDepository').attr('alt', 'Depository of Treaties');
+                     $('#imgRegPublication').attr('alt', 'Registration and Publication of Treaties');                     
+                 }
+                 else
+                 {
+                     $('#imgDepository').attr('alt', 'Dépositaire des traités');
+                     $('#imgRegPublication').attr('alt', 'Registration and Publication of Treaties');
+                 }
+               
+             }
+
+             )
+
+         window.onload= ConfirmExit;
+         function ConfirmExit()
+         {
+
+             var getSessionValue = $('#sessionInput').val();
+             if (getSessionValue == null || getSessionValue == '') {
+                 return true;
+             }
+
+
+             if (document.referrer.indexOf(window.location.hostname) != -1)
+             {                
+                 var previousPage = document.referrer;              
+                 var currentPage = window.location.href;                                 
+
+                 if ((getSessionValue != null || getSessionValue != '')
+                  //   (previousPage.indexOf("Subscription_Category.aspx") >= 0 || previousPage.indexOf("Subscription_Navigate.aspx") >= 0 || previousPage.indexOf("CN_Subscription.aspx") >= 0 || previousPage.indexOf("CN_Participant.aspx") >= 0
+                  //|| previousPage.indexOf("UnSubscription.aspx") >= 0 || previousPage.indexOf("UNTSSubscription.aspx") >= 0 || previousPage.indexOf("CCTC_Subscription.aspx") >= 0 || previousPage.indexOf("CTC_Subscription.aspx") >= 0
+                  //|| previousPage.indexOf("CI_Subscription.aspx") >= 0 || previousPage.indexOf("MonthlyStateSubscription.aspx") >= 0 || previousPage.indexOf("UNTS_Unsubscription.aspx") >= 0
+                  //|| previousPage.indexOf("ContactForm.aspx") >= 0 || previousPage.indexOf("ChangePass.aspx") >= 0 || previousPage.indexOf("Subscription.aspx") >= 0
+
+                  //   )
+
+                     &&
+                  
+                   (currentPage.indexOf("Home.aspx") >= 0 
+                     ))
+                 {
+                     var culture = '_en';
+                   
+
+                     $("#btnYes").addClass("btn btn-primary");
+                     $("#btnNo").addClass("btn btn-info");
+                     $("#dialog").css('line-height', '24px')
+
+                     if (culture == "_en") {
+                     
+                        $("#dialog").show();
+						$("#dialog").removeClass("hidden");
+                        $("#btnYes").prop('value', 'Log Out');
+                        $("#btnNo").prop('value', 'Cancel');                 
+                        Dialog('You are leaving the Automated Subscription Services. Please Log out.',
+                        function () {
+                            $.ajax({
+                                type: "POST",
+                                url: "/Pages/Ajax.aspx" + "/LogOutSession",
+                                data: '{}',
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                success: function (data) {
+                                    $('#ctl00_lblUserName').html("");
+                                },
+                                error: function (xhr, status, error) {
+                                    alert(error);
+                                }
+                            });
+                        },
+                        function () {
+
+                            history.go(-1);
+                            window.location.replace(previousPage);
+                        }
+
+                         );
+
+                        return true;
+                    }
+                    else
+                     {
+                        
+                        $('#dialog').show();
+						$("#dialog").removeClass("hidden");
+                        $("#btnYes").prop('value', 'Déconnecter');
+                        $("#btnNo").prop('value', 'Annuler');
+                        $("#dialog").prop('title', 'Services automatisés d\'abonnement');
+                        Dialog("Vous êtes sur le point de quitter le Service d'inscription. Veuillez vous déconnecter.",
+                        function () {
+                            $.ajax({
+                                type: "POST",
+                                url: "/Pages/Ajax.aspx" + "/LogOutSession",
+                                data: '{}',
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                success: function (data) {
+                                    $('#ctl00_lblUserName').html("");
+                                },
+                                error: function (xhr, status, error) {
+                                    alert(error);
+                                }
+                            });
+                        },
+                        function () {
+
+                            history.go(-1);
+                            $(location).attr('href', previousPage);
+                        }
+
+
+                        );
+
+                        return true;
+                    }
+
+                   
+                }
+
+                function Dialog(message, yesCallback, noCallback) {
+                    $('.title').html(message);
+                    var dialog = $('#dialog').dialog({ modal: true });
+
+                    $('#btnYes').click(function () {
+                        dialog.dialog('close');
+                        yesCallback();
+                    });
+                    $('#btnNo').click(function () {
+                        dialog.dialog('close');
+                        noCallback();
+                    });
+                }
+            }
+        }
+       
+      </script>
+
+
+
+</head>
+<body id="ctl00_htmlBody">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLLHMXN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <form name="aspnetForm" method="post" action="./" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="Xh2GwDwJePRCnFOE8NOWMolS7d3NaHoyFyQObtbo7ceIO8tPTiQ6qhV+Ga0YdCm0UWhbTwOO9NZcu6IlsQNfYd53UbW2crw7g8ugiKg0H4bm4YQErNS0b0DBd/Merlpbu/fO7u0pKGEaKmzsNquiuumrilpQXvjawm9L7B/ReSbm4bU0+TYaTCqpiAoNXbPCavcDKUinypFuLiNxgoy+traHS65hi8CGmJJXh7iHae3NdreH+2SvlFwBJkBx0BSUlDA/evI4Rh/K3aFYy6aX8axevO6X0zLxoskuAwGaAbWoTTjafT4LDtG+OUakx7snfCp67zGpAVIoi2uWR/EgI6qIobu+0ki5jdRzdgx5JOMMQqetUAwQhSiGnDnV+miXgj4yn3TgwJJaPWtFWi4I55nTaxItzXE5GqgAlRJtFNQNs4tM7kJ+1DaU4PtbY+/iO2GlLeBZxGTowJ52lDveIpqryLyswBUI79TWY4mbP4FrBvkSggt1RFKMGRPq71FAnLqs6Q+4wCus1hwgB4d+T8AcsVU9eq1yqGIQ+vEe2zkTg8GatuCMTOa0EWdXB4/he9a+YaFvgaiVf9bh/dof2/5PTd7aRuC6HvImeiKVqEyL/6euuv0BqkHuf18FieDcIkgSCPG+QP3xh4EAMN7A8AGvQ8X73eG/TcCvdTQStFIO9XCkBKbSwI8gEiuevx8gBt3XAuPgD7XgbsK50i7ArwxEhQvk1VFYPzvlQEy1N63MDmFCGg1GNsEEUoGRTzMi142Nhbdx4CByny5jVsnCd4syl84tn296I1SmohZITjTafpqY/YaIRyJGQW1kDB0YrxCfSLW5AIbQdrgDAJtedj2lFsMSQWV9VhJKAa2bxSmokzy7e444/b8oqTtb9Og+IAXatTiadsVfOvmYlUWAgDCCcBF/fzO49PFLXmxuA0qKx25q0lUfoBtXyZHQG543RRl8jFNUCQ4HHkkdHd5gHWRHOLtZbHkQoVrS/EJVrE/6uB9X2ows5CFdrnbSQfrEAILWTtYVeJF+qLgeI506JM0byj6qqPaf4gaLvzdjy3asH5Va3rCPqqFz0fldmgb+kVahrULh6KMjoY7CL7KQLrRAZhKoiO9MdFp/D/d8nOy5WJyazoe+z7bbkIJ39LzN8/OaywaWyLwzCmsoeh8u3MyuAKqmZWyoGEwjtfqPvfeDdteSUwkMB/eMsnrKo1Is/LyBcN/QLawxvkq3/Ku2w6icqWU38k/KLXg5nlMk4u9BBICnkj+dkLiwL+SIOk3NfbXFQJKCd8bnGw71f5y5/ggrTONEnZ9roEaAwkW0Ca30/L6Z8DZolkzgXf978VN2lGbHoLcvJFWBFg0qwb+gXzDPnqM3K8znW98KHw7sbNPNL4aeXEFX5gB5AGNa1kFpqzxfa+jAffOtJ5nrhDRyxN1LweCqxTOGs+mZwn3qFLkaH/iFoc2vJTY1DSoFHDv9A9wK6l3FSbXSbXp48toBkvpYKAeHvv5UjwMBmFn5voQxUByIib3y5GmNgojd4nFbCpl0SECHtAxFyP7rozYO0WAOZ27hBIqIr+TxRck/XqmWk9hl4Wc1cMk5b5v1i4jRvwCqkLz9t5j6tsxZaO4c/wrYL0a4gVKhLmk6lA2B6zFKdr8NtuaXF9ZRhS7vyTC5k5UfVdbibzfm9E/WxvkUHcXU5EZ7EvJ9HaB3PlEUVogm496nTpgED2ZG5stNHhDyln/YQD1zsdbmOfakd9p4te1Z9AYfR5DIU7a2+btzxWcAC75eVAv5JkwTyLHoYQasikrwrSJSTJqoqxOXwkfgH+ZgQ7zryDnO28bfnk6DdwGPfqMrT4Je/fWiSwL84FDOBWbjffYZQgvluDz1mOQmxxVaPqoA/Z8hK9qeaPiNUJyiKDE3PWBEPpQ/CymUFGjpT+yJRnl7WDRkbPcpElEzPY9E80gkKPOYRSI+qx9ulyjNkDe2ep1y1guU5Sc9VoM7meOcd9P8R9KfVhThGl9Rqe5Hvt2uEQKJBDuXGfuQR6njeVE/kNERG+s0rq5vRSfofKwq1Om1AmRfb2DWHkSoydHEcH9hNasYRLkUvnfLG3DNlS5KOAGH5YKIxzWysXTtTxPKDMZ+Ua1fXGmiiQvQ1LXox10rkFd/AootJeYENus6ohbMjzk6scyr9skKkxF7csjRXIZxsy+41hLRHj1kCFrhpTTroTA/c1CbuPgdMdMifHTHyKYPfYxLMVGsEomMQF8cFpaZ/IhqeEQdCAKsuKreSXevPXFkiglAUVh5u+j8z6oqVrnGZ1d953a9kxsLILd6pL4cZ/4tdHB9qL42a1kmPOotmCSlg6D/Fmo741K7gwYw4MhNGKu+MFyAg07k/r/B/P63tGs1P+lR193ir8POcz6VjLJdwFwHNVzpt2WcaQm3VguQoCAY5tjvuE123DKgG1pP1leD1f04//DEt/9nXxwjbqEFf1v/vP9etLUN7E4F519chwNVW8f5Sv3CUyfWNBQC428TrY4E1PugPsTP1weBOGx7YmScvzn3mayxuhDlVOyk50pVhvxF/nxAFmnLzxN0CN2jgJ7gDNKVn1qzKGB2B9Uldpsb8fusz7Ir7bYqsVeDwP39mrMM/j8sqquhyAgrkPQaJmj6Y4BHnjOWEvfh/esNe6kf6euTY68Vul95pAAs+u1AJltlBV3/pYTIm/zDmhqyedqzVfDVAu9FKx21a1FVgY5eFElJeEakNf2iKfhDDWY7SJIjBetEBjWEEbb6Ai3bscK5tPBRGXB1ykiXoa/U+m63oU3zGHORgqQk4V5nxTleaWevPyUe8cnUWf071sOaATrlI2l/b2uN/X3B8J3ofMwYRnP2lMgQbcTSouqCqxrZWAHZOyhccUGTOrZvOUjt5TEdh7RvKpTjasd/6X1GMFp2E3pqgKjdUMonOmAnp8TPsVtdXKY75Vq9fOLg7h5w0SqpcVwqqj89G0sQcrAjchBPLzeY8AbaTzxKBsjaQxeyR0tvpGurj2a3JBoKzqO3e8YoPsjkgXBs+LOP5Ocyh1WQY6/6s0COcR5Q6m1wqD78fWspI4c50PL54KjvhjAwAqOtS1OziOoQSkZFS+l9AZelDzTlg7YWNu7L8Hd6TwprIgIZl145F/mkfIWf1z1I5rPSP37cw4dguJrTGY5tzDtsbnCGNRY397q0YASbwz9NIz4ZCBFHiIXidUQrS5BlhYRgLdTKFYxMvL+FsCj+3fSKOjWhatNKojg4wubbQALp542HPq4Zl1DyI0NsQRjeZ+QgF/HfHiw5elnEt7iZtgrLNln0opKUIWgTLFF3cMGaGEiI/U7EeipfnkZLZollV9cegTcUSldH3EKLh3vGq5fhGZglWdBcFJT/wnOOmzM0r9U1EBFm22p2B17nsvr48ZV6ZJmBisCS1ZbzXRVTnCG4nsRNSGGKQGZzcO9JyjbYkVMaSlZwMVg4+JlXNBXZv8hWOggNDmJeA5Z+JmoTjY2RbNNKGJb+Ekf9rhrXmIKw0CjMQG2qfgQVpCAZ3vk2EdI3Wq39x9aThcaGaz7t+0MI2dycQlBtu5n8YVIxFBEOQ+cCupTJYfIOp8As6MMKRNF9djvtiDtDr7lS0nWCX5Z5Sn4z0Ez/AZA4gwdrn5v3R7e62lHows6gwxasGP2+LRx+L9tCJoznXD0SyuUM83NAhv5leC3Ij/IEGjgl7WKyM6J1exDBMgj5Y9HRtqf5CS8CTWJrtQEWK1rzmbc7wosDlfkXNw6jGiNFozWGwtqekvfJeZhTh9CylaqUsPDjZMbc0BVYidRwNFfZckwY84MbNvtQ/EKuW9Gw6eNGr3kZrVUkvUAvPvOQr4OaKycyFatQkkXrLM6scIuIK5yTg1JnvGq3f1F+y4ibpfriQsYa352lOyvFA2F70Or+J5i8BrVjWKoJU5AT8JkfbQqoEDKLWweWq8lhng5gfbnCYyYAEKxrdVR3ZHOhYFV6urg3jB6/iNsF4ijIiRZlgtMoT3lVr5I6fwBGb0c9Dln+emiHdmKgFm4lerN9+tLtouo1EqP5KvNCQzXsdgX++ScJwttTwywzh7fWBGj261DqByhicmr85hno1kQfsDO652jCQ0XEhRay4FDs6HnvGOitMGH9YvdNhRSCihZKDFNGlCGcMVKgkxDLlBHwb+/ctlGQL4b28RufHAQEOfqmPDHijvnkeuXHjl1qVRvyIGe2PnHdext9p/qEc6etbIJ4XKKwNJfslrWfDhm2VMrStNB8VXdIYOOBU5sSbDH4gAAMigNyBkVsRRHLRngkp3QOMM3mfwDd7OgkT4PZ3sMkdVDSQdMoKsWSZrhYVZWRrLovG63zxtmXOu8Ikc4cgNAyDdDX4LX3cfR5mZglKT5SLT5eSZe+QYT0y6yy1kamYVw7ZLVElBl7wV/ff92JXikEIPGSgHvO3If7bgra9HHcjg4AdNKtGCV/+Hgz091gUBrwpNgzdRA9qM5rvx8NsoVGlN4xq0xFlrEwxHezq7u6ofKeX7o9l3a/qYBhmbETSiMa5dYQxO8CB0GHoUtTuevlcjk+6xRE9eDYyrvegQsinZVjnhu3lX+PrDrgU7cvXgCDgmIM77Wk6T59Mg3claoxyUKB+XtRaQK97wDrTe2p/7r9fAd4A9HjOHwW53uFsHUWFInNJ80bo7V6mheDegpkglJWeKx0G2Wto3p+r8n8PWlCf8Nc9a1qDchffnAZqIsAQdl99mJ8Es2HobUVlIU+q35thSQm4+1SFOMJqmiOdsVyMEhdWnRhea9b+9nVxE2HZsoXuMTbI0vRjmj+A35/WhGFwPxG2DZlSOsj8NTx5Sn1RNoOrpXmCjdsyZXi1mCNVP08nOS4tVfXmXoDFj3YeIdcyohs6EOBTzRIJ8cQF+nroyRCzEkkWjVhMG+yXcNw8kAVwtX+yh8dPIe3F5Ft8OdoM6xGJhN5CkfqwYoXsyKwZJZmaoBwT3udnYoVL7byhc5tiFztemQ0wO/LY118/7UV0to3FK8bE8cAVwkixsuloFyWQGs1whtmd0H2JIfIy8jn33v1SygdKnQwZ7yVgEVZkPYB2dLMjnpLLoqqiYtBy3IXzC0ep9UrZimMUxk66AbSrr7QXU8YZPSEjEeRwLa95ZhMfFpclStIUABEv9UAODQ0n2uFUWW3snJD7KEnkRaTO2Sv99LJnAqHAKvWvTfnEtPQsls/SapmV1stW+aty9yHwArvHRxT7N0xj6cyCdR2NbWiuOxngW0XEgQ/TItsrXxs8tGE3l3QJf3jd5Czb89+0EHNA9v8vEqelwtEyV8CYEq2apnznInCSXh5W1/LU0IU4ZBOymIanNxcyS3MdcoDCg8MoPEX4/D9413+kjvtgRn1eM4yvlDwaV/Qh1NLvWBVf8dJBskztRVJYYeBGPLiji9ZHU4NziWDjAVdbMobaYeDfrnU/7A2AsRXEbOwyxAQeh9Z+sljHXfpQYtifEb3O8CseJAto94LUmNopTeot4z83KmNaX2uCNHrslKrp/7hQshpH2LMWZt4LjEijVJVKRkiox59Yn2n3d+fKUk8sjxyGyZ3q3pzh6FiYYu2tE99nL1K2y8Q+jkZ+LzvkmDBWt9cOAaw1FcG1GxJ7tkj2KumMMNVCHYT+vJkunQWmTNZtHN+2sNYLCTfda2DofTj/L1RumKD2NIDqe5BFfGljeH8Gf5v7IP7IbRvjZgCqua01wBH03agCa57LBb+HPVrUozHGzUXm/SfQPMqoVQJJOjN77vi6sOL1oYVs/RX4/SzoBd9XIl7oAATBbVVftBeFgXw4WzXQkOjmvksHcxkwj4AGJ19xTslT+C6fgMvS0+oumNasc+7fs0QDf83SuDbaZoKTwO1tk7GD2FYNgUon3KMpDBW8kbAq2hWFoRwnZ7fE/Mj552zxQrCjrxOzM/pRtHfmZJIEOIhTo1GHwF8f/OFXPx08fPAosIEYeasO8HtovW1f6qEgDngrFtA9JdhD75tGe+FUDBXz9rcRSD3iDkZgLxbSIpYzmyRnuR6pHrjdSc06PFtcNzTAdz5sgUVIwoXCcb6j6jYB5YC8CgMwbLgFb3lT1RBDXc11SXbbUUKX6z+NXC0bsZhVXgUTflFieNPAxzLfUpz/pmiDolIfIhoVeVPIMIK7ij0HlpkEnYNwY/DCzpFfuGrQ4NQOkjgzfHWx8oAf3MtkYBwyiNve4dhiASr/OrVXZv6xS1vkh9hlYNHljmXum3f3c1RzJr4UZ9sjlyaI5dNnS7qQ1/joVNu3ukM3macjaW1fNGDPjx4kV8e4/SicuGd3MWVaR0hum1Td/OrxB3qOuwRtyKHdHYTF3IX5hBHf6c0AmhYvckg5sMf8WRQExfZquKhrnTBhq8LK95pZUuNFyERaQ7+QUO0HsNZez3Um210X3tJDK7ZSmPTTGNtLhya94KwFIV+tNP+K/hiMd5LVj6Uc8o1mzgvbrvPqvfTsUjSScq8/3ZdUGSGJD+eXnMD24NleP5DES+Px/Zvma7vlKgy4ibe6MBUOJpz4PFlHhhje/DbCeQDb4ChVvWq/PfplyidXSA/IS45fM5yz8lqszrcDPWypr5PjLSe4qCaNDBlChoYDtknFxs7aJuxhKZI0kEBs0aRNl1cjn1BrWlwpCyGFtSl8KVowmtk81iL1ulRD4OYPF5BOQRUV4I/G1Uf9z/zvLfPdBsbrnkeH1T9vYOXhD/GZBzCdZbSTGjx/a9HsoVzxHAHae4LGpyatUmQUaSgop77T+NaHWQVKfchk1o1e8LBpYHRoxLwMkL9eNHJSNwiKHdxhXLPxU1tGkVeuvSSqzr+dAouYhAfi8sTt/tdoMY5KDlSTuD//ydPMm+Cc9DszeirRyCbbbsJ2wXE/lUD9Exn+DcCM6edA9jVH4AZjv1wO92VrT2L3qnz1wvrIjKDTEDNh/iWIF36O87dc1BzMfwX32nsZbZKCAMq6XM8NMLf3vH/EuSmtqbNFVbpdHlS4b6k+jxkH4apc3EkDQ7FJnzNCJ+IqQ1MyHRfVBNMq4VyaStsKffjdG5qkJaVLPJWKDcVnP/CIaCFjs7kItKDG8+alDBGBoR6zsoqvakn1eZcEgMthghzjSpNDqV3pIjwlPlTVM913wnI26BKcX19KcfdLiv6gCu0+OgjGOeRwZb3tJDQqYR/b0MFzxTeMRzzoRcCh7B1cyUrssqt+MyDD1BgITubmqu4KbMegPrK4k0KC0Sdl0Edsz4G18/kR7PKZTfFLQG/oQOdRjl7t/OSH2bYSt4F73L6rkKOQyvRBJy+RO6XF6TB+KxbDsVFMB6psG+OV78YnGVQbhYxzwvPZrV6eCMfCb+hOJLPldjRYGjr2sJtUjhcvffK9RJe3Gq7hx0o8wu+OBkRz5JGdicXMraGsQX0hYvHtBeNnVylyd7S/pddY6DuDB1N3iT/rDuWw6NSDYLSm53EwURFgAzhBt3QuoR/YgePnGJIdQmgYVldqSonELVZSAoJ7XQgyTmCQJZngfvFPM1qdxebkWQzwYmgo8pDCXQXB60Ey6YjHvDi41dXeJOKRuPF7HJPsBUUehyuBaNphQYhIVf8EUiCJyvrTwwjgcggiUmyeljhGorPYmdaamu04X+T0+Ct7RRbP6Qw07lwd1E+CJTSHi7Kq0rkBCfjIDd24DbCOuvsrpLzZJ2Ng9j17Jr/A7B1ZTzZ332Lu/NE2LxI3Ys123EtnM2VRypoOpZsR2C1q+YjKVEsxIwgYZsq6YnThqCOM8WfhS73BLhwjyT65E9x98TCpxHvkOKI1DUOPj9/F5xLrZqC1fxCdLf3Rfnllw3ZpRPIZsy5YRhT9M0jimTTbDyAFKQNdmgiT4tsg36XNXrLU2a8ypS6ThQ+wdZR8H18AuycM2ZzI8yD7B2+qZwb5fUKCFW0AhYjBUhr7GippXTb13T+94HmnDJW/p6OvmzaD4KV8bemzVF/ZKa3g8corkiHSRKDRJCw6dZQJigMx++BBRjiKGI+OuFX4HpFIXbkkBVVx3IBb8Q2/9oINE3oI+HtH6H4YjSJT3kERxmoR8EmdHlUa/sgjzUNzuNE4QjGPuH+OI9if+7mbLJBUtk+aZaiPTMhGTyR5uPRO7AgeVNR1MWPkVS8e2/POG7qYqULThQXDMDX8wKu+2kEvlsakhhraPbIfhyaA96I3NtuEROL8kqqRl9EbW+gCHW4MeoZYcSxuguWblL6sMcIhywTDGrIobP6HjJt63w87Eudu7kA55LkV27zxtDwH+QwlAWquSMerlztey6ZtS2G4u6xWTMu4auVG+oAUjZQm1uF6pw7vmHgsrWiis01Ep+nYcODYL34oEEpTnUsIPNZGzt/VaMhg80nYxpjaNLKuWBmINPGdRL02Zmx0Yu0aDEjC528SalXwvzgI7cX+ayI9oMV+PQgEl0nWEzJEJHvOH/rLCnNRr8RGzYEbsn3SXynuf218p5lf3jiKELkvhBBDlkYEWR4r00R5HZO1uuVHXI8rEfedtm3WljgO17iy8KsoIOx8W+rBb93v/VHhpDBkt/0shVAIZ75qYHUi+ikYTM6fDgKvGVomg6c5gK4oBawEV5B+a+QXxqb1Q6gkSG5A5usic/RmrbFE2N+WbfWP0bH962B1mr1LHGPxHcSHbIZci5LSiCMAdvtQ+12/GLXCWJhafV490m0wBksAlUwCG/6WxbMxVQ/2T/SGL9kNSdDUIErl28DOrBavs76MFlLhLEZNzE3phy0KsHxD1AN7OCL8AA4mTAL/DAQrLt3/KCiZd1wHsBVg5uFm1Qs0AZs2vjUi0Qbu43kuL6+4dyrPQo/I1p+39q08HMHF5K6A+LVKmZHUoT/+0kh1uLxwBD/1fuL+TSQHAWDheY73/eOFBjx9CwELPQziZJUuwLvFDtefy2bTr2OcX9nw4xzSr2gBA/q8nyfDctcMbozFsTatehg9gAHCqoLugJzB31ueVz87aCUkN58cDzQnBZCJqiNtE+rbWXZk4mp7Ti0EH0u4+MBMvCP7qbDlLz1Im/5kO6oJp7+3aTKpCt8cbSMqevbE0lLQdQH1pkKxLVxIR/d+hctaN8PEsxYeSkbOKe+m71kFhGoDzmgjy8VZ8+NwRfD9DqyWAvd0IlMK0MiK1ElQzxKroT+Vyh3sKE1Ycdw+8ps3yYd/9d9N8GQWS21pATuzbEmR+EQmqTT8DCOGUROcyJVGu1J/VcyGIuBgRRB1RzzF8BtJxW/gmKz0ivY/pKRyx30f08ea7kUIwQwYphpHzNiaSzqP9MF+JR3AuMW4ncC07XsddLoIf5r3zJSvMhfLfrCOevWGEClpfOJ+pRsf+nvbawdVvRfVzMHqQ+gIutApzE0XGrpVySmB+g/5wgIIH7aFDD0IHl41LkU27F/8kzQm5wpcjQxqo+RT8RnPfPAjXLsAxBdoywjvdZQ5cTtBi13ZaqDjAJGSK8rOjt5xRV5hGXbh7yBMNTCa02BWyXl79rPrn+kS+tnFuvVH+EZtJ8z2ne5YcDK5RfNLrWuxmqC2fvhbnJ0E2N/cUBo7GToe6QcMAyoTll8qO5XHKbPKZY6E0dVNcAvX9PKZDN7N2AH94qujYJSDvePNJp+P88odK33rUeQA6w7fJdrsMljbWO2kJeBFvgIVvI2tJXGGtmlCteH4sEV4Bj7BEDa/6ZvjEYnPghODSvgpjERuBWbFhCnrZZbrpIhYtBXSiG9WMuacViBX91m8gF6XAq5xWg7sQomTGpHPY1G/OjBXTxH0vaOCyh6IxZWipQbNMLEgFIeHcfRs7dBES8RGgLlXVg+8xQfMan7l1pju/gl7yqAwHt+RZeTQ/g3nR6TkO51Q9l0VxYbetJJmuv8RoOC2Gahijspuirk7fWy/b8SSHNATOfSkJu7g3uWXmzPvhuUzsrswS1n32m+6rNm0j2t0DOrwoSuuLZlSYFWVRUrjmWmP1KpFDQHSMmQGF+ioyUknopOmY+nZx/Fl2Qmh5IUiqvuBgOsaNI3Mu3ugu4B8irifHt3xklF3Aiq75xs93kwtgM3qfNAJJd7nHSTkof2FDDD99h0nJEFiofebBidTdN2A5wIbYswEcwisrqGHOHZBa2bJmPUtiWZWgIA4WTLiUuvMgD/vi0ww0k4LrRD1XoMiy4+eoh5O5AXKIKvOqHQakD5JpWIGj2ubeytdRlqDSclbdlUF0hcwdACNob4FifbXTcBlTz2gnwgkz66mt2er+gXLh0GjJ79vjqcfz7t2Xc94906i1xqt31qNKS+qu4UfmhaLoR5GrHrkdc+8DhQQI/Wsm/GhcJsz3Oolb04Sy5dp64289fwCHsdeNQDJ+vgZt0GycWqzM/DgBQQ1gAwC6STXIToqe54F3isOxJp+xUHlA9Go6ZHOj2CwVdY0/bsOaqqMFfGzvkK5aPaPbNv9VujZVdRBxd/IDsjByLe+PD8boQnzP74JyiRXwnfrAL4mPFcEQgCRXhH9ZTUmPxl32+Um43PPnZZzhaJi7AHZWwSqd7cfFXX2fsZjXBXzZ1C3WMlY+CHtUp99iAqAV2HbC1ILghiUfr087acY4JqZ4o93SLleQp3B4+Hn6UPuvvMK2y//URhOnJt3a7uF4CQjzfPSvISDNZb9Kfeddzp8UNhxbU+Esa4lVkvJAY0fmAk2pWHHo1jIMdBdrVKK+jsV69Yg6vQo9OkcYB6vrpQ4oI9dOS5hDMxrAZRHPW5Qq/D+rRlgqJ5PQWhO6ZgPTSp9oaQf20ls0V9oqMw6ecDh+SdRCFZPZUVJNm3cICSuRNTQBgw72f7DMmCE2La5wgkp8wyoWfVIk0Vqr+s8WRBwOnLISvU0ThYndbDg6yeE0s1WtNWsZfg9WkN0vJa0C1vwU65sbzAUmAMbbIdiZ0Bh7ep+BCzrQApWoFN0g3haQhCxmhC+iT6pR8l3BiaGwW533b4G6RsmdkHYQZIFlgGxIknvRgHu4OUR9oMfXgN2njjyCaJmhE7gHqHgqsLTkRzLPwHyZNF9OdRdP+WoqlVacpZ+Bf63UKT6HyvgFHNYNIIyHm5TmitcOp0KgJmsHbvW6MqhwXnb5/zVZxfoHh/onQ30If08enRJKxwOZ3iZs1r1r/p19Qk5wPuDyZyYW14ZRGx+Eye0fqMgxmhbcuOXCnKnk67CNusiVcGGvHb1WDyXWrHhMhEY7UveGjvwnyba0S7WVuuNdzuTULpL126y+4A1aH4xma3dzzAv2+UDRbOx8XDnn1DTaOM+xXQRrPfiBKsNKDPOW1okR9lzeEvNFNz9CFFd1hee8mPzoAp39Aahcs+5e0Ge/H58KuwM1ABBRvIoS0PZElaJaM/WVFwNdqPHajge409sA6dyTjZ9DBwvL1+mqETIX3cQ6eB+h/Uqw7rQwKwDlUgSiWDR+iC7Af9qLWuykKhkjb/lAiRgSPU3aQ3RipBcMMItvHc30thu38os/X8hRlGR06n2Dw1XSief14nP1IGwOKsvtxtcy029bbsTiBmO9wNBEHcM4onck9ywWRVQPBPhTlLwP05Whv9JKtulxlcbiGU7Cs7C1SoGy5FC1V1cXs0qmOeBcJ6WidoIwf7vLT+0JN/4BjR5vErIO1SYRle1/+p20sUW8nWTE2jupMBiQrxZfYlBWP7jPEQ6euAIdrzPMuJUPdWO+gBQ7/ETBsj5kNq6NrkMiq6deiaRGgHIoCJHjstNjlefznLwUZoYQAPzBTigGoWVqShkCVMdm+0TWs7icuDS31ovXk5UZPpKZgPepPrGrg7qloFb4RpjHATn5GjY9x+YUWdPw1i3z2WHRRvGbYKwnJf7y8hsidg+UWt8dtZrHnawjr357UkU7yClyMfZ9/ifNbK/U5iyiVx5l0qszaQ6jROxFCiNBP+AUZLqyRYyBHDzAt7/26Hx5ujvMqLJ60m3ZaN5SIwqTr4vlkDAx4167+EXg7VfawDaP25RfsAHl3/Cb4NGvlHqK7p6MpD+wUe0SO0fshpaezyFWB+VduZFMMiQ3aJMUiIVEDGYz4rCyMCIa1bDCntqLKc9ChLyFXMnUHiqwPXCEk0Ern+JaZA6AS5wBp+5YzSX6Dejl08uQlYiUwqwrnJdlM/5I5gKnPRR8OM6CncUqz7ouT0GcShWhmg3U65eW7gKruW6g/L7MABUB1xtjKJKGvN2ERFa+wkHn10aLQAhTqmP6Lwllg+gnwYF5lGOdnREESd8Aeu7i7W4wGbuL9RA+KhtbgY2jN335JAplEEb6QRj8BaTb6h3QXOypxGbAASHSxUTHYmSdDrgo5ocJJPs8doKHmoIWh/HePMo8jnlvs6BVUv21ZKZXzZTRhdokAZoFSDAQWr/qhu2RZutnohfDxxXaIV+Puu5TDeFOSfdtIeblyW4T+Mz7EZ8ASBRlAIs+kqkjRDAo/0X+Z/LLr71wsH8wHz9FoBKLUunFr974sXWHSzy5deksKN8IPwiTYNnakVjEwwqpzhrwd6iUeaYh8xM3QISrpjRWICwtmEF7xlUo5fZmCykdlcTckKhHXY08XNDeORSrK+CnZbD6er/XIGGCQwgTya5tHGy/2Emjg8AT40P3H4otHQo2TVMQs4ymwJ7MtRBARnTv/8uTX7TIK+7nTDThnXhmEm9d5kvwq68jZCGdXjFwArev6weqz31oUlE9N+S0mHYfj0vqzA6+56J4jLSWxVjM/GV4+HKm5aduMNHsZAyo+SaacrOoMwJJeBKMmJ56u2VGVVkYFnbk8d0UxQNNhDd88zOaxutlh3kHxqQq61M55g337Jz/sdZZTKuf4mXdR3Q8zbXdV6gUyS5BEIZfOSkIlQsoLdOMXFdPjiPwI12GuBOEJl2Rf5xqeHVtmEaYP4+u9t/Yve8L07WNEqyEsLn97Y7mPszqZdcFGoxTLpA4d0QxWcr6GD3ex0eB8v+MaVdnSgN+3JcJN9OH3GL2oxRU5xo5LvZgKx4rgY7kvRgqZhVonFGxNUJge0mgjQwVqra6JUFBTA8U94Wv0Lg54FD8kP0XZVop4ZTGPDZ07d0mMGepPdIyUlR5mzkfNQQAK+wWILPV/Y5ewfd2DQcNI36hO1a98UvU2TZ5jfvpfFzBpbKZ0dOwiJjIdRWHRqGtBd4WgYitFHvMJU0kLRKO9LPRb8MVkbZsIglBkjfGaSVl+DMzr0Rz45XK83uTu80Dzf1TRMbVSPMv/VA3IUMtRuGqdgWagL1QMqUxWRemkNsHMPctiPaLP+A5qG/iEu9r1zQMga2jaxquyfhAuw/DpXet/G04liK/aff6iLDkRdtK5ectPiokeRviYNN4sA+SmBklsyyN2nou45lMILtFn9tHzhN56nO+CNoZ2s6/khSwQ7i3WFgCVQwIracO7mBRD3MmX+O71Z/UtGJPuGkYcDF3HuQpiGepp0LcgOhh5jEzcwGoHZvVhlZZqFRnpOPuzrHe16JTfSDRAv+HtuFmi4j3N2M5vtluqZsP5mSR5rsQ3/eNbujtGDOyloTOdYmctVkEid73ZOqL6CfBYj3nhOChEWrSTDM+NWmPo/PTkn1UHLfFyeh3sW9749IyjS+YGYN+CE7PC6BgLahDoWIwECPyjqGZvXiJQqdaO6j/H4yiPPwx0BHBMU9+FCq4yeUPCLav5hizzhoSXVD0qZ8weDgbqjXJA1tVnoTsBqpSnE1oineiGYEtcP2Mf1Izi8S5Vi8k1ie5D8SpPnl6Vy5N6d0o+12KHqZGT9hdd3JXBDflx7XXFG7Ep1BXYSBtU+Yt3KycdMoQ3C50ofkf6oyGWx/X6SYYE3moSzEYNWa3+GBXc8rEJ/XijibAhxLVOzfBer35xcr1VtqCNja+8v5UIpOZrvBHJyGxuGuSBsTymPixg8VATIrBh+pg5kAr3LikmqpnDPYFYlV5DAysjmoTU3LRVOB8BubRrhdln5yIBklq6aLbnZ4xDKUzLp3/mhl9VA1ewxAxTfVMechqaa9jXP4x7453XjxBoL704o3UIoY8g3JgTX2bevqIPdHfwv2ySRz4kPOPPWiogbuvI0j4H1DctoFVNawg122l4Sk9hQOdKDWya0LUMMdX0RQVKBJYKXwj+Z6kmtgr1kDHt9VgFG75qTRFtjoolQLvNEcyko6zLX7410ja45DhunZQXLE60ETBs7z6OjyibNfFdJkEvJFQ+Ittf3WbCAWWj1LAzwap6p4gDd94HlFRyo9RSHOrttHV/AZQYifc68EQ04cISZql7KTxt6k9IyaPVompg2jWG3nlwMkN3VwLUX7n8zMbykWKHiqB4K1Ra6Ll6mwli587Cj6DfdtaWxDyaI7N2Fgh7j/nbLtCqfun1L/+lqXalrE8PRMoGaSrDWexVdvgQCVdgC2CADvUxC3z0FkbQCECF+csyGQDXP4NQo0lXt0C1g9J+dQorCHCXpJ6d3JRJFxhCI7uZ6JayCHkD8hcRgfnOSnwCWHnydatFOtiT1tha9/CNx7XEmRaLjErKZ6H0z4i1Y9tY3ZEE2UoPBQ1gjYaaTJZOgJUc9QtUbmmv40SR3eR22gKH/XJib2APTZBOG/q1ca1KT/OYYQFKV1nE4O1uRDE0rV7+WrvqloYsqqQYR+z+efi8PsDGn1SmVGNNHZvlQmJDm3XSkxB4Fw8J6fOSa/UM0+7/kNCCzUAVgkBcLhurkAK2zBkNC8WXRhW5tVY7uKZAm0rx6CCa7myQ1Sk029xYhOxM+tDprCtkOHmnlV7I1lg8uvFlbDuu1N3cxCDCErwpAcvZTp/olwk611Y7TlpCOMIB0JjkIt31edGbuAvx7wI0kk+KfHoE0egZQh7I6Vpfb8sCAVKefS//gsdrGQ1iEPNHSQvEjvjGglgCEy7hA4U91prf0Hz46X2UT/RthiCK6j359Pfplf2CJI2pInn3RMMxJUAMRUHR4P+qSzB+8AvPZVgD/BtxBMvclz0CGyRJNHXSWXQJL8Oeli7x10TsW+m5V+NqYn44u6fTu3rYzaJ5/30lKrpvIl/9Koc4LYUx0w7PRbw8hv8O4WXeARUVisbFWGL0xg90tX8wVsE4IXTKsKFPIDD/7gh8QeUlnOJGTQaFLS8Wp6A0yI0TbM3UeqTBYyuPH7XZyWLPZ+lNcAoLHPMOCNpdexZ07zacFay3D8MgPNRq7oVk5osdRoH8Kpdpujz3W6NuYY7R4CTIj/RON4js/t0VdM9rY/2k+pUwmXcWkKAgUUaZRyWbvSoLkqC9HGtB6IlwGc6FSojVYndR+iEI3Yzmb61lHfgYjNb+mpSwSzjgobBjRC36h+1cHcbUq5+bKs8uItVGpS7lSdUfVTv7vAe2QuvmM9B/0XngVYaS3kHrSJSPckxn8zl5wW/OESxzZFxgFtmY+xtAPCcuGgwsBnNnYBafKV2KG2fxPZtICwFizs6CQeB/26noaGtPlneT2Gg9m9+LrLYKqNfICxWdksldb83jGyCKtn5z7IB4HegFXiZfdIaRa3DozIsXtedGDZ66FbCuX+ZEcOUkF7tazepAt2CmpKF3/NaIH5cj4MFzENflUysJUNtxY5oHqrzM+LSqZVOpzY05fud+mxopg1dWqyJ3TAjJlE6mR/Rt/z5fGYP3IeLZjjI2tESTiPQRlJwA4DtmmROp1iOWE6YrnYa9ax9jIp7wFFqfemFnGoMIhpXGcUaGJKoYyXmnlJH0p8w37z2uS50oD/fDNMs3homhtLlJw/I9ixoCekCE5cEITFLU85UCDmM3/4iCXrwKjQAf8bPPWlZsuvY1TMmYmYGmjEKvDOjtpsDpzmmo3x5XBY9KlUnByCCHdyzxtayqPPsRkmWpurTKXkEHP8dcJy7eia/Yo4BcjO3Z9QdGfXRbDFcy6gFYvIdVgqcvAEqAdRor9oUe+9nzG70dmr0JO00qwxrf8jYqNsNjv7pi8Xsk6V0aHmQJbGP3pRiFpAeoMGtnuroxDOv5MjCDPVAgICZWx9vbYB4F8xBV9B5bC/KqKLDhTDnYgv2NyTIIAqxCeNQWPhuA8vF/MwX9EXFidZ2ThmycgsfnpkP9nR0UE3hCLzoZuMhBmhMKW7wf9lGgL2W7sYUEVa5t3rGghNm3oPYrjgIKtRAIRSANIcnrlWr75xdZcToZ2eJjeQLwXjpNXUU/GDhW4srv9i5FpLOaAEJqPUl4uVEoErNpJUxzd5bQzOmM2UjoPaSeIHupkKJDogBK6oR4YPzFZ5ubTqkjA88F9vxmaYxc5hforDkrSQJVq42LO513PMGYMKku24PR/hYJWn9ITjBowGVgq3ByV9eZH3ok4e/OL1o2Dhnd/4P0kEMqXzZXfeHwK+P+DGxHalU4DN5K3WqvbklmriSro724jo08mGGwnTVVdqcB0iFX9N+P+mveBOuvxf6xyQvjSnNHUF/NbYOMaEW84ogi2YSmqsNnP6KCtWtJwRkST8mNZPZNRuasA0Vt8iFKwUHDhmLnDoCdtRlpBOvmVknTg2VMt+oAr+UxYvK3YsG4lTR50GwEfqwKVZlmAUMoKo9MmHOtsjXCrRDiqWPxjv+kamc5e9XdusinLap6DRJesQXxfMCmBl2Eq/DYuvfoXeaq662zQfSHcXIeMZOxXgVE1v+DeXcezNfeIS8a8moyJpqw/1KMgiBAY1iskgxxpds9wU7rc3YjXn53wPWHyu4LRVv5UeSXKOBYiBZq9OPMr/yfu4oH1ozsj2g8NslR4eOXb3+CZ9+Ck8bpRj7cZ3+7SR4FXTxqNCbtpKMMpUagVCaSURcqHs/dmPO6o/2L3x2gMhKLzJfG7FVxk9GA9bxfUxQvlmIXwypM4ZFbpY7GB3MRAgUPE2cFXMFMIGdXO1d7MG/uNmq7LRCQAUB081cmLM8Jy23qsFc0bMq5Xj2crTJayVLkG8SGyV5mi54PPKhnr4LEAo66pKzXqBbydO6cXDSKMaHJKbfCXXynZOoppOrlqAeuM5i4o/jIas1Jmot+/hGidJ9Uresv9Sk4EqPs0LAMJnx56FUcqEc+XyHpinVfM+evtoKeRFUMiNgdCMrVEv4fF8nPlRJzEVwrNqLIdwKbEgZLRNfDmUw/qDvkC4jWK7Qrrrl0nX+dOic+Qafi6w933lFCjPF+/JOi6QIULH8xhwzW0JEOV49xQJpDyWYds157UOHcGRTm8UaoIXcdPI1N65wG7JSlg2lEcC3m9vMeDu1wXOiQFNgf6lrD0WBSlwkE66Vl6e775vVzfsGoAAFl+dzdjHrVV5r0OLOVfDiSkRjy3OO8zU2VK0KF5OSnKbdZYPVDatDcrmFwzuFwVWGrH7cJZL8ztv0JExso/ZwJ7B0Gox47YMGlJKR2Jpl/NFK1NWNE/Fp6I3H08GKTSeblXwm1sfaYIwPQlSQpZqYZgv8fH4ZNOyEzdqAgJl8HUV1gatWTo4w6/3aDxy5OjDdEolBmisEtF5NA5QHiO59UclPx9IWnLigoTdR3SwKYBJB62wu0wNZLAeGskIUQ8LPHXHjw2nAr+GWgrXbqtgavYr4Dv8uBoaFvtM2u1JG92q+Un3eVzfCsaJ/fVfq40t26MPAyDAHeq9qdPPBQiZAyzu2GSlidvTtrMWBckB9qdHpDp/F1HZw+VUUJ/EkxOatStOWeClU5RWEObNOReoZkDLdYSDrKXskd0NyTLDumSYUUDc/BfQaF/Lm2eQp6LE9c15R+oGBQNX0/QvntYUx2nUF/hbmi97W61GW7aKrVNSoYPmgNXhdWq4u4+Pi9cOp4tTvXWOFJOfMVmiDPx1BNKK/c4uRBPOPxjI6uhCkzEC89HzL86qlqmuvuGLV7Wq7ypJNp3ka99CFuzbMt7VJ9DeMkUvRXeCBJsYSDkUOQ5B28JscqfASl6AB/h5TjePPaL/QNkHMJELQUCuChgNvSsZ7XYqc8tJqY2vYLwKHsTydeLLmwcyOzai939d38cZCUS8xP5+VqEYEkqtS7ITnizGF2B3a9cM8scAk45rUu3L1oxhwG7jzm3FXLZJFmtBa4KaV3zCEfHO8AxZOHRonpKhg4xvaEsIC2paBdmqivzRlFjyejhFIghKmvCXcJre//rfLobGrW8ERVhCH0w/ECgSd5NySV1izSkyqS0NdEkuy6HFXtv29I4iIklBKQoohkw0G+zR0G6Fa2b3b31D8u1E4A1sE1PFfR7citjchREBRwA9V3wQTAujAYspVIk/eSfG2i6ibHefzsT5bU+w03QL9+E7xK121vJJEiAYP2f9dw9AbtrIFP9g+BKC0L9ltXmQXf/z+DeKIUOS6Z+2U8WD8wntqk1F3gcu5p310udN5z12W111/bpJ28k13i2RyCnzAu2W0oayOWh/RQhQK8Ld2x+BwNQidaW/bcpjxc3Y+3JNRJ0ZTANKXb0WXht/ugOC0sD4brTLN8FUQURG97NDsRQaOOSJOSA1peMlsyUHoj2rL08SR6sGloIC/6t5Kj9d7uWOHWBjaE0PvMhN4xIdhwEYFdtTJ8Sc616oGbwyf6ZKUi8EDnsWmMvjcgS0JxI2qTNpd9pjcapugN9dXSCumkb2WgRgs4zNO9J1kUs1qJq5LjY65JyVUoeoQjtM1m4J19gTMrx1EPrdsUiH/RbJYkbanm41GUno669LrBaOw/4gm5naWU4O2nKcr9OpiTZnGTW433mwfsrTDhEiJbcqPpNklcJ0aIHiB7MrkDYX9aZvCnRwPh72XzoQ9wl+URfSKeHyKoERJtZ51I0VwPIeE6p0LorJ7DlGdpqP8zu6st4JgHiy1n90bquaqog+XVUKtQa4mfCuKemUzXEHwPWhWngR1j23K9zNBT5rUdwk9OjxSw77wegVD5XvK541WicIIsOgcL1qwsIsZECigBZ4eqlAtigfx9a//Pw2oqULhtkSxfc/QywVDgjlxzlqoNWx1+ceyNefX/jvCKyWuUFpIvlbwl8Pq2aD+OtFbn2rOMYYZBCeFE4VOOTI9IIki2Qq8nnbNhf1rBWIBiubfVZeFQ5BlxlMctnqRVpZNiabahpMImMJUi/vt/aKXfK2a6tLAMZAe9xbrPf7dp7rg0682Z2OgfRpvCMrlBGNxSqyBCvEdU3WucdocfboGHYHB5rBRQb2qcyN3oWQ/HAb+fNJM0uVpcq4dEODyutj0K8ct6BVvJtdsgGPj3oXh9Bd2Vpm27N8BY4mima3tMmnX/9R1Ptcar2I3Vd24rARwzia6RBwjoPk9a/B5cll56grBcb5zIkz1SwsIki8S0uilxgdnkXJ0/lEJ4PG4a706BIUYkqaapneh4DVOj2TXQlQhdu2AEFuwJGlPfX343uIWpuYFLjCyGngLNev+CKQ4Y9X1nRYdQdXoT/QD6eNE2wqbE2hDSGdbx58fC9iFNIPPX0Vy0PvWRDV2CQYUONSGu0RYk6wnggnpyLd6bMlkoHUhgpHGYbV4seVYWlovsSwQ9Gp+Zin8+pr6u/GXx6tO8kKkzxY9tSY3cq7kxcSIe3QmmF5eR7xmhixH2ypqTd8IahEF7iJJ0fu/7XpXH69c42tBgttFhxsq3/xXzh9o/rEfmBzXwWYrmtKWHtrcWtb2vAu5fj6oLIaMv3d3RSmovmzVGHWsoJ9grzf/WTa0+ZRWenUdmV1A5pzN9cQG8jUbI/US4FpcumL18xnvsMuGuMeFopZc9jEKEJF8KRpV8IL+kEYBxZ9NFwiDfKtOeJ5Sr5M2vzEPGnRYyxO9rSrn7a9GNDeJWbLPPSWHqgJejqU8aKE3YSxpRcdejCdtV6+l/CEPtZw0eC84D+hB5aBuKQTF0pZFnQ3xzNGjABJZRISrjbnWoQAQzRDuyHHhyDp66Hou/OJ2ZKPKdDHArzeoPTWGRMvbnh5vREnPtX5gpBkl1B1q4c270xxj74XgyCIg8TMu15klAPWIAaHBmnnTLhGvzXw8BMQkZXElBgcQ/VNq3yB4B/YRzmY2XtI/zGLIdVLw2ajj3NJtRPvdPAVNA7BP96EXtHd/yQ9m/IS6k4Qon4DiKt90mTT4PnRI4leNZ833EPVS6LV9QZk+Z7xvFbIyGFOPTHJf++C8Z9Q2dyOz4RwrrL+OwyVCFQYGBN3tXrwIAl5mY9wFppIOwrl91D0QQgyHfZzxNGQkAla7UYuxr3fH3J7QqBuPA3HLlC3066Typ88frL3UDfOOwkE8TGI4FhVVzwwQou31yMG9dMh4bs8nid1slqVTpFLQxLlOcY3/xs723F6026KdZdECOJ+NtjcNxhkxv8xrLmSbUyz1resuBGR8CLDHmZITxYpNgM2+9TX79jd4j3BDK7n5YuhkXeRejUTCwQVv/hY2gfyooXC8pjmqaBwTm08WsfbNhvmqBkIPXQrw+Spyg0L97GwPHrs3vYXRPYomBlw+DDxZjCWBw/cryZ+E378uzoNnD4Qh1cM0SggpCyPCT/u9fO72F2yu78v8HnCRll3SxMbfrci8INK5ygxfCtfVZXWWAv0lz+ONJrpaQfSR27vRMjdQ5iZfdtgMqNbp0TAsqwZrSrX9UqwjgbbdiVpfMCpxLBMTra5LsJhftlLAVzKqsbqIz4VHJfLkKjA8j1PehxLSYUdORpHuXtFgJT1V6+RozlVj5q/dlu4vfL9e+9aV6noBIZJQNy379Q+Tzmt1onFer+TcdH5s8Nur/WAuHKvyMdyun0dYUGscUV8uOicsnQggb6mpl9LJqRvByMO98csUX1GX/re4YiQdeAnvqPf8Q8IikgVuU0Na8hn+kEfNI3a4VvczigXUX6paFaYZNiRbaqnINRraCG5zB7rb58Rqu2yXtxHkq2nyI9hfBUkTzfmAR+D3Z8b9mT3aKPxbcQi8imF75rcyo0N4/GIDDAi6VrDCUeyClb9oWHCpDuimgHLisXVcS18/WmNt5Ysp38tdlNYYCA3RCDw0nbzq11uQlqjNUmMoAzAFIOKsAXficwKBfYobk3oA3k/oI1hpzc0QJGS2v6Nwdk2RJeTZZAVcOLEMYOknOADGcZ1ZxGxyAK3wlT9Gw8LsJWp5l7J8ammvWrnAAZKo4vh6H+8w9/Y4RHo288fI9++C8BKwFFitMaWXEfN7JXEXg95VTcUQIPXR6aM47OBXeNM3oju7E8bbSUoIyyxxEMZ07jLuBYqGL57pkXlbc5IntcnEpB4HX9xb2k+wMP959BhQaPU+XfsH+aHVkwvt+Md92AEVxGTphbHmPmyjQbM+LNqhybjdWj/PKotXsON5Kp8zhWlyPzbZkTrMyzPp0rn0+j2U+UV1WsSaiLK3XkUM9crVk3IiVVu/joIQoFVORuh0HzF7FucKDPG2hGnWuqSjRauRuh2xW+FgSGQDBqhFub6OUbzWr0BN6pLwTgV/psm5iZpTXAWRyoG6aMYDNDyVPHXifr6Ad8moPew70CTiw/Tf40WiJIHHQVEG1yNerT8v2SC/Yz0+7INPAe2Hcwaq6yVyeRzw5tAjAoTozmFmShqvLYXhhmCsSsgLzjGBj2sM3MRul5sjc1RhBBwvHdmHbv8kANEntLXojNXGOyD04aNF5x28nbOsZtKsgj5PC70xctWXQ6VmEpQ6Yr2BCQgMgP+vHGdBZLcHeCEi20jXiKZ74oApHANJkpeKMRRaaJksbKj4WyGYV0L9pJrk/xKwfFp4kFa3R16+a58JpuOLSNoTfaCIPuh9KiO0IDgcsAMI0rW4a27TkgJBX7pU6qki/fHnb42r++d9jJiXJVPP+EEcpZeCz7xZHmSCfLISsWIRtGEjos2EmJgGfx3yUbiE0bIkcXOKvoxfgsYbTQLl12L2hXAFXn2I0fCbZP7YMxUnNeObXGSb+omyVynh41srRLg4Iw8VNC+QCfTxEIree1BgfbTQroXwA0BJIukAVeYHfLtXcofmCnuHW9A4WFsYNgfSwogMIdhKovvbo1FqEgzTx5Zp6NAtzFlmJwqU8PWp0wthXYmk7rnAfbmOqCm/fC7ByvAmXICnk1dn2ZrxnyBj9Tt5hyP+OG9XEbq/TLl2jWZHm6bKIuJbM5zpkRHai1Q+DxhdvWisKun4PqGo5K5cuZIHvs+M267GqTy0RHp03HxdvZHxveMqsdes0bS4F/7hQqi2MZqdY4itYUgSkdBwrvB3tZG1yHlKY0/Zl7qdaOysjsdkOCQjxFEvKWVRpM+bcuCXBh+3Prn4APE2gPnkfLvpNrjWu/bRNV59aOgYGVt7Iv/FfHh4DlxCQbY93qhbcvgDTjL3wZW9OzpOdzWN583HwPlHJDdv5zSxCIn8Junqbi+De3pZ+HGguT/i2cjdGDHZ09Gdrwv6cn6c9slmyO+oYouSPXKzmd8PQ1IZ1e/WAYxtFyITljNk+yjA9Xxj5CFMGNGAZ9MkhP4bMn9S31QSzWDGI2Z1FI4xmTkEqIOJSggesLC1IKK9CX9G7vxwlsFnAl9xeLEk8+LFh4LkyMhql1x8yN1i/MPW8U/3Y0Nu5CVFQkgof/AefLiiVDqnjnr76A1fEbSLNT+E3CQwgPh8bRjt8K5WeyH7kvtukgagmz4F0BPxBkQYLWQ1GbCU0Bi+RWQouA2HNeyMAwxI+fZCnmfW60sGmXK8sfYLKdWgCs7lUdh8WEchusezovzzS6jgcs7ApOZrjMFIY1gxB2MWPXzjYhbQn6l9aLc+BzG9HhZOpD658l0V6dIjlq9uIuEb9m/EqRbAFQWXgsCx4I7/lcby54X2jrrNRX4+FTLT1t4l0J4TVkKeYeELofGOl2q1q6C1l61xQl6g8mQL5wZlrZophGwbQPGLtuFXByfnFY3GfHAaT6XSnyEGJPkHs9NZ0+wRc1ph2NOjSJuzrSAKAe2Dfs1nF+YXhaOUeN2sN40v6zePBdy5yMXvYN6eWndrqjNxjLb8s/IIWEj4GZcDZpEFYxOy7ZiHT6bVItijIgo64miZWvPXHj75suMZ8hkyrwqM4k3cYF1KJ1EUj6w7LSv4Lx2u4ubybnVBWTWZwxO6yknOkwVwUYbbuOFi4VLroDZbztdbF54muwwugZJuDoyP6rG+ervNFmsPIiZYXjHLIY9gaJn8Xp/J4IGYmT51wetxznHCCEJv96DBGM903bmwtQb0KB9GUBt0DFS0b0fQuZCzjyjz5WQmlgeFdBhKhv+72QuJE/lm5z0HPJvPo0y5irkXm9H5aorM74lynKHjPs+XgGDwzlvBFljRgh/1FFbw3z1L3RDKMtQp3dPbfRgM1TqFXs5ddRfbu1QBbdMHzVovUGPFgKZGNBRp6jokXu9msYjxfXAtWB0HUN7cfr19JT/w4PD10hKB4lvie974vyuaTeuZFjv+kDTwujRcf2eB7olfuPIwdawDUYj6c1GxsIUh++zHig+WY/RKMkSqGYTjcKFH0lwsv4JAzFI8o+EzKAoq8S1f2s4UhI9te5CJ/HjK2s4nhUyNdELh51tD7RyCLSAZBM1m/78hteshfC/19DdHVpUqn2da9oDvuc3WcYqfmQZTYmPSTgT9f7iwVFQWoA0AKm4Fs0KIlpASDQgPEtOxDBiiwL0uXNfwiKupsuXzPGmoMYSjWcE4huoITDTK97MVd1pzGkpsY3FFRh2s72TYr3roOt1iEF7ymQG5TilsP6CPgbqgAYSMm0g1tukUU6JvunL+kFK1DhF9UargQcnUzpPH90RC37dNVGYYZaCWsSyoRHL2LvcftzYD/w7UGwWmlbHc0rB6ggxLCoPchqxlrvjFs1ouzCEEm6b9kKFnklobLa6JIlAuqprYu4mW8FzcNaZuDabwWFmSroTiCIfI5Z5iuY5E95j0BeL+ZqMjDTy7d6/A378Rftxyvv9nGmaetUiYUc92/MCIKsWAM06ZieYlJ1Orq93vl76SUsH44dGwE2QZzfBC4Pu0Xxu4ZG4FkUIwaUe+OtmQWUHY6hVorsV5MMSFpIs/WBtmnvnLLvnvYB3XCJRcarg6ZpFwbfZCb8Yl6nseGz4jcdVieNlwrllyNOS4xpyV6ryfmnOWNqq2/sQs6seTcrrowLj708wc7pUbcZLPaZBfP6M37/k7ngMEklicwpQ+xah9MyUMOt5w+xnh2DWJ9+nrUgHIvW2u9sgkVYw1EAImLDWBnDGqOhrRYoTikTuIENq8HYweM2dg/fVLBwXoz6UgsJdQV9p3CYkqvcujyffK3TqJ5/zIun/+rjWRDFShyXHwi7y0KccuLXrku00t+RDHdx5j/7y0IGsgHApzcJZhI6/HCQIgJODiannndsW0ofAHK5YPFgGw68nK/k0lEqhTyIH6zyQv9BIz5PgMy9znfUmdT+dF4Db+tWbkJwYVjBeQAChuEvyi4mB5hKMuFNHzH176bANgiUO9Cw+m7D1Ffgn8tSAXCYqLbWnKo/ZHmi16kd/Y/haigduAHOxApytwVTnYypGcExlD20qo10F1QNsoTLuiZqiGb0VT0uMDjhz3wfp32unlPdPpUK6k0OG7KTt/xfL1D+oOu4sPrfyk7yb1tHTLReQLAdk3c84wp4ThxbhNDA+Mhe6O2pLzuVIEFeHR7Mz6gWFBVWcT9YxCgUppXdUGRf/AvD2n33JD1pEkIdbRoIIO6bSM6V5XPi8edhuKV3FBDnTU1IVst5DlnCr6lLNM7DplyNOxBgT3nqVJloS6G3ENHTF0GKt14jL86g12i/u6ZJz2sdTs9U3HXSxAIMtWzc8mByuBruTxZyDdYtZKRjpPYumUZiABmklfoIYTotj5H8OBFKeZP6qucSUwb3CjwjmE6LKbFYGaBIZbbk+e1AH7KF9hzUX0VHwAzc2koo7HCB4BBz9EuOBk5djIhzzWiP55FZevgXTnpRuAGx3HqYgmU2Xq0dVbG6bew/KK6Asq916fb5CPujJDTwAG6U7KDCVpSxTkXXqAU7kdF/3x1ShYGMNH0wIpaDZRcGKgHG6fr/wKOtZXwjCwL4O8I6KCWZ8ZynzEDL63RCcN4Lmqxtc9dIy6vrw/Ri5rqnL5Xm5t6p4FBhH0Xe4M3k8jAfMYLJV+DxNDr8CiQMxOgrgYi8Vqys7rNB/9mE7Bl1scl/uKTy4TcQBCwgs7eiS+gVBKSAv1aNrK59D5yWKYwzIUp4atP0JkaxNikrb9ATrXzQmNH1kX5h1ktohx8QxP3RLs5pRmQyQpMqAe9L4gqreSVCt896wq8tOoAVNbfejMjYEElq5HNtkNF27yT+UJC+H+t71NIB54gj6GgJZOxHxFrgGDsQD8XoqbfJZSGF6jd63J/y0342PP7JwtXzmpSRe8PZapbmtkfPfA/t5MWZJt3RsE+Z5tYHOhQb+76Z8QtuFINeWgRaBnlhgAsqZgiQUYk8hqvvxQ/Opa9MuE6la66zUjUvQ7TZ1CxZQUm+e1AWc5Ye+kkD8b3Uu8lz+qk2pQINNYUbto4+jHrbCc/0iXGVT3FhSMPdvDgixAu7tralnhtd9YdaUU3IeCiEq6BjwlHpz1+VvieiIvSk3ZeBApQ9PXjGbYNxpVNBrEM1c7KeHWrK+QOeZ0Kxp2olm7ZY3meT3J8+WsdpVn714AaaGwYCqhZrrqbJ+9li2eXR8CTLhbqdi3fNz5Tl7GM9YLSsz3+51FuQDEOsaWrzRoONyCTCVZtmtG1bBu2zfklMSO5LlBB3KZM/VfTch0boC6nWlqQyH00+dG+UiT8Au/c56EtBU8Em8YD7pv0f3w2j6T+GDPVU5ciwPi4BcJZgXbj8hESUo4zBgSa2ZD7+e86cZYuq+4VrS/zCXSYhibRKvN1UQUgwEYHwV6yjONNienkG9yQJq5o10bCy2MQmo/PaXI8vGaMJACzeHiuBPnYrUSi9CsgT+fbZ6sludNskXob0fenNxWFbTNejquUV7mNn1Mae77c5GtBbeg2aDbuzqeOxSv4kxkvLpJK/my1x6EPrwVTHbkNKMAfkJtkPhfEPhC8s7k0WWOIfNS5tl1FmDIbpmQbwKwxjme5oxzrJ+GU4qxAtDFy0/7lnX8U+xfr4d+KvnNaqcXCaFJvY7HHRrdvLLFrrMl6Kkbf1jGJdsYp4zpIYRGW8dsKrzOi/Qf7QuNdJe2S7CSK04RoYAWaIUB1M8k9lJHuRa9oePvk6kLkwlCtoYvHZcLhAS4oNpAPxX9+Ul4HcVV8Hd+N+M4jzDtKU+CdixhPsq1Hf8PRXGIUsuEXNyPA3Urecz10A1zuXpTwFP+qwjiWNNN0t2phshRwdInvBYbZ1NcSSC/raZ6c6OiX/dmOPrrHXKtr0eccc47oJxQ7K9IsneLR5Ncyqr+db5ObYTLJbQBwtNhEFqkDFDToFxd8t+Fwg9Z815bRfcZqyckR1AS79BJRSdBrThkxdLQeU7brl5zrPX3x0666Da7JNhuJmwsb5t+fI3oSAcOGpvxcAhTPMyjHbXne8DsBKsA71o2tYNHFSNymWEP7URcRXDbv3nrUdWbNnKFtmSrcgjMOPUugiLED/j5ztEkZ5Tnc2Ay9MpZXuWK0GCedGM71BivYsMQ1wA/UwYOYlwhnX8FzLJTZBq6FdYW4jnCEnUnNmXhsQrymr3DYe6bjttFGz9/DgyDud8pxa7JcE524y3Emm5NqgsUyXeKUZ6fNZM9dIkK1UqGzXqafDiWX6rwACN791LXpY8Ik5vFzYf0TiJPLwglH7G3OMmMcbnKQ3aHExOVeZl5lgP0dfhg/FSqYL7OwpN7A9sttZzTB0wrQV+illFdsK8mKFF+cwrcu0gge64I+5qks4gNEShOhI4Cn7y8CnL+joaYLYBkJ1vLZedUd9k+1+TdNmyNphrfHhKU0FOQyMkA3rJlM2KGhm1OkSF2aQfIX1zRkNR/dLGL8Bka9y6eNXGM9duz1i0Iy2DTx08693ka8evl9dC7jpqIc+kiieOxI2IaplwWa000YOlyNJR/Usc3mRmjo6NefL2KRCvFqkQuTKdwQxlr6w6TNt8ai6RfA8Xo1CntIj8Nl27eIxXbxU+x1ZlBLtSfRIPN+qyb483Wh4/r8YF70/39KXJBkRYAHIgB+yzaAU/mN4kr6jKr3+7FscenuzCp1drNAFMDpTHt6keNyPmNwf99EK1+/2R6w86Rkxernd3Je8ROaVIR+bSG63bkbY/N/ZTKvvb8fPzD2W5arAMWvRGRd1Mfjs23W5RWi8Mwe6Tf2NSOfGtTFW8hxjBx9TWItpHG+NXrWlkW4efIgy2tTD8rC+nhhcAVmZDl38dxFFjn1lBopjuSbty5cnmj97TI3lHQLfBq/nC56NswdqgvVc3rYCjj+6T2XuY20OM6EsYwJS5as6C5VUgD65zUvXXEDcGqA4q6wzBOn7MmtK7/KLPBBCoVoT2S7xi8RGsWU/fnLzK3+5EKuf1sB0dZWrVHw4b+YuPERPPR8yHTURpb24lGP6fwJdNJYYVcTmZW0kOSYWZv2aCQtQIGydFFy93SHcXAuetUtMBjFWNnPuYo8839qDxYKjg9nVCWtWVXdanU1RVHfi377hALodQpSnSgyyBHm++BGtAqV3VJjR2Xfh++8ZH5L8CWw1KzuBiWu6lMtWQ00pkTE3ZBeeV1FmS47GZEoLXIDT/GAeXwITGBo5phjm7fpBXf7UsXmc5dzNXs0c0r1dTITXyOAnHfYeie6UeN1v8oHPYwxcd9Id4AdVgaTcmoe3y9aMii6ZFTqEyISQWwqcjaPPvPdUTp40+GAcryUkp5vZF+B6hlX7eoSpju+o9OcHdr+Yl9fKtWguggUhM41sekKVrJkC4Z2Mpif0SaT8Rl7v7M1lFzD68xTcTYTNjDw4CoUczpxA7Ly847g5gBX2cSxh6/Vl2a2Hx/GKFbhaWxAJfoCpmFg/WPM2RauAmO/f9qeytI1ApxPFIsyMqBb7n+tllxdwhjnVUsOZ2hG/3GI+sgpiSPfBukjABo+5Cr5wVg3FmuVwfvJ6FAqlxPvURQjA8dpD9RutLBJbWU3iObipV3LqAvGebf2hT+7qzstOCzY8G4nLRqC/sNGR6p+BMKiRknaRPbY58xn+3teVXmcHUEP9TWrsHhuuqn4PasLGkg1epz8txK+uzRpFkerOX1KBzzBa9tLbMbTsEfd7Cq5eQMxozAzvtDH2wgYfIs52ZRBUT7RvmYU2aBj9oU1a8e65vdJ4IRnTNBGYvWJBZG7Kh+W3IKWC8zs4eM8d7qz9RDXiE0Hqvs+9OhQ/iaccyT2de8Q2Dot5x+FK5H+xSeHR8i33kJH+XmGllsm1W4SbGBduY35Lippf1iJFagalDF42BCYJUnSBvT6DLY6eOcZi9RIYlmDy9LOPP9KvVi7JmLDCrk9nl1VLg6W9hMv0wKA4R9D7HFg95zgT2H/FuOSYzSuhR0qL4bIw7vDyMKEUMK+XyAe5duCpRE3OvQCfjRSBW4LDRsObs4uWTtBouiDKyF6PlNfBqBtkMY2mNn6xqtFgSz6o2wipL9pD7al1/41YW39uMyp5Exm0sycCbB7t9xPzs2/wRrPiFRvUd4L0nteqbHV4Yh4IHxMWdoWHG/u1+h6xq+0auWWDj0+xQncfGtPKkI6OfLNb5dyGnrZq3CupR4io+s/Tj6flcZ9b0pUmHZhK8JisQuEWYLUp2v6qInNUPOCJ2upaBBj6IvsY6gb+GXyYyNRsUCkZnNYRozXw1xHpBsW/biAcFdvd0977SvD/33ZyRHc7rseWBmAKrI3qxCzzvrg6jQKDg2zq8f58V4Ra5SUZyX7sZK8TI9F+TWrDqooXCcd6kw4rvZRJTTg8IG4l4u8dTlhpwHYpYHTtOZaxdTZloCutG6XKgFhMQfyoLmTtiKMqUklS/zEkdxNgUD6/U9/EuDP03I/360ukiPQU7/WDcJhVta6oCYULgGUdo6EKQwY/BxPvwy3TOZ9YVKdEBbIi4joYUFIN1zPpytRgWIaQacb/e+ynjxOOYLVUCjo5uUG9Pe9hAjWpHXsypEfkoMyjfkjnwWYwO6o9EH3D933hyCiXw4KWhiv266jy8TH4v4Bsywec5IE11kw4I+m5wdgRUIvYzuA4I/95cS1iNDbHykBX9l1qkeGrawY/spgV89yE3bWH92m8JKByq9B7n3UQudoP2eViz0OWlEQi/xx3UtuA7ncWrCSFjnRJsJpBRPH69T8paE5Dp5ORmmku1kMTNbqgVX6QqzNg0enXI+9wSCtYJpAymwzp1zB6oDoEpXqjR31jmyDtWH5LYp0nJXQq9ijPG7Qr1ONoZqDH64+iLn9hJy25JUdd9C2PWLmGKuOfsvW9R5nySsJXj5lxL07Pkw/etO6R7Gh7oeJTwcqYbAU60KFz14c0mGuOkpFk4RVEjMR0w3LoLfHIkJ9k96UW/VhGa+isTGskNdNHWhqRWU1eZ7qzIZ4PN7dkO3iStIlMmY9Jl0MUHyv00BNyAtfmVfku8+QWq1GX40fkeW/tyTbcodd4E2vuaFtpqkNceyq4Xwr9IThKFs1KYv3mXcF/ufWSWQBzmj/Z2Amf/qLlzNb0Q16nMzXfRt6LZ5xCNzmLk1fFcrbCTJTMCoooohNi9dPQRm54GDezfMP+tSofC3mXhZeIuuWmx+tjT7tySAdJZJfv9ahpsmsEN764LgXApPrpoCWMOH1Mj1sR18ZK2sTh/2DMBPIu6DwYxKIO721cbhQxvxoaAFEqNFAnd42p3uBIQYy9qmCblB4ADqigg12k3BBIILvpexLKWkmR86vmvOm0hjBGmzlkPPMxBqxVMwXNa8z5LvknPmfbncp1ehxTucF8PiEK6TTcbQ0NiWHSmbX6SxHTx5MSg3npRm9BRsEYGu+/naokKDaKLGJZZCSNjVZSZ//un+PIdbb+9ShUtENPsndO8YzJTocu/uaJVk8dwFyKalaAwbbNpdE9iCUIzB41lqY/SsXxL5LT36cMhOC+oFkX/GX5cFZdGtsuaCEeUB0Wi3HdypE77VIxwpSEevTJ1qx7UVMnP4l8hpl4od8R8O3XabzTjVMEQ03bC0h3rCcV84HocCnvHYJVIjZYVJW4iJp1C8YgT0XlSoUFgCPDMrgPMk+JKglOtF5BBLw6kVH9V36I0xWCL7OOOCzdJKGhs9n15KH/b0in/+h74QpugGbsOXTy4oIeTmQOp5orCLFDtGpSp1RIoiHGBBkaM+9Xzk47N/kuYT7WyXyz1RHBctvons4wcN9i4y2JhM5gKYTjWh+6ZM/5aBvpppVNWoujpInZf28d23yRU6Y6GN6DqZFgaeJpGmxX2qToXOMyF0Urqsk3ZFVVxT5dvLT3rfY9JnOzmPryVqsUyTtNnmntGCylJkDJzUDMZ0IaFEz1K7mCmwcBQse8C/T0Vc8jpwEgH9X0NuoZiXdgICsUFRf/Md2eHXznILWWLaZqETTsBKFdA38g24AeEp0iVAmHL2Jz+2xE1QD08309q6Crm2YsjqV13onFqjH5GYEf+Llfzk9G42AF7YCc5Jr8f/g4hcNNZfbU+cLng3rhDZSsijbJTvifRbJFBgYXpUOnJRVV/7en//BVzXUn9KO7pgA3qE1vf1eoiqV3JqNPB9Z2ynlCa+NZ1WNTX/tHcy9SKtknmNJs3Sf2cLsei5rmeNmMR26gPiiI8yOlzv+ZTh3oYx9VvDhs1zhQnyc7i79YoI8q9QkiCfdPnWZLFoAMc2IaiEqwjRxvRuD1PIjOXihVuw7hq93oXjugLUPVhRTogmDVwLvl/SNMBBP7V/z0G3QZeUMVUhbVEtfM5h51MtkcI0cuqkoopPgmyNOoGrLn+smzrdLVn8Vht10zESAzb0ZNW/t6rbXh5DGlsVOaurUBubjf2wJKZwlukQ6EaN5PRK2R34BE/vu0ozFoESMSP15DgI5grSup+TVtqlAPyCmBEJ7LTt31v0/rWT3IJ0ktoxQwzk8p6n/vLA+UXKl2EYy9vTiRqgYiCJDoj1FsAz8yzriDmqbMcHaosJCW4MXyaKR9WRXArfV0n0bDS42WVP2odGjCbCkIYe/y9xG88YSSrrfZkJPbFtQaoZSyI7UMrJ0TcrKh/yieKPKITFmrg6RlqmGIEuPK2LBiqBOm1r0wNiegpeWJMqNINvEuuo6RkMVIqCGo/cB05alofTlZtQUEz2USa/yvD2njgog1lrjFS8TFcdUIxdvae9amMrNIfd8jPGIISEtPgkXuAWMjm6Rs7oVt+PHpeD7p/wsX97+kP/rRoPjUUgjDm9W64SjzHutOYB9L7r51hngapzkB9MelUvcrimaL5XJmEmyx1t0LcbWma8kiinn4oZ14N9Gk66ny78L20Ys3aAajzxjctWYl2Qf8MqrghOojfpqKGTCvBHKheQeenrn9TqTmI8PkM/egyRaaw+efIZFnch3Dcw6d8R5WMigV+Y7nM+IM2I9acZg1xs6nGUEXb+blHeLSnQLbfuo81qguc2R2YvfE9ncVv+qfTOF5wAQoaOdA8jFA9e0AUo/ocCz1J+BmtYC6sCTc8AsgO0AidRhsnBy6BZkzQToQCkoTWMdchx6OVOfVGEF64j0u1/WMTvFx4hpO/+XBCd03J/Z/mMPWiBzDqdAtbzZQLl/7wtJbauzHmBgK/Wn3ydXfyaQm3qN8hiSrNEP/BDFPXAjc/OMTGKUriC+Sy+pLgM42UHu2VUnmcHwDx3KdrxGIMvrpcGUjicNKvqlGItB14VCMM6p8vStT2oeexUrcK4a7JKwy6Ga3k6LvSY1zzlG1xG7cAi7Y4/LYFiXzewczyCEHoUjtoqV9fWP0QrOrOErX6O6aMkGL/X1B1xy5BF0PLminHDQw/WpbxQkvTKgwlMwV354lERoOp/qq5ymhp15f831kJcpY3nmjj9ejzviobBKFQXodg5iO264lkOaXArgmwd+zQoPBsXof1YIpc11O2tLxL71fwTHLiKqtjE1q519hw0RikZZMVnvuaxcppjf62atJ88azK98ksOgLCCnjA9424FJ5OtSruMPP06IhVVCdy0vznCTVytSgu12LPHIhqCm2mTEM0IbK4yCGEMFZTYLD8EfOwJEzgAwGJHsbGrtF4fDmRj9tOGbCiffICASjTYXnOJnzKoIFsc8Ro9kMT7/cUuAth/sv96PxAsuNyAphmPdahZFIXvd/3CHGDjCaZ7qz+RgoHBpi4ZaJjO/XOni8H1Q2xODePhSKmkfOEQtih7RcEs5Lwcnsx9LYWsxa6x2m9hR/1Qf72WcuqOTcgVUBQ3Fymja3k0RWWqeJN+FODk48ZGRb85EewkD1VOVxoCDPJF1cHo+6NZq5+S17kwiZcxLiHEZRzHqed2Jz+Rdr3WzGjN4JhDkfl3mvY5NoWeEzlGgwYII7wvCJA7/2Wccohdc3AclLHfX/892OQueiL0aYGZPszIkK6V7L8XkNAB8Itdy+Upt9mvSwFugsAMMiPNGSN4GxsLbFlVU6jRJ+cbdxgzwZ/jylUfiyM9+jIjIlcFZA14ZEdAj+/PQygICngQlDALgSsWUIDBTMDKzMvx9DuqpueMGbc7hkklLEOrQ/Xl6wA6V+T1vx+0yMqctUhRhTvgcRkjcY83ZxfnQp+Srjv0VtA4z61azHyeSbj0OvPMONeo2MPj2x7gZYy4gSr6VNffoAWj2wn5jD3g8OtU9HFMVqCuM6jdkg0W3ee3Ki3YhtZ1fJnU0DQrS7egpcoizkwN4cNG0yoQaynyDbJ805Q9Y0W3BAR5NjFUwr1bT0UzVynGbPO/rBmeMyly7hBrHKko/QVYOucPzasGENZRtOdfZrfDKfIVPZdLWkgA1G8ayzXTo0O+roNQZEM9M/hP13ib6sosc6KRYl1ifWB5RLUyaae7UtJvqTmBrH9gTQslIQODO1SLwL5mKvgYu1FH9mdJkKbnlpetnfn+8OT0CpEK7VqrrqBuYqpFxPevIRBiwXcxcEE020DyJtONCIOgolauI33DaeTdDIObz1RnB17+edet9qkxZ03k0pZ1UwzqM1ht+H/k7w0V+kdQ3lF7ecFJaF0SZYUmmBXSdGZyt0XAUGdJVt4e+lrzVf59N6hMHVvcm1ugjy9KQgwVAkbqZn7FXPlmaVoCV+er+kCrP1VvXQNLPQcJ7ni3uQKYrfmXv9UvolImJQNKrCor5Wb3KZAUnntFQ/YlMneZnlx4DfKrIa0yhbX2PS6akXxaydtfGN9C6SJYwEI+YgBQEyl0oQMTKRs8dWFPL4Ewm+coKtcwqySsDldG/pqJAQtXHJ2Fy5mwC6coyWdDSvcvFyTMCiD8I6Mte7iTIx8LRgPfAbG2WZvZd9nrxsYnIkrGBv5hO+09MLfQ8De0LETsb++GRFRI+KwudLkReg3YQYlY0O1w6JUyLFGnUw7q+DaKguAM+iVlIN/I6A1uEsx5Atl5v9IiAUkPzwO4/4k+rt/Csloogf/UcTbQ+Fhp6MPx7fJYzW1cnOCJesEMs8HxeURABxLV9+EHMS0VXOqYT0hFbU8W9brOkIDhzdIePLXF19rD89MABv9AWB+N5cx3F/cQ1CP/mVyaqXVQfpgkzMkcRyMAscDH5U3npzPuDQYmriaEWjrYJHwjnz7FogK5qNqL4LwTskCZ4cAKIJiNRLWzEyjLCSGUx3LJ8lHIMmyqsm6MRo2l4/B1MIpVlLGjIKJnqqjf00JjLxUZYajGcOVJGmSWtUq8caNhTkT8v/W6kFpvny6DHGNzrt55FkyCrsYtvA1DRcyCeMQ3tEqa/tQAhAANKrJ/UIiICDbr/CqjK8VHrtUbnH8GbDCoWKwxGyJIhXURMrFPNoi6AAV4boKEI5I9JzWNeScovvtZppT0WiXEyJNBSgy88SDAyYSZfZCnr9CKMJyEHuYwj1AIuEXb8gJHmDWNnC3xXL/5doLy/2jbUJnz3Zuz+OTIuWj0n7WAeJyQOaMzrQGSn7HcsUJnJGf91bbQEhVgRipp9/QSRaSR+BrPq3D0v0QpXHspv2qj+Z4zhl+h1RWbCXGVs3RnOdtW9EssXtq3vBtqjQbKfeddjpl4cQ9cq96gpD7IYF5hNkS0beSkzWe/TimqNzGB2zGKVJIUWXVhzfFKrXYaWctCpx2M2pxKEW2l/3mZjZVWmTHt1xAzhE/CNNwEUEQl5EuR6Xj4kMeiQlW9SjCLotGc1gvL1LKReP4Q1l0X51+L5xKS9jqYFBi0TS5bVp05KJG3GdJlzAGCLUm2F2vKSwO0sTxeSprjo/5scC2IHQNb9LoyopDbcQKIOXvv9MaWUrWos0tXgnX9X9au3kS+oavq9Zi2X5qP6eWbJ7Rcc7jlmFz7fr+uimcvUpEy5YScsn15UmGSr+F6yDxtBPN+pPt2ttvein5JntQ11xSOWfPiWgFL82oEIyKk5r20nipW3wi7zQDYq89v3DldCbbkqmcAfmnCZbP++Z4qdDu0g7dsXTNdfO0UmHb/7MxvUtmmXy16GvwvaffZgg2J5lItRBLXSa0jAVvOJuFUUgb62NCRRckSwPguIN1zCijxm8PMX81G5Lxr56OWBida3rJvzXq+QqDZ2njNlRqvLur1NTmoPNXCt2k3dpr6s7mur4hP1tvexZdtFUGgXD8kBC/iLEA3O63b8jwA/yUJfbVQudjrRkMhl8t8WkSQzU2b2CHSD1dKVwm3bWXSoyFSbmsWhHw1VdimwwsTml0Ht5Y47zAJC5ZKhX6iZ81QxRPdRSinHJz4xcesMkLdO6Iyq/SOy6bIw57jV/gJlXO1y9HaMoS4rybnXTpcPYPDkE58yUISCxYFjP0pvQDe5kQjBHr1+6c6Me9Iqc8dE0+Z5m1JVGy1sZAm0Bt4Cky9IXUCgtESxI5WdwRHBfRlpfb+HYR08cEaVF3lPYJ4tm19Viq72G7VINsDYnfmXcmaUvt23C6rkxF8l+h0GeF1B5yvoqXyXqQqLEH/QTSOSaSBAii6tBoeI8ffv8iv5nolaaM1uBOzweWHAgdNnujyicw8mgjJLajVHTw6pj1NspviVgqmRm9f5Iq4IIcc6BmTBR3jq05oxop1xcMQ2wd8HHLcFruhwPqeTZJMonq8iDt7CzUzbKw/vcPaqAmmMgrGaHHBpve5VOgR42tNlWzb6GCrrHQG/ETynyiic29QfS8XrqelG1dZPY+if/VZzOxYkHKXryx4uCU8IfEuhV6cg43KSoMX0wD34ORpXmagX04Q9N8y+uEUw57pNHgHaKZpA9DuvZ1C4hbKLOMq1AZayaP3bETG6sSxTPpGxdl88g4IfbVbyu2NUhkh8/afnF3NYEQ0TdQPgPchzfhXkNCRTjiN3eNY0BDd+J6Bz6IcZb8/KMBa/WvGOI/PfDtkkERitg4cvhCZXRsxyaViCnHZcZ2EHFifmv3ega1JMhg40u+DQRMowo7yzbIPd6TZyk+dYDHGXfMRr/FkI1D9SEmn8RnG4q/KrmDoCi6iLsCAHQDbMdpCz9XIAFWpTCN7an9mnREkFam4BU6UXo6HdkDDuxUaiz8xfc6Z74ZS+aaHy8OJ0ZMP6ZYf81/dJe+/6Toui5ycn2ijw1LP2gpDsLqPfJEkKZLM41Mp4wiLh8GgUB9lXloEHG8aecFGbnMF0h4IWmKPNK+iMKA5pCf5HvMXrgMOVtrWD/ibGkqYQH/Qs+GWlGBG/bw8ZpK+mqm1s2r2I5p+alfZXv0R5GMiGWQCuu10Xh9si4QEtR0A8hZ7QLiCHnvuq3HsKjgpxix6lDSGiTiadWx3dj2UKsaq9WK8wrznIc+eGZpSrQgEAsBT25MdfcWVgd8wcg+M6yBlLLLoCcvPtwrH5rKRNZcJE/eAkO739iaLnJtgxB7SlPOw80TJ7Q/yHScF/jyBNczunsl6Dkp2iPpc5Zh6OwjQ7S1NFL4E3uIRQLFTLgmmfrCy86XH0q1nGmtoxscTVeciwStpruEFI65HfuhuUcF9m0pAA+vKZjsz4RT5hZPCJQ08rZp1OxG29l2dB2p6AwulKKPEReq4n3XAQ5Ugaq2Gz9cqRysxqix0IKfmq85FbhUTtOWzbAiSpre7xEapR3RTeQJBydcSeWC5i27hz78WRYm3pNt1nh6FJe3IYCI5fXJdbXnGu8IQY/pO3+ae235JiiTKoyoh1YcwBiF/DZQHv1nukvHflvo1M+diAcbpRJfDp+O84vQabmnhKh1k96t2i+QEKwlk5yNxgqcRHBERCZMo/U7wG0RzvBwOaKNkav/8zS6dYYxRqUgXx9P9b9r/Q8t6sltubLnoxelk2XJ2DbcISAbePlRKbzJVFgKXWz495g1/Dj/B7XYODAtPirQ5oYkugjR6havHBy0V9LQlTCSqiQPh0mB54Csu63GT2skcHYYJLZyEoamB6n5jKB7yis99hSvq+jiEA/zs3dLns4pexmP6xavcHKmGy6L4Y7VQxd2EmWvBRFOusnrD9WqewhIO2q+nZkdvcz3PDj+tgQDUr5at8d+GQVizyIrnQm7dj8clyuYgQONrbm4MQfrpwvmJNL7ibbJiKMEnSaDfMVLIUT5y/YG/Tezo6Tb95jkrgmAareo/8gcrj6XZFEWdOh64jivvlyXK8G/wjw+MMjufnLY332+PbJbP3Rk8mEcg5XB2+Sy7JJEITLwD9bMbuwjyQ7SH5O7V2AfjQjMuMII3MmHDQrVxCBYRdRqosnOIDl8dF5GnLdJxq/aFkQdMPtqLZkm38ZLsUSxVA/TfK6N15WcsoVISf4i4rfdINZGy1tDCAt9xCnXS/1Pc58PhubBYAuRujVASaQ6BGjUTIVZLPI3nLUtTCYdJ3ic8JmzW8FuWhlwx+LGl7jrgUHko1yOxyKWgW6uGHTvEjB3iBIwvAwsYWjQPuc1ab+Vqa4hRXZz3iAb1J8gUL3OtXl2lBpthiR8YNe40YAhkfkRF0jLJ0ut1mmjSt5b00GOAm17/QJ5cazmANsozrv1OiZU9kfNaLnd8WCus6R7Yfk5MGetwi+VOv4T7b3txqtwG0al3g8GTsKFkZ6WfcLQi3IpqeJnk9u8/YTWkJxEVz5oVVwYCWm6KexiET5FAAFkRYkZPwZIbwrf4N74WPgLlg26+CL9dk7WRlomhjNHU/r8MnqobMbCV+KGT8BfOi5RxfrcZ3yW+jpCwnCr2JhyieXF3da7bZKEJFaOYzQTDWVrpwBFkaxT5x6Y5H6UaajArN4BZoq4Jzv/X0TNgc3qUklFec5E3ArbJdHvLzpm9vEqWWMzE5NP/q8mQffSTPCqqBWc4aLSYe+hqBqXX4dlScN2nDLYp/tn2zsKkFgzn+ngT2NPwmFddDB/zZ/uJYgt6F1wqG/kgIqRBtBC2ubEVSNWRsIcYjG6dz7UdRJBMSG7JtYqkNeKk4Owkf4F811+SB1gsYJwaXMPV4sJheD17UfE7Tar8fDWO+Q+FN6j+vC5mm0u4nKfiXLR7BPOZh2+JBou+mczCD2vz9JDv7/++4E2CzK26SNvdld2r2NV2oldwmUB+lp9DF04Fm98GL4aOFIL8AAFOg0eJuXmxIvw3oymfbDYtpv920i74576ChjY+6jVTHvcjV42qtbjn6bqCgjZLzgfw063sq2kpEA7IAINk1NVMij20EAFCO2bTZBv0UqEvzHC+tLdMrwlr4co6OD2TJhRR0Xmv5keoPkg1ZJSE6rVqnvcdMzjFHPwEIj+uTq2mEk1W5JQcXrOHDLGXnvnmRT9oYRFbwZVHDOqPIPFC2wl6ICHfLJL9tghRlUGLN6RVA/sM8HOms/6IxW1YQr9HWqB4CKp8ZoBXt/hN1foRLnpnvQK440N92mGFhpLrksm45tVIuave/gAvKUuHaEgReWGuzFqvIaHOeMKTNXcbmBxWocMKmiHg3mMRGphs2IT3b7BgFq41WDrcNIfKnHixb/1d0lSO539jrSy/w2wU4pKV1Ch+jvk25TUwCMoeDhYypmMovx4xle6SyIp5DIHyjTxpsKzXRgXL5ENhEFYNz/FFNqL0Ko6tjP86s0K5qzaLb7yxz2/ZJ/TL3QJq7B+1PUz62zIF0D0hCq82IZ/Adqn7jL4ISj2kkgcJL6YsEhghjkEBSx0V4Zo3GE+/0+1YxFBLUTInWijCDhp2C0zRWPshcJVYgcf5OismUoHvnDRUjOPoax+QfVM1kCkjsP3PsPDOCijMomFrDMGG68goyP2YLP3eh/aDn/4rUXf/MojQKYeL6kojUOAAokQ8YDc3h5K7LYjq5ovyrUKI9kN95b5ImYoTR/RM00UL8zDtR/8wkZFW9h1m2Y/oFkF4F1Ol9a2sTV7opWcRLh0Rwt+tH4NejGYeIKyisAtV3/b9BNfAsoYaCOFO1RsvEDSMo6/DxfJYqqgSqcGA2fnmdgDxkmqS01Uzdp52vDk+EVG/u1DcsoVCZqcdLxPvTHjczqcF+MQFoI0fTmLwSMWYhyKfrtaymgRvuhWSyntjqMOpcv0gSw08+Yif/6OlfeUvZeNb2mMjR7bESbKOeRBw146P+avVAZV5x05uLsLwn/efxAvSSvErJ1PL7I3irkxL26h7w94y2VekI8TbHvK0FJYaS7wh5LnuEQg14izvV8v084gzGF5M0v05pYMu4iU4XQIwG5WfjDkIYhccRZspyHXDJHqt2/wr1MjiwyM3ytgGtbbu0iUn9t/hUrMH4N22NUntba/l3jPJdFsqWBxbfAcl7I63lKsO7Tyl1qOxmndbn+7KXJd9ZaIO+EjCuIX8QanUUlBdLelUgy9EeZiuzbz/HlDlg6MZ2F8V1JL6DyIijyxup+CCYUI28u0jOoWaLugR8Wk/1NwOM08aoLPJhAPkYpMSgw5jt8wKGqzoByaIf+yzvn6emqSUaYCnJmyGWdnj5KrKsxa6lMvzVIR7uE6e/71qHY2Ip0OdFUwiTB6EjTT8DUuRwVHDNuEhfwukxQVieMqUXcocw2xHQ6MKe11Jbqp9KMs7m00rYc+YvSCs90Q+dqM6Jt2IvBBi2LX7dX4OD0MsP8DDixxI9JFEHDlMOztknV+nq+Df/QqYSpyn5dZEBFXr5T4Tgpmk0iGeA5kOqUcAK65g+Wjve3lf0CmBLbVGSmxV+61jDa3QGnlSrUSNT2ZSEWIRK7g5cyvryovmhXR5q+gAKdmlTPSy5hNgN+OXpnfUJ/LV3SMli8jkB6f5KVr6xD3VsD5COJtrh9jToSJtggJP8cZXsT8aEQ7j7fjGtnPGrGyWfHWTUONhoNXtbaDi2mEmXwN3H8lviSivdTHDj9jk5mJGbhOHY/s/bCtMBMRvplPST2VOxDO8O95JnziPZWK1SFM2wWZHK1Ka44rJIJNSaZ1W4NRQTnGbewmFeyE+j+lBx764WmvI4j5TPHraeDfyH7GOQfbd7gabYuXbYuWDtlaepTRw2UKBKjmUtwsQ53KwVBUCYzDRCx0u8AzL8IFHORzSWoWt9OQwODQb5626WVkiH3QxCiZROSWWHHY+P3knde92RUxPX1Gpe6eIZ3yHxKLHo1DgOzY5iPXG7X8y1WwqjahxX+ldSWSlu9H0Uaczp6yw766ikOF6fThR21/xtsS/Mxdcy8xs7i+EV4xZ9XsyhkTCggma2bKH4bDZMaRes/x4Pzs56fVp5JLUam/mR6tW37GyCyFKSMx33n+UpajN6nfip03r12FW+MTP8GDAwAmEEa54JwVpKoEEHxZO4AJCbBWthHwdIUPil7cd0WRPzdaYMDryn9K87vqJguqQMLs8scv+lN+CttCfX8okvA2tyxEPoH29Ulu6alFCYV4/XKyFFljXyFW42Yuo86xRuYPCA2Mm+W+NepQFaXXrhwwNPyLrlYXdk0xvd4gMNcl9bcaSNtwPiWiZtPM/C1F1dGqAfCBk2994ENqdWqfAWPkkUNEd7hJ1islwCT4tRmmyhH0W40MW7Lk7M8DNKX/J+uluOnfQ496CJQfAyIMnI1lo4mMzgcuU39K9pSmU/Q9FLvkc+h1nmGQUUVbmw8aYF1RR/d/OFHLK6+r5dp01OxS99ij1Y4+YLLroh9Piopt3LTVggO2sQAK8+uSLV/TYMesO5zilyLvHk/0KyKUUu1nJ5jtf4G0JiebuVlWhEZaGkEnOYN+HvkSU7GIxi1TvQv48JgKF2Vi7CLpUjiSe/QLnPYhoyxWDS7ds0XN+yu9QnVCD7beUBPoMh+/atJoAk6Mo1SGafvjk5BKNRLsMZwFae1I7240Izh1E681GS/Lnt5QqKic4q5TFpSGOv9Oqa3FxcASkUk1WqkHw9oHM1TSMH7Yc5C+htN7M+QT7v6LXTgq2aXPbOwvQMNT00dWyqsubrqjDXWGlFiKX1b2rIS4iu3jh0m+G9ycTa+Ws7ES8d0xfNbl2r5HCW3iMwtztSwCNdSvFNDB8sM3CQOyySE3mEUTFYVln3znGfcNdPZZvj4P7+cFvbA0Gr1wlCTeqWed2qhJtX2tqkhqBbzTnw81Pwg5Q8eNOWrdQ95IlWLlN1YK+wcsCyGR77msvmGOpZY9k/IRrhptnlX0hhUxDLT0fezB4Fa71uQ0Q8TMxp3kbLWTwcGOCKZx7CTcvpsmP/ugnZUG+8q/xRgZIACs9kZqWpYqJ8YJOTyTKdBjuOnJzfGKSWK3v586pO7i/pVj3yNRIRN9Jb0ZoG5dQm9IPIOVJ2Sv8IraBMg2saRZFUqZan3TjANTQ58FHyXhF4PwsRnUAYaOK7v6kzigTPCX+bPSRladEpyCsGg9ZSnIloz/HeMWNNGdGrslm3t5OgQuHuL2p//i8/fM4za8piIbNw+PX2JS77+L0utH2cY8d4aIYX6epqWsQgkkR/OXN6AcVUFKJ7zMtNy42P7lSl+22LpHJ4CqTD/Q5J0BfA4ZVyPHV1C0xysVRaLJEg2OkJLHYBvK45AaX1p1ZajbyGGpRKFHBMQq/EphQsSWqKZHrC52DOOff1yuFq592gfQPd6NOftk1neGlCnOrJlyA+vvyMB2KLGpdSeNgAhf0bqcm9pOMRTcxNJ5YXrfMcyUPRvYH+nn/ygXz4ffc7Np6HKRElp00jg/Cp13A6UTC3Hkfpdh5tFCfnvZ66mpKUUXh2xjT9TeFMs/UIKaqCz9E/lPA0uMJbW8sTEsoqSq/F4NNFwnT4E7hbIuaBgeDQPUB0/rqNup5y+JzseKLkVnzPG7XvQUZLn9h3baRTQOEU7VkOlfggiWNGN+22hFter1Zch9lvk8OIfrhr2Fi7C4+J/gyjfJ1tIWKU+cIdwm/k0+UsQQm87z5FoMV2x5jm1dm2dyCsI6tlZzK0oEOpvlvjHG0DB9MrTxrLQls8GT0yNp5NsbD1vHK5TSmQ8jdl7GktsB/+YRnnqfuLSJ2fkLbUvCEO5twlfs8ctBheqK2aDEbsFjrCVe7CFv5svTZYdjqRzkuta7fASNQl8VBBiWIAPw+lrpQVLxRWJ+Zmgig14/eHl/raRXHIX9PFoCzOHoMTGBGqY3L0jQkKY3eTSvqV6tZvXKJ+pSjzxZzi26O8IEZFDGgjZ710eyzsELrKicyFZ4Q/H0wPCMMtM7zn5G2BdKDc4ydW8TUmg/9+TKHICTfA6mM8PsUGqfXWDXihThHRwydfdc3gs4vRwYJg2JDen4l+sDidd9taZzL4MzIIRsJdOYk90nKOEWsgceFqHLrrGX92OkNoRADaIRBDowAIiX7KMfM4pzS8GXkaXyIQ27gfD47ZstkuCR8KCqHxyih2wLniVt66tN1BE7odSyxMVm/afxdTZkW5phsNXr8lsDn70sEC1RDaLwaeZsXnofwnGQ0tYpjlRK2chxuLbMw3VI5mVLzbi9LQMftYwWBlvD7txq/nx7ktJMmo/30Oq0UFwkY0GWbGBX/H5upA3OPv4gTJYK0h6Uu+zQk4mPOXIpQ89oWA62DC238+FlSAnvpZYVa75gi4YId+9GN+0NVOxSoV01+D2njOkG+f7Ezp9GEqxOvreONO/ZabmyZMTar/xyyb/maatAV0VdYvv2Fog5u74K5liVoybsHQUmCzXPMoZjEDvfwkJgIhgMng+F4qpjOFRGubTNpjpM955qi37Cn3Eod+op5nQ1wvHybwBFkKSMub/cXuvdd3E32yotKNRKWplXFcaP3qPbttfClY+V7s+NuzTmIp8V7afAWk9HPI0pRa4CZLHyThOzc9kPyHuFLy5PThhnI4sHEABr8O9ZjH+rn2bayEG9WaKKNuxAtazljp2dP3GhNBfpxJgVa0Edz9T98hGlv4CJ13twnqmgwz83RYktP+uwh/wluvUnQ+1mL6Le5Qt+qX11WIdNGNE7k2xGxHbuc2Tnz+5sVHt84kTbzHPr1+WgF+c4ydU3QXCdKtNsEmlpAaUjT4kYVX5x3dmP+j4JStQ0FzWiirKsRM+YU1Q2FRYTiqzq5Q9/X8eXhxU65HXQ+DHeh5qm7eewPTtog6z5aEdmKZaF+5LB2l4yG0ksf6MAljaE3vHsVgwu0YP/Ff74olWRITcsYyJhK341wxLa3PlIkY6SRLLxm/niNZwyKCnV+Buhl+oYbqD8eBCgWo0XV64dDWE1IQ1O616gFMzZofNo1lDm+tUZV6dGzQ20hg2TndtgG1bjAEU4EICZpgpG11mL11vtl+ar0xaFZ2/a+iwd5hjUGIxr1wtRQCD7o3V2WhDL5JH5bbCkGRGrKzLiKeGQpskvaFwEYAWqVRlWzdIZh0IN/LmxYGnM7LYPfHz4p6tpftPkVyBnwJCiEzoxB7nIK9EqXk6DGL7rWkr/JT+6ZeXE1ZNKd6LQb7lGU7XvVF3DVfDf9mR9KlMuEaKfPhOjK2vMAZ8yCfxmMojm+g+X5+btDF7jBZJyIprsY5v1xiFZyiht7EQ1FSi9b3gdgf0bgXaTDP62qmWWaY4Ss6Lxok9lzijrhFyFCXzh0oDPTAE2S/dR5ykJ/mD+gdfvuAJ8DuzLgRQMFX4rp9Nt7benepM0cMKcGQ4olmG0jOFZrz9Ek6XVJaPpYdBf4nbHLxu9TQhQ/KLhIsTenULbFsj36HfJ3/PYjHDLtLQS1oPp+ZwVR1L0eflUhMw2OX/CJZ+guXvUF9XxOSk2tBV1qbpqnHE7fA74jTQJPE/nFU4e5cID8S1zSd3DVF29lVrzp24RsDNkc6nCtSkUqdUUUih0Xuf9uDAXb2iIYoAnnyLawRvRzUtRvOYs04hDzEMNiy5qIwf7cVIbD/2l+7eVsPGl5tFXbwLWKTnN2jwew1zxPYGZ7pImq9mM5K7X+Cff/KZm5Qlcbt+GIJSmYMzy5fEyiJFQ4QaXvhML2ZOZgIgL4HhVPijTudKq874fTC9oz8MAixMUvn0XxMWoEiFfjDIUOqJPptyaSuYl36bPec+Ys6rfAOp/cHyBESPOXPUkFuvH5Ly1mQhRKAJiXXg2njiGCjXrLruAILrLdHD+fC2m5nboRAvgL74+G8lqtTZpn7BzrWPZBJf8kWgvQJvYCLfD4QbVfC4+r5fkBc9wkDNHH3UoShH/1FvDIZAitq93vCEed70+B6b3WWLwS4Z5SE9xVOmmQ8zIxskqWqZRDzxyb4RLqvWA7WjqpU/e2axRXhmlwYY/ZqRx8e+5mk8TSBTa4KTCckB+tCqV3yd8OxjJstiCtqp3+khG2MpzfwqGa1TYtQJHkEoQeDmXbER9PrxugINhpdL+ovHyOmv5FwJ0Tvuf97VjBKZCEky48xbUumXh2Z7Tyq/HUkyJlOSelf6R4yRxIINhLueHj4wylVZOeGDXixP22Ou3zfa2e3PZrRGb2TK2YuW9oRK4JzTqYatqydqUACT6e+O73OgfkCdLdJ31nR85NE/pPLd8d4An7Byglg7IiVa0nkwOEFZvK2ild+yXTMnr9pBxyjTb4PyHrN87YGdfQuBANS4hsK66f4KrONSRa5uM3YuZNoqDiXGqzmgmJHRIApCp5KPn8cjgiaW/n8MHxflgzG5pS6TRkJD+VyltgEPqqqIVvhgw2PtwdzW53hm06wudKeAgE1SCLWWPyv0FXEhOz2ZxjTTRnc7tu8YhkRdxG+96zForo2PcRrgFsdfDhtuKIE1/FK3xJ3/rzOAWz6pz6iYk1C5vjBFyF66toKbB5zK0TiM7PfXpui3o3yizpQgeijIzUtTkLawwnPOQeoBfAeGcIG/aye9PsnBFqEQPaFMw79AoWF3gurUv0rrvsJvCdbpRwt0S29FmHz9G7QpmLV3jxxd6lEJsnSYwgvjhxXGxJFdwyDC1kUe6wYpIzvKMWvwjj/CsmOqNflrwWhClROwAs4yT4IjrR1emmLnmWUP8wWW6sujGuQQuy//3TbVM2HsbSG1CqSam4+TYpsjBjcl5Zjhi1ivqb/ea6xM8DCMrtqgli8J0AmZvSuWH9rLZl65jYNpagDPOS9k2u+0KHuOZzAOqM8goVf6cQvhvWQ6JB0RljRsxvptGwnp3SU0yzAjgkwT9gnPpyvLmIMoO5LQSLYE5Od5nAPEe55mS/KHr4GUZ7H0Y7ONKzDrm8qR3PR4pGOVvgLVyr53KC7RG/qjVzViA+AP7BJeV/YiGWZCxUoecC1WRa1Z1Fv3ZuDi6ZG/rWnktefb7k9jYzKp+tBG3Q/w1SXJ4LDzx7Qr6pdLoCBV2yjjohtPupBXH80b0y0Ht1LYCdTCfd4I4Wuqi/cjEYOCTQZUdoUohzSdT/lcJq/xe/fjjfWBIC7OeyonyvY8IjWcfNJ30mHvCWiHGuIWzgfaPQloalj1zCh0XUhWd08XnOgJZLlsX3OqJVDc+Ff5O3XmE3p8Jib9fKMqwmlP2xgBTpeZOzidgwsRIuaFM4sHSE+LxOgfsnIU0hKAxlxJ0esfe987ILbP5zn4QSaOcSFx17DkkvwoF30lL1sG9vqr7zPDrMe4QVGsUerZtO+xAVmg9JCNGrVa0Aa9z+s2iOYGOoZLWxwzVG6RVH8oyC8iT4CIrAvxl7wImdlGGOXpFsxDMGQR1BqfCf2/sNKFd8dZMmYhh5RSw5K+01TxHwoI/wWzeDAfxxULj67vy3ef1pfxE7MAM+QqiTHiFl9HwFOkwHsToC74FGGZXkWNfdYeHOsmftI+bIloYgIVdOMiDVlRSBrXnn+o//CkuOAT5nUn3Mg3r6COB9fQZ5iewHipJH9fn9PkBiJayW8AWGcLVVuytQDsPEMm7x4NEWAYBhG7xEpf6C5FV7dEDOzvgpNioXu4YMxzYSvL5jZZr28quk9v2j0RBZcHS7HEUjPNE45jTslqebmFHdQVLIZ86wz3yMA7dxyei9nB6A4etrQ7uVDeawSsg9bDHdndiztAHpeZNeVVqecVdiCVTQUbapVltDiRinKaAfmbn+uSQybP+NQJg8nv41xtEDTR+1oxSPN1hxXOLRf/ZoPjy7B0bsR17TAFAfcBlv8l1DFIu60ePsfhf0W84SZSnxUYPDPbyjAKMXcR+2F2XfwYMVk1f09mF345cXENysv+PZ3YlTre/Itpkg8XLfMagzAkTGHc+bSZJX5RUGn0mmPZo6AyX5qW2yxVc3d6GYNJ2FRvpyvzDY0NtM/TBhhYf+ypK9Qww6YwjOhOcMUfTuwnYuhPUzDWkxuj+JqTCCaOgzWEo5eJcg/ANSOGc8WFCkLtWS8cNMUt0g+/vyJFwvIpj1/aLoeHOaFoHTV2bFeY4xE6nIykMWCTdS33AMQXqQF9vuqD0AYKju5gFCsNjcjc87cf7yZO0Q4UtLVsJSbmrpcN0yqD2TaYKIqjtFJw4E4dgFYPf5xrgBQuCKaqMlCuZIa8XyydlA7fPgc3tW4N+RJ93R/ibMeqgQlgnnRcBmj/xO6jpJwEtSCFDX8dYPTdUs4KAkIFzlcw8DOdDNyBlrbsjfbuTmj8jTaA+qLSzCCTGWT3kTD7/WnjrjKnUUe/jMeF/hNz+PwtXEoZ4LCKWJVxoKRawVti58/g7FJuXIF9Tuj7FZ23P+cAwwWrlKB+o8/wQDwiysBWWXgHLSB52C2PRUaSJK/+T+8MbXbpm4R+3QOJJvan1yMJEpyVmZuwHmlo9v6hBZdHYlYCfbKHqIBc0wdsem2NnpswL/P8D4tPpgYGvUIeqMlDwLjMA0IEkmNeDpuYju177teRJtQHRC9/oBugLAx8TmRyeR/Bl7z7IF6L3/nS0GHCCV1tpcQ4zZFZkiZ8epsJKKFbeK1KwldoEibTMwZ06SB/ljmlNz6sonCWwlAKksEhMmMsXV9Zy8Etrv+fHzITWBLSFIwC2dX4A+qR4/acN9xPqgG6DjN8NnWflWGt7nCnAzsPZiNriqk7UIzOwwwJgaAyr1DR7zb5NRSr1x33QOBeDUXwcNJ59ZQtxIeJ0O7g4rlCW+Slne33v+v6y61X9jFdrNDJi71Q3XV44OzV74ygFfP1kHYw2ydhxBnVYdg131/XBSGhqYahckTnXC5H6saIk8XCG2EONjL0IhAgnGlKmmQRUStzjBb2TLehJuoy2huAn2ILl7Oa7tghOcOW+40LahcSH9kfxGWFn39QLGrIjTHhObVBwPYccQNg3cj6pc5piCNssSCtnJXXfJfWquBcpW0Sxj0Jfy6diSaAPZJwpEnfZnUF52P+IWKb6qEiPXPWeSU24lHvvN3hl5IPgvEAI6Q3aKn7w3KBSkSsiTDAlb4ZVAUw2LnaBV4EMGcKONXl/3VSzXvlQhhuqxnubBactiTUHfgvH66VrRvvFSy0wCAiNPZIf0oR/nXuYc8irqRvNxOw0SG/g8/eFW86rRlIpIshUNY7qPf9ntETs+79fC1EVPwDxqfcpLJfeqaKUuMGEcbT1lyHfX6SAYpTOVZMlG7rp+bo35aMRWCXNZFFKf2h5SNuANYH2Tia2qyWIY2xpz4ev2R16iJriCucHok/xbJmnvo4pazN27b1hJQ8QeHf/cQvM32J41hkoIt0oI+MMifBWou2eCHQohjm8mzrG6tIXMi1FFLNEW+nkVOxtvvNILmVflrAdXyIRSyH8r+ARU3Eg82EmeFIb4wy0PTFBrO2WMYlUe/61FM94zo/cTtdF/xETuxFMBPNVbeHb/HwWs7r328HZ3hOHEyrnpDzzRpN0BbJOvJcFpytMRxUy4ARlHE2XA4IEurMTFdgw60P9si7Q3q8NQVpfgBwTRYpGimqbVQ82qzRThBLv/WmDulcU7DVGXwIChxq0LQ36nKTjqu7nuJ1RMp28zttg/bHAUTeRS6xYCdBnMvoP1Sm9YbjXLJhaaH8AtOC1Hl3JrYuWC2UFVCKoSTAxtcj1CG9/oqbo2vK70pCPiue1y+hcaur9oE9bvj6RG0euT4/yalgtWiH8bpJLvrmDg/ECqCyWMzo+dQZlVLiOU+vWpu0HA27QwXohjIENgeWmKahaimi6G7YnkmehbJU0k5to+qxwl0T9g7MIRvoPY0SX1p06A0XgoKZJdcINK3wEkol7sU0acbmTahn3y62B+3ebtdtmPut7VQ06DTD/BbEsRiGApUbYAy0q0W7dCTNbDaee+95FpgdzYLoLUpBzqJLeB960CxtyeP/jjM8RSDT+qV3kogIBYGaJxZA943Fgp71vbAbGvJ71uvsswdqL3bTkRVjEVTKFilykOMhJzerHycoL/TwpYNj5paRN9EpgyTqfPBsKLgTkU7Aomsj3B+JJ4kxIKoRAZtkyhP3iq2Fjcl3V25WCpJ8wNJiZnh4QGx/Wr/Kvs0AC6JyQFyQyyaTsl7G6iLVfwf3CR7/T/NI52OMIZR+vyRB2x094JGeDMJZI+POYNxaxvyIbURMZw3+8S3IiHVP9fRstXx6FPjM9TPONpzRwh9m6HLilHpdY5A4ci2UF3uzl3Pi1YIAJCFNcvdPfO4cVssYHf+s7LU2itIjbdPwJTnA/M/g+uzsnV+u1OjZAzMm5V3r00/qrSMEjQT1OmCrTMfbEeKU/oVOweJtFvz0w6UHc23Sj5LTN5F67vI8zYN++dRcf+TZtjHrCjfUFfu6wRFGuKVVI1vNSwDnqKVkGBvFaR8l8klHIfw2Enfn29p/u9+zYBECSKA+gQ0j9QEgZU3LQ9PieZS0Nv9RRV9191z/PmaBLjsDtp0bMIzFvbxZNKRvcWURHcVdcVZx6j5MQPyOt0qlnVUQ6y8Oc8c/iY/Nw71byuGYOvBeYT9XCloxUgZyfsIplgzBqmOeU6piLWLtb0jz5LRQnsMGnm5IQlcljuqIKv/KqmBKCSqxbZpPUe1R39imR0TJTD7zw8mwlbXxS/VDZvQ0RFFcN8StSbKZVORqzmpzH1RZ2fbxJa5b4hm7j6LKzJTS1gcoYemSeh68f3mNlGLpcsVLOnqV/FbwtBhzXJINF0k37LUonkX0rHFo1lcxPc+7Q57QVpRHgrzz0yGgzJ5Ow5NypVrNhtvqpmyJjbgVT7S4wmRZAVShJw4qpapOv+BRJWT8F5BqrdhAwTXrFVZYziz8UG9DqemqTQtlte4/dZmgom2C+nJ5PKuoyMFsXs4WtDe1jEqZSYKfdix8dn6XjT4O6mPmgEQOME6Q572przouJfuaLekxzSLl1qvWzrWhgyL18M7TAeoLdhW3POZlphdP2n2s4WYWoeqo7njAvJCFcpxvfEE/ZU4b+exb1J1NTR57Jp3tcvA7FpKCwcUuyztzb4Gl4Aa7cDx9+MhG4Xdj+Z4FZWpTI/rkcdBpiHggUYOpMFVpTJKIOCqYC5kK8nUwc8EuoKqa532aDsSTMbSPTM9LpDFSyDDDx/kF05sofGUqGSJgD3+8qFYsrmPYY+a/vjnpq3xjfeasyfumnb/Yh7BvyB2KFPKDn3FRR0OzwUvjnClZgUblTBy1Vyw40Mrp2/JdEA23QX2+UeySEoc/ccc4l0nSEoIIbZxzwmzjLwbtWa9R1SMmaeKeYcy2C/72gRtIdEjm3wnMiKgNaGjgL3uKGynFQ8WW2jPPhqtS/REuNN7nJLOIJisrZTWTASDo6zYSEs8k0d7bxQK4r/T4ggYpcuUAppLUqKvZ1dfgDv/nmUOqfnm7Zu00mZoHhVcJE3+1qChdKckMNrmstsD/Iqocn7ulIlOUOAGHgLv3cLJl2nZpVJYTnvQ9+jYjY9S+F/3GSzg07cUXL7E3CB7Q8YRnZvk1/Ix9nmsKQIzepoeP8unNrKxwcpGs3XX45JvS2KqkNEDj/PViBfNyIw5UUV+eWf7XuOFTSefZbldsadOJpe9jg26pfDkzwHkpzJKMOVuOfEWpOsDMSR8cJIeRJs1InapK6Azq9ZoAZQ3CKYhO+xWXl9FNfcdSI1ckqdbhp5JVFfibQBhkQE02ktnF+I6seO0whEaeKrWF1y8YC2oNwXPsQHlMQ5kAUm/ujmrz6J8PprRRueB/rMzu+zR3j+f9/+fpeFDSjeC0WCjuhstBEoCMThwz7cB5RbfsWqm3k9VW0mbasFdNQ6GPvSMpb0FGgR3s0RHxOHrTvn866hzvEnoH90aDVU72n9ZIFvx53W7c8VquLUJmAt3zJdZp66Vn+V3tcbQa7pchDGNOrNxAVADz29wA9ThMN2H4HkxmVAJfhJ4fNztf5BtjGQc2wKszk4UlGcddKRUvfkuTQY574Ig/6/KrfhKEiS7lez0KoIx41KmeUc7o9vDwURMiDeyX3N6dnu/krQTHzH134nKv+T+cPLc36+t5BC6l3q7i9+tvOrM8iGQCRU12pdzsxDbiH3PHLA4uFQVLRUygokweDROkKZ5IEqE5g3gn1A6GqYtfOAZc5kEKGxqRUnrN49QRRSbEJ2vLsb5yXvwwh3oiMiV1Yp1deYM7CwI1tVm0opNXMw35+I/H/YfFdvHFO5GX4N+RDTrgul/+Np248Lx+gOEU1mbXUfOHLtRCyxQ7mDrCnR1785J3F2gK2Gdfu1KbHZM92jcBbxAtWtAlliWB+fqa/Xl9DcBlwq3KWh/jLTtHUdNGtOG5tiwM5e+2cdQKpzxBhS4HYR0nI+/FYi+UiOUrhOXGWqTboD9FoRT4cGQ2jgmIQvXUXNMgMPWHn5MAajb9MPeFHyXrMDcXnj/jZgV8HVOqfSKGNKpZ5jiiLLoeKFE7D0gudxWCNMdMPn6fo18zmEx+JI0GaxqNKUXmvvFu6WKpavH33kTUfb96L6lDH3QXcrpWbNbNbhocRZc/+eCpeByuFfsEZ+J5sXGvUttQOc4pFXbaqbXjgmSyyozwwz2mUWnRy0bV0GeO2zQLX1/s/P1eHPC+NITsnu0v7iwJZbf9DZXA7W5K4ufDYpqGVYGlb/n/vuhhnlvrCdXuto0lkIKbkCXj6rVDXzkS0uafYYnei6Td/Fe5D6k1hEg1yTEKxKLzNlod4M7K2rb6z6RkIZYMXcXMg7aYpARDyVCTruWeyeWTrUppIbrxXkznRqrtDE8GulvlhFUkPs6xgxwn2eoziI7FMt+iEO5YkRDV/m9E790e53pvAa9bwNTtbEQxQ+DdXoOslkB87DRD8yVTC2vjNERcnSxCs2YWNRXB+ljdaPGC44QtbeliPoCUK3c3dR5jBBI2vZjVmzghT3Mo+hkN6gD9O7NNjkkjipT5WQtNxIziHqKxd2bxb8RE00ZKk/ldPtN/QC90Pnq2nfFldboo6sqhPojZxv3y+GrbsKVx83MPcTwJ/1dXS8ybhUH+Ex6iaksSKNnObgz1eupd8sw0v32klDiDdw93X3OzPcEaBTb1qjgWvY7vKLEa1ZvnoCBT2QRtS4l3fT7GynA7DpTZjYJGwKx49dVUadwrXgQNtX8tF5vDTqN3mjPzuUeXFLZPAWQ6gGzkkO/c4wzjK2Kmf4Cu9Q31R2wZ70Drs+ZjRz63nBhcJjURo8gqPB67L4tCzGVGnIk3UqJF2LHdyH9LTa7vGIDnCGvwwSALASw98MiT8VsXXbStaM2339BOTMxSDcXsV3MkuNdMFNYmXmrl1Cv9crKbHiR43mp76JVHq2XJe3LusGmD8btzbvuYaFdvWwExr5YJ9USSDP+lF/F0IuvbH0wJXIYWDYIU4w2CEenamwAR+Joxl1el1xO5esQkmHevgWTOeWFEPV9jMZXl23EGk16C0QTT0sS6mpMkrj5OdSzWMdBlw85PtLvMbH/KZLZD19ycj6BSA/a4f6+4b3hZ9TrUKrTI/5cTp0xEa2ZEWP5PR1mZtDQHMKskt71+kmpbER6/xpt43tvjllSVHbUxTsSlCY4mKiD55Hk8M95I3fk0PakkdyGiPaEmpTWBpMERujE9iRJB+Qei34iLGXN92NPBcsd9nW4Rz7/cx3E1TlO2Rtc75eGVXdoZUW9sLdgVD6IiDTK0BB+Hc4um75DADq9Pdj0+tbLlz0FzWzsLfKLiN21nkx/P/70KBtZLwnZzKTeCew3wliUgJpEuU4rwpa1t7jcwYeKZ2Q0bR5H2kf03krZyymxzRW4cdQkP+RYHaqzZpHHp45xpwb8P6MPTmNqyNdQ9i1qD2e3SKjdZYHcv2jlTIZyAA4HjDADMZUwsQmUdVKGTnT7H3NJJW6yz8YZT48c458A2DPrLnWmPaXQrZKpyPnsmMuT5pkrXdvrxU/2UNsY+7+CfN9SJnDdLx/5WqYtkDJff13waRKc8nTOSxvfwNR2uJvbfnbd1kmjSKNMRxiNKb/HzSjHW2Qbrcy4Dim6XMZ9qR026givYjSDGsqOImzeRC8mB2IF1ChVr+OlHEsGYLW6ZZScrI5C9RI3cts6gkbDI6ZPONApo1EbBcAKFrIylbPPvrrJ3TBCTTtF6lODquw8+7XCC/tZnljCJerLPwklJTQjn3vigDD18agpJqtAkegoLVpWL4LO240oUM6SA36Vu/u83V9YiSn63SxOKjnbdxkPLI/TNP75N1wfRaBntpSUrOBI/jblafKPl1guzJkTfMlMGmCD5AZWC3mH7xJV8y3J1WoXbbbYSbNw2tBOmQX5wMACXZw3PUWSsOBXLQ5bLPxP02jPsgJgx+RqqqAlvEMQ1mdRzAfXm5l70BzcRrEue8HKGUKPAEIdhBQhXl4gJc9abSPhRIJgPILQC6Op0e8KHmPh4mHUYZCLkApu9LAjeKRWFahLKuDCJqMSLCq6PeYtRi0RlbnpVzNjWSsWsWwGzZ6ycXALKuE9us07RBPXs4wq2bUjFfg00PYPrjfzi1DlYsV6DUzpgt2pOC89MjtEaCi46BwIB+NRNtOfvSTPXmlsNdE/OhZC+ZJQu1JWbrbQKn8dpJmzifYdfLU83QtJ3Hx+AwaAV/2Ak5qZfwoQWAM6U2Dqg/VesJ5eguV5jWvwoHcZX/KDgAzSDbLOLPnCcs5lLLMKIzBWv8xI0bPlvJpG64pCnzAmGxwKkYL/rm2o5RI3wNv7iAuSOi1ipkuBaSGTksJ0uA0tLluHBQ0HMU/pE191NcXYOmoliYPhRFhQjkO6Oz3N6QtAzbJ7arDdIe78HDvjRpSKKPdBA0F0V4fQr6YNHsha9clOUkZgEKJVpl4N7rsiVVzpvGjqsQd7LNejs8dfhnIRSUnd7Ssw7aiRT+Fprp+t+d05TEJASs6HqLKHEcZ3gr8lmkvBcgmOTTvg6Z7b2cbUbdug8BbaZugDoVADOOzT6kNsow1lrw28gdNdGWSd7MC9i/FhkMBXU8dD2Zk02RyynRY16RYsK96V9YyRewn5v1P/grjozWdJddizI+q7GBGWw5mS1c5zt+gj00p5XM11yDXM167Ux7u5B21cerfiT2q4Q3XgDBU4pJe4zpti/MvFCRJiFMJmyB/+z8SlitMRsuqB8J539D141zpdcEMsjUZQcjR12FW5YsVEAwxz9z12x4e9IeYIFwqN4BYRMJnhOJrYMw6ZBHPntRPtbMrnE/7iSnn6tnWWZRZYIRS/w8xsCu1NP9iwMwhnVAYtmFCTpz/2UTkgUjLdErpE2sO/OtfMlfttGnTUJLgz/mSUyOp3MEvygw1vi+To3xu898XPuiY+5TSWuhhH9LrBMfa79rF47C+7WHQmeVFB4EJH2+C8vQ7z5LkTktuZRX8LM/2S/ecNEwq/BPbl+R3R2thxUtXq/i5o+ocgScVw2BbmbqemrRGiG1/LMoQ8IAYSNLr8znLC6TOc6gS8S+GMrAbrZcB7EHoP+NNneB44j4P9uvCEqm++HIYGNy3YH/E+YkPehMJBxwJwqX5YkeF3mNpAPgqUi5w9Rlvq5JsdMwRXbwo3z4YGSHRxcb8Rq0i94HWxvPoWyPI7v+sKiK4rzCLc4FawlDV4M7t5/Y7dkyel5LG73V+uMu3/5cD2iiuUxviGrHejxVOehU/EXOUrT0D98qsZoWTkny9nc16aul7uhec4p9XBFTrtXexFwvF8blzGHh7P0a1gUxeTV71u5Nz5vbPnbMoIAeQ6I1fk6YEIVGPoOd9gDCrO+3kEIvbtEtwyq+EyU7BfXyuRzM852ZWIe1spnvuSdur+M4zDO5tE2LVYofyrCKdyD77nGTMgdxV9i24s1P/j/4IBOP8DO2jL1f1YFJW7Qm67+EFdMl12Eyd/X0bxfKPL5Lg+7eHCzuISuOqX+zuXXvD9rWiR/1pCFRodp7wxZ+6NmornS/D2Zsd+X175nVuqBIAdGQ9H9g2C17ccLJ1v5pmJp/R8aDR6D3xcIZC+XjE+pgpOAgCx/Nsr9FWNkbaAdZsPQ8ujc69SsOA/FHc1UL2XIc9NkFYTC+vOaEMgbPiCTYm/nxC/H3Dhl2HxNgCokcdznWJWb7AtH3J253sGiulmy2N7t0I+WLwWCCuM6nFas7NndJIV6DPGIN7r+a2VbPkhOmO9Ag8x/Zpb6ISo39rgjvaI+C7PGo06PrXg+szXmosVaGk78L2b03wOCYxeyIttUa7ipGzfVkHoqpRPkiJJY3Qt24PVBGx5xKcYdoY5JtmKAQbhZDcrw/jGVS27H742+rt4IT2NI3FomMM3kHzssC/mrUy4tr51NrMGTSdH7+/RmK61FK+L/7D+WHdtJHPSafOIcm4AJP6Pm+g0OkBVYnGcefY26NY6Mc128jZ0d0XOnCpEb+W+US2BZQpDAlgelXeCILyIMeJ9OWpbplFhLbRsOAAV0+a5HSAHRFajVqlsahOqnNRVTdIK2F0qmuuR97ra2BJUItQ9xx2xKSA6HsDTw9HWEx3i3tYTWHVA+57i7X06rYwafaLR8/wya5Wjn1MEKBnpGAha26WloWpOGuAuPvcXBSh1Q8PCmm36wRGj74fA1pL0QZg0hzNsmzhUXMcuMIC8fbvGG4arAygs5x2yzznUlV1GKbmwNWy8P1LSE9YgtdqZib7DQZJtJM7iG4f+3yLWcikaSmdRi+zQXcVVG85zVWV0huDpW4EHWr92OmLNLSXKVB0OaJivc5gE0mVBhnvrXaUnI73LbP5NHrtB7oBLwCL10Bmak2mcv2adm789moDvRYejmfU+hJn38rfRswucZUeBO4jrTxv7lLybjfPPHdVRJ6bwvdn1m5ZTnjqZ85C0pJF2P3zzRv0qIqXL2FgW8TFi4Js8zfqjCxJdApmzpNmujPjYXHx2zWJdJvQ94pr4IbJfcQvdSJc4Fy9jdQFBIF4UMF+xgfgMnIIA+RIfrCsE6HQfPqxNw/S38q8e+p+LtfMQ4aa9iCzwEP4/dvi8NH0gZ1GaedUuG5culAykXgRFgCfMULXW3ugcxXdP9ci7TMnCe38iPGxys4kY4/8ADyPPHYE31yDatoerSxhWj/MAWE20wV/yx/mGEsOQtUXG79Yv1Q7WbNfZgijK7bIc4g6AMWVRq1G4WvUnbXDEg2NMozCX6dIYJkVK0c178Hu2Eq0V9tAokewJkFD2AjLDrTPdfN8XD/8XPP2MsGfViL8JaSjSnkI260RZKVTWGNHAil3M0Z9bL79Smwvoi1Xgl0bwNRISSi5Xd1nL11wa4Wm1bTSrUn7EVt72G3lnqaQ+6RW5VUUZC3TnDCNfKIOyBkbmjD/IACxaY0xSaU92DWzGA6F1Cd134PmLJh+inqjixblBCv52FPVGC0AoAG3meeTRr5T8C/Ok7QBDMl/QeSzuZXXP3pazUGZ8CQQvmV/lH/EmGXkYIa8Pwl7qMNI9noQTDBxz/fpwGqnXkM1nG3Wojh5P7XA18JM0xWDT9BFgKtZr8qH1GniYLp4EO+87ZzawjJTvwDblTz6GKjczGKhSPs/vdIPhwe4fXxh1YYmeWeuNCwYcxLHhSs7maF8UnoNTkWhGVvypi2o8342dDB8IXfkYmCLTOQNVuvTLq2tTCrMrgW8AXM8EBp4/r8CFsTXE2J9oFkKt7XELPk2ZbZtMEPm8JWWjP3gAZYZpQeEfT4HPI2YKAndjMuEzsLf5q8I0pV/PNIbr4mljCLgfYg2ZB4mzFeZSra6U2fBGKCFcVkzHWslzeZ0duJ+UbF5/zaL4ogA6a5SU7DMTZXiQyY4Ik4EFDYR8g7jYk+CmsOlVKql+uqrsn3N8oknqQscCkd7PYngbGfpZztn540bOM7J8GfH1xKy53HflNjWPSS+v8lpMVuxMENm6T/eLjdChdA8LP1bPy/U3bAbXONNc4F7h6N5R90BbiI+4AT+wnN+WH8j/nH7+iSCgNWxvLbnKt/UkIp+4BhgWtA9hqID4ZxvlOnWlk9gpAY8ogkeEzsa7/Ma5I/ap4tqK2ZkrsWFQVnRP9MdFna5WlOnRa4S3f0uDF9cI5TQv16Pf+C1Hbncg6GZKbEYorcblX/i8uHTwSwxazPoD195yro6V7zzCyW+jX0UggGTgHviB4omw8Ofw9bt41wQ0kZZeQ/8qG2JQjYp+Hlz5fbBfsqZEQgpPKwuTwbdRSARWdE4vG3ZEuj8U55eUIpqRPTOD3xUGhOZ7tNrIkwT8KtXUNYQYk40Fbh8T3UbIMg6xX1hljtXoLDkYXZdvYf7mlnfmhP47x62yAf+cPBFpWc9Tb2UzPxStJYd+IgQaS5qC/HRHTVKCF4okjcGTlR8oxqfOFVEoV9CblyJhwBtRNOcA0iYqwOKP/hg7c0y9PJz2vAaU39hQerkOuchXLCQ1Lp2z+vIJfqNA9OSwdaUfGLA5JmqSvEIVFaGE9e0gIwfZe8TMQDmVMRXpM2X03xmUY/lLN4AxYasjiAdoqGaFkPydeURNLR6SfvFfWhcWN1VX2n+PhfXtx/jM2ijr4CF/DlcUIClX4pVuShvrb9TLBA/Hq+YB68fnEyfwKwj/jfiN2brxZjSDloF51aKgJn/yPiFT4sSmFdEEOLgBoZaZSibdxv8KdPSL9zDPu8Dbx2N6F8MdJdYtmdIj78FqUYRDEpOAbEmVGkmBWTdnKwWt0me0XUqzCNYnZ8LmrMw330yFgLa/QDdkK4brzszvvfuZ9bZqkwvNf31WXGlXmgcaPeZl41mRbE85aWnP10oEIzBxrDgaWMcwhR4S3SkGsUqPYnGCppKdTOwsKCqUtqfMHH1AOKa8gZHKGlk3Rz+/SGHfWE7slR8JuJmRoX55OLvvosQRPpbn+ynF+R1BXs2JQUW6OuZ7+5ibPNqNGDPoDADERoOEQZjDJig9teIMXU0WnzvjygZJLTkMddPBxWJQ/SPoo6FDo5syZ1c0fWvhC9P5xslhUha2uYU5B1irM2rw3aZboZWkTArocQG4+R2D/uDtHOh1eJbqO7Yh5RJSQa1uyJF1WIRkZ4A+yvRwBTpYWiS86CVjfLgP6cvJppD5xV5CCaMR+44CLNQ9t8knF6rGlAh4KABps4jGu6DUbf7XlhZ0rEUjzDFa7otJH9Jvp3kTQ9FOWMTZQxIIdeICguReMLKwJFLONM1zdVm//gnBhlir0B82mM5hcDMCQEHOwzSp0xLRT572EkkT8YGVGJKxx5PNQPWT6eZBQGwupKwim0hzHkBObtBQbjHIuHZRGmqcDr+Y5bmEUkaQFcR/xUxTpf0v8OI0UZ6y0hZlDv6SLtCaI1yRHZAE720I5eZBuhxhy+zGLyc3RpxvgmNO3MAC5oXIRoN+kmZj3JphTHjuoqcWpxC7etBloL0UXIeAYH7ZecC9JL9xj+8yiZlon5yMalGGhYufe1Fkuk/rhjyVUCP1zHilS+ni1TFX68aiQz7ncAvNq73nwU5+5l2LO7sF+S1CXoOQeErH5if1mzBhsUuupSNl5JoLWELm6d+UgWrUPO9BKZtyludXZqkoT7+HaIFszJgmMw/OHfpm88GENsOkNqjuYS4kem3VU31Nf/sKYLbZ7LdDWxyAU28PES0XhnvZqOOp4M1hjRkZ2kJg8ewJIymlAi8odCNIAGJXW3U8iET2MiSxGPxpqHVdn7ZpNxfok7Szeo6sbptC1NTaV4mg0iQKENNa9uvgIVJNdDPsBbTRo0iIh3mrSNwRBw4o37S/xZMz2k0LYYHgV77KQcaPqV0ZCgkLA66vn8EJftV6g2kTG7yVMBoYj0jV1ly8FEVfYsHdguH5U1l8JiisTOmBfZ+q8XmGMuOUjIcgdCQNJEPhy8WQGhnloNggo0kWS64KqXAnDHLhA5qk6naPios/77gLb9KCg1Ywkz2G0kvyJxo4DDre45Ki7QYWkLfA7llISwPD+i8zPZAI4EbAdi/TWhtAB/QrqCp7tmqT7ojwVz9eUOuAcc3HRlNhzgxehS+MZOH6a7jAMEWPJA9UL0ElJsUVjVZ/cm5iRL/X6AflKb415UL8Z5AoXkuEfrfJysuujHSb+k0OXS21HxoFdk6NDX58Q2p+xBMT8+84/m1HZizSUar4sJXBtqXMCluS9Xw8eqrqgx/7E74JHURKm9qJYo9WteZhJSkqGBOUa9DMSa8cat5zdp4HPzi3gVEjAqNkVvSQd8ZeWOvnEMgGsnLdyU280o88+nvDewQwhsLvg2UhXnT48VwXP4uLSzvBd1m6zG7F5UnCY0CQ+opGY7CjMaeOKXjO1Nf2LrBG1vCO6RCHV6uxbl/MPZ+lj/BXweihX43JSw0R9Job632RPTDeeanED9aJZ37HrQeIKNJHq46NVHzy8r0EpI9YblxQ/I2JTXKVQ2eAQeg2uEqNx2uvNNEUIRDd5T/uct70Gx5yBC+X+lDWMN6R24+DaOe6ltGsnmVUFfXdbF3zWZ1VVZUTwiEx0DHL+DJt0/P60S0GZ7nQF9NQP3xCgupNps53VVbe2e1lrxYQZWyNag3zorpPFZfwx302d+yumS6hFr4xLnryrdLrleJ8gyyDRWkH0WBfIl8Sc6ehm+NrGWsZK4AL/oSorZ5QIkV+F5HVTBumi94oqJ9VTQFjFGHDZAgAFuLYwkhClf0/QGpWvH3pS8X6Vyxf8RNojaYePfVldVO0rcIrBX4QQ1ZT6SPFUMMgrbF92U52PTnPL4zJqyOt4Gv7S37KfaT5n79swo7MooAmKBLPMjkih2PG4OYasHl/Ge75BLthnyeX2jiG1xMMATg6863tm/X+Si8TYB/b4DdRUVoIUMCok2tgmTmhbcFE1qi3T9uyNGuU9ItbY9pker8UOzctkEiRn2Gc8z9yXXEq8lP6kDvAdn0NurqDgwUQewWZkYzW7KBB+WapX2h9+MQP9vLvT0Dhw/+dxIEtEpFo8TDBdNB3/h2Fb4Zze8aBZZLvYlUn8Zp2eGPYrAYz5WeNDG4HQGMjZOIfLHUXJWQJHw9yOFPu9QpiamtgfRzT/09E0FusN8lgrC+Za6E1C+2s9GkuinpRjTZa1CghaNz/Uf7aSLWkEbKCCFqaHBWrKlpXrS0/mHsX6rUQeIQxxF+S+iruA8iPtvskGur83n2nPSxVxe3nYy/HuwitTwi2c2lvtEWjt1ARLaUkgBlY7n10zpBq9PP8VJxbVgTwJAKUoz65Jn85z4OGXFcnnY7lKxQVxYv8zMaplOsthGdAKOtKwX+m16VQaZHeVhroiQK8/v0+i7vy+3iS7GEiO8OatjvFsPuqNnHcyFw8XSYLc1Dws2NuiRLIwdyvhY1y7rHgJigzoevLanTaptNl1e4ykaj69NhvH1OVbeA4x0uqMA8CO7XxbUw7xW5VWP1NfEY/Lx5TK3aAwdR4ziDoqNtOmDwS69uqviACsN6nsmOlQvR2L4EMhUB2NGi6M8yJ3junmKDX+hTVgHqRv4LgVRIf9zjqmCLENFNqHS4c52uoD5XOkgFESojR0Tux+WduCf2lvn2TcRTUrOQBX1qgYK6ZsiNZ3sidaifBPfhBzPY2kT1jdtgwFmlKyMgLcGsDGmKCmpiUiM3Yw2GsqpnZO8cpvqRmo456ZMJ1OeypgPZqyKwumQt3loNlRwXkomUS/Y4AuGqr/EKyDslq1v4+dmoCjyggG2NSlz7CCx9QZchCY/MTMdfwh0L6q+ebuOlUZdMImPA6S/q/TB1tZhaecGLHByyDP77nrhbsKVat2Pf9Vw9DkFQFr1D/ofS7HidWbHgUhkwyfLpstGoL8THCqh5lfr2dJdFYN6Gv12upSk7geTxf7ndDZ4NCWMtipgpqKO2BxZxbn/thPkJrlLgjPX7LGFIgUApEoL9EIkq8Pbcdg4t/yT6coGV2FW/JoK6IAPc6/8jC7JiCf3irsnOKJvIRdlblr6rZ74wpxOMXvX+BJ92qN6qEm+PANL+lioHRecIcaxzHUcHLIBnEtq2RGgFOlSYnhq1YDdofvfPcjlO0X6aF69lpAZ1WXJTlLSS28pa1XI6+wQuxYyh4lloQDoh6NZoq9RAGW8qqNRn58nuO4q39VRViW5Kid/5g8hKpUHwWYCaBeZUyifSe0QyX84Bk5SCPSVg7yKRFJbOPOBm7NNLai3USVtpx/51BI9JNSLu4Eut93PMHMxmT1+sBVrrpqIuR5AgU3GzXiB9q8HssB/EUByM3uj2y14VDYSUyaxU46MfOqhnJ7LivkA7rV/vMD9l5WUnvZqeuth4YSxi5CY4PaE3wzrq84xHlPSfy/9r2oN4ZDVWXTJQsm42G9bRkcLo31kjrPE7CGTPaSmOpAyqzpS57tk1lvzpm7vGtsm733EpXSDQg1q83G870uzcKWh/Hqlr7wzVTtpD/rsndADcugsy7XhL09zN60nfsSgO6oIGY/j/SvdqROEHd4PLLc8A93QBeEudUCSPEqWJQ1w18AG20t/tqVsY1pAM5irZa1WzhRI1zIa1pUPxrRW9xLGoMh2mz5Er1l0o3HGxq57QSETQT0b8xeetdx3sQfEBdcMNbncwCphgSLx9J+zwTdSsS6JUQjCwo2tRWeuD+/bqs95QpAnm8WIuLQmlNizRQngwxK/9OjgJ1OnsJJAshdhiHSBR+4n/wIt0reOeDUwPx1LofkMWpSLRSRQedpITnISsQFWQP7vBG/JapPTh6t8NwuzMk5vioK4JU5dnTnewWk/l/Q9O9cjaRR6IBclBdWQRfyFeSM8vlp3mKQo1VK0zABETSEyMvkrQh76KwBPDjYefp3R+jHmjkxxE17UvK+5sG+h4Wq/qjSxC/Hi/jeIPtQO5VysHngnAdaB07HqBcr3uALH1caDMAAtN9ggdEUf9vAFnJm/B+USf8TdmS+CEXrjYsu2tLQ+N6LGaNAXbPc9f0JE0EIa3GGedPXDGvU2f7gqYmErdARTYsb59elqWe9s9+y4kuwHo0YBRMqO/EaiHqswpYe6NDjSHonXdmT60jsZ6d0qFoM4wHl9DDa6SJACt2jgBeYnQYgriyMXWIF4opapMMXaFuAJ8X7DB5DaNbEtOmiCPbL4NRH2owxcBKPRrglbmod81WYac1jorbi/qZ1PtEjrjVggV44w3r+hE6LkMRhsw3izbTNQ1EahJ/M+wfmOjaCpBYkbtggHrrIrQIJvkLjF0sQKs1bSML2H+k3UAZziwOPXerSZXDw9Mcs+l0ZYNl6tEqOf0PR8himAcShm3tnPYB51BA9JqHDUYSrlOrVViporuO32Dciec4iza/nYsT9pFALR0GvJKkAEE6htmkZvYMGl/rlxXVHzs02U/UuCPsHFJnw0AUYeNh96xIwKtA4P8rIo0W1JVeXA2jBSchpT4ZNJEtn2997xCHxYzZn4+8rRYqMmAgJfg13cQratpuB3AmwHn35TJTgp/t5HiqSpBKrg3Bm3ctFszUnAmN9mmY3fachGv4ryAG69nfCN1baqBuLIvnewZ+sO0/RYD6N4lmYXwZLNv4CkonFzrEPquXhTJ5uJcme3sEiTJzBl94H6MMi7NXhU2Ji8Nv+pzTbJXBg72VN9wiPj7TB0XkoiQ8WuPyXdJejnyIGVPgsLAzD4Pm0LxMxpd6QsGXbkX8YD1OarDRy28jBpuNN3zJWRVrvj5eUcm7ZJEf15NM5/fSO+/SDyzsK65QllA4WS2bcCf9WVdNhVwnnTGXwIAkXrntoeLry2pd6m8hmlG4oi+U0412PUeHuPKp5dLkjAyNshjGv2t8jnwhcxCzPxXntN6Vk97V7Yfmjo7zD8bbWbb8NhM2LoFSMeJR9Hy8d6Fo6T5DoyJTtLUiZAyb2g9n2WPMtH3ypJtvscYpz8mEyf6P9tf5X+aAVfGR4YKL0MNreRpdDcDHDKmlRwU/c7akyOsmcj+cxL+8gOJETrlNIH5YNkF81JGL87m2Q+/gddi0ZzWFpr5V6g8aDiIh4ywgoqZMRebAV2z6OCyMA+DSjNucawimkgCmRZNOdy37NxF7s1ZvSNQa+N2plR4JsfFp1xbvMeO9vHgP3INmh3eqIqU1oo4hRx3NNuw1Z3OcN9f3sWo31Q9KZ1570MGZekm5lIBh0uxHAsI3S4Eux8kNbCGD39nF3ukDir0GIjb+cb/M/2JQDQbRK749Yr1r8IB2ha5uxVl+p02IZDngtbAWt0oQXVyhY6JMpfG/r+ucYqYSd0GW08Z+QAYeaIf3uJdxwxPTp3P6hh6u1ilHfx3VHz5n30JD97KVZRnW05a209IDV+7Nn9jGqkDKbkv8OS4maBJ/r7BFVwdjuwMEClr3hKg0/7jTeQj3n9b1dP6/CqCRm+3fh9pleBRJ87YhlUsT8yXLYfAdeH4/8quzTgaHGwCBWIaSBOei5/Y1gpk2t1itdGdv1ofXWBehDBuM5jvuGf5E73/ouyM1Qq6y5/F4BXOvlb4mqWghIUc1gG6mvO5XGhmEi5hDgfWCNOaRS1oza3b1KnPaeRRHhZo8IgegGz7MRCKXyjOCPOXc8zgh6emUa21mgojK8o9ikEFyjSGmTwKSl6O/gVOpyefYRz3m3YlsXHS5NFwwxFyeKnKVJrMPPXAGBXDG62D2l0NsfsrUU1+kxR9M3AJUVYu78227N0VVyngnGu9Ohub/sxFSJ5Nf2EJpVo83aPT+HswKN5e5Nw/Q2VMYW7uAnM4P4Gav8H2KekS+7JTgM2x/MZoRoFdQ/u3waEZ5BLuIR/iboPPAm8cxj+fVTwP9tGV7WTAsV88zdg06neGh9h4/YDrMxnC0yi0qCOzKXOU+l2LUvOeR+1mash3MoWN27l97E9DMhVwq8DAr6wZzLjjgADu6SvMWT382kgMrt3vriMHHoua0srlBePrNLDPr9G/fIbgrwTFOgjfVE+kCVJ7CnKajJGxnCMk2DiLRS91k5h1+j3GPPjkMicdrMeFj3mXzliT9FLI9k8soMR/8X7F8B/fW39pw45xFQsaX/5ZOyArYPi1IZK+GxkfSpBrKLl1Bf1jOrvZ+bjkl4FAft/TGdMGtC+dnXqKZ2o3WhNCriDDCaS1tl6p2ULzBUEn8WHtVlG0n1DIWk+Ad5ftACpPJGKEYHxLnNsthWbBq0qaaLkN4kzJ0oV6EqAKCsHgaDiEe/GEPWl1Hlx4QIwq+OHOLyQiLy4dQI53FtJcYeuwpUy8RTB79kF4pQAxN8b7O9yX9qz2d8/xWfnKDIchKLDJplADdGYKsmLk7CZGxknKtExvL1hO4IDZSAbXHbgfONk+ubdiV3BwJ1sHPCG+eCn5tA24F+Yh+YtJYW8QVIej+mSC5ZUWj+84CWthtX4Dh4C5fxNJEWiCecEljjyjIaC2QRtB6E8hCGC02kydr89+79n6eCJhCF9ossdUV2yUS6NfnG3nOA554AK1xWYG0NT9K1Hf1J1GwDNGbPB8QNDgT86HwhsE5XNuJhYYiTk30Iwwqxf+LYjmwfo1b++YjwxTDjAPPRlz5C2c52gp2h4qGCL7COHzTuVNK05PzLoHzntQEWGb9kEIS67fCcR+tnmbyqxfjHP0f54ugs1wZMPoTd7vKfmw==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZOUTCi3S-3VKdwO4FVw0zCyr13P0OHVboEynDErNtHrtyB_bL7i1z-TFZkbgjt9B6g2&amp;t=638694539923498145" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=nnHyWnZ5bTPuYszCeiYmK60zbek0Itjq_w79Nsa5l8Dev4ETTQowYovyBE0-BEWHwmzr-NSG6elRxD8f4oyV-jw3DOserCnVRDqRRLwpT4Q7m_Pa2n3gXlzPG-fqbockiiQOaEhS6KcUCjMM94BLrywvBMEVCQ-gKt8nMGYurfo1&amp;t=b990ecd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=geiJw278ELCE4oVrRV2zH0f4xo8YZlSmlLoe3L0tmVDFpIdd2_e1YG3lWnMsfUDdFvwaoA-daEhMOZGtXHeQGq4D_zliAD7CRN_fC4NcTgygjAJ6ieP8fVxx4lk4oBkyVoKYUiPUwdSl7TvcoAou0anpw7RJyMYAfFqlybXXtG9MzQU6y495Bb1l-pe-YVTh0&amp;t=b990ecd" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="84412C77" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="nZxNyowwgwDRMCDbJgs325azh1CccF2d+HIX/bdmAyhSmycF6AtvjzAQcpVA8DO9kboMre1O0oU5vZNBiG/Y69wp3Xn3ZWDaAp9/G/NC/71nC8tmIILqrgwC42maa6Z2VgXBZ5QecLMCDYnXuy+rrNwfE4kMF5nYL6kbNsuYJVhkYiPNfMidtvAyjIO6c0H4h7psJFB8vuVuKBQADy71DGyd/iKc70bqHQjIAmj4OJ7CZVxOjuNvNi5BPBzAbBBG" />
+</div>
+        <!-- Start of Header Section -->
+        <!-- Start of Top Bar Section -->
+        <div class="top-bar-section">
+            <div class="container p-0">
+                <div class="col-lg-12 text-right">
+                    <ul>
+                        <li><span id="ctl00_lblEnvironment"></span></li>
+                            
+                        <li><span id="ctl00_lblPipe"></span></li>
+                            
+
+                        
+                        <li>
+                            <span id="ctl00_lblUserName"></span></li>
+                        <li><a href="/Pages/Home.aspx?clang=_fr" id="ctl00_langSwitch">Fran&#231;ais</a></li>
+                        <li>|</li>
+                        <li>
+                            <a id="ctl00_linkContactUs" href="Pages/Contact.aspx?clang=_en">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End of Top Bar Section -->
+        <!-- Start of Logo, Search & Navigation Section -->
+        <div class="container p-0">
+            <div class="col-sm-6 col-xs-6">
+                <h1>
+                    <a id="ctl00_linkLogo" title="United Nations Treaty Collection" class="logo" href="Pages/Home.aspx?clang=_en" style="font-size:0px;">Home Page</a>
+                    
+                </h1>
+            </div>
+            <div class="col-sm-6 col-xs-6 search-section">
+                <input type="text" placeholder="Search" title="Search" id="txtSearch" />  
+                <button type="submit" value="" alt="clear" onclick="FullTextSearch()"><i class="fa fa-search"><span style="font-size:0px">Search</span></i></button>              
+               
+                <input type="hidden" name="ctl00$hdnLanguage" id="ctl00_hdnLanguage" value="_en" />
+            </div>
+            <div class="clearfix"></div>
+            
+
+<nav class="navbar navbar-expand-md navbar-inverse navbar-dark">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" data-bs-target="#navbar" data-bs-toggle="collapse" class="navbar-toggle collapsed" type="button"><span class="sr-only">Main Menu</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar">
+            
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a id="ctl00_TopMenu_rptTopMenu_ctl00_linkMenu" class="nav-link" aria-current="page" href="Pages/Home.aspx?clang=_en">
+                                <img src="images/icon-home.png" alt="Home" title="Home">
+							</a>
+						</li>
+                
+                    <li class="nav-item dropdown">
+                        <a id="ctl00_TopMenu_rptTopMenu_ctl01_linkMenu" aria-expanded="false" role="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="true" href="#">Overview <span class="fa fa-angle-down caret"></span></a>
+                        
+                                <ul class="dropdown-menu" role="menu">
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl01_rptTopSubMenu_ctl01_linkSubMenu" class="dropdown-item" href="Pages/Overview.aspx?path=overview/glossary/page1_en.xml">Glossary</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl01_rptTopSubMenu_ctl02_linkSubMenu" class="dropdown-item" href="Pages/Overview.aspx?path=overview/faq/page1_en.xml">FAQ</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl01_rptTopSubMenu_ctl03_linkSubMenu" class="dropdown-item" href="Pages/Overview.aspx?path=overview/sitemap/page1_en.xml">Sitemap</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl01_rptTopSubMenu_ctl04_linkSubMenu" class="dropdown-item" href="Pages/Contact.aspx?clang=_en">Contact Us</a>
+                                </li>
+                            
+                                </ul>
+                            
+                    </li>
+                
+                    <li class="nav-item dropdown">
+                        <a id="ctl00_TopMenu_rptTopMenu_ctl02_linkMenu" aria-expanded="false" role="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="true" href="#">Depositary <span class="fa fa-angle-down caret"></span></a>
+                        
+                                <ul class="dropdown-menu" role="menu">
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl02_rptTopSubMenu_ctl01_linkSubMenu" class="dropdown-item" href="Pages/ParticipationStatus.aspx?clang=_en">Status of Treaties</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl02_rptTopSubMenu_ctl02_linkSubMenu" class="dropdown-item" href="Pages/CNs.aspx?cnTab=tab2&amp;clang=_en">Depositary Notifications</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl02_rptTopSubMenu_ctl03_linkSubMenu" class="dropdown-item" href="Pages/CTCs.aspx?clang=_en">Certified True Copies</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl02_rptTopSubMenu_ctl04_linkSubMenu" class="dropdown-item" href="Pages/PhotoList.aspx?clang=_en">Photos of Treaty Ceremonies</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl02_rptTopSubMenu_ctl05_linkSubMenu" class="dropdown-item" href="Pages/Content.aspx?path=Publication/ModelInstruments/Page1_en.xml">Model Instruments</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl02_rptTopSubMenu_ctl06_linkSubMenu" class="dropdown-item" href="Pages/Content.aspx?path=DB/titles/page1_en.xml">Titles of Treaties</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl02_rptTopSubMenu_ctl07_linkSubMenu" class="dropdown-item" href="Pages/LON.aspx?clang=_en">League of Nations Treaties</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl02_rptTopSubMenu_ctl08_linkSubMenu" class="dropdown-item" href="Pages/Content.aspx?path=Publication/MTDSG/Volume_en.xml">Status of treaties (1959-2009)</a>
+                                </li>
+                            
+                                </ul>
+                            
+                    </li>
+                
+                    <li class="nav-item dropdown">
+                        <a id="ctl00_TopMenu_rptTopMenu_ctl03_linkMenu" aria-expanded="false" role="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="true" href="#">Registration & Publication <span class="fa fa-angle-down caret"></span></a>
+                        
+                                <ul class="dropdown-menu" role="menu">
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl03_rptTopSubMenu_ctl01_linkSubMenu" class="dropdown-item" href="Pages/AdvanceSearch.aspx?tab=UNTS&amp;clang=_en">UN Treaty Series</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl03_rptTopSubMenu_ctl02_linkSubMenu" class="dropdown-item" href="Pages/MSDatabase.aspx?clang=_en">Monthly Statements</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl03_rptTopSubMenu_ctl03_linkSubMenu" class="dropdown-item" href="Pages/CumulativeIndexes.aspx?clang=_en">Cumulative Index</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl03_rptTopSubMenu_ctl04_linkSubMenu" class="dropdown-item" href="Pages/LONOnline.aspx?clang=_en">League of Nations Treaty Series</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl03_rptTopSubMenu_ctl05_linkSubMenu" class="dropdown-item" href="https://treaties.un.org/doc/source/checklist-E.pdf" target="_blank">Registration Checklist</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl03_rptTopSubMenu_ctl06_linkSubMenu" class="dropdown-item" href="doc/source/PublicationChecklist-E.pdf" target="_blank">Publication Checklist</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl03_rptTopSubMenu_ctl07_linkSubMenu" class="dropdown-item" href="Pages/RegistrationPublication.aspx?path=overview/limitedPubPolicy/page1_en.xml">Limited Publication Policy</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl03_rptTopSubMenu_ctl08_linkSubMenu" class="dropdown-item" href="https://treaties.un.org/doc/source/guidelines.pdf" target="_blank">Technical Guidelines</a>
+                                </li>
+                            
+                                </ul>
+                            
+                    </li>
+                
+                    <li class="nav-item dropdown">
+                        <a id="ctl00_TopMenu_rptTopMenu_ctl04_linkMenu" aria-expanded="false" role="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="true" href="#">Resources <span class="fa fa-angle-down caret"></span></a>
+                        
+                                <ul class="dropdown-menu" role="menu">
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl04_rptTopSubMenu_ctl01_linkSubMenu" class="dropdown-item" href="Pages/Resource.aspx?path=Publication/TH/Page1_en.xml">Treaty Handbook</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl04_rptTopSubMenu_ctl02_linkSubMenu" class="dropdown-item" href="Pages/Resource.aspx?path=Publication/FC/Page1_en.xml">Final Clauses Handbook</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl04_rptTopSubMenu_ctl03_linkSubMenu" class="dropdown-item" href="Pages/Resource.aspx?path=Publication/SoP/Page1_en.xml">Summary of Practice</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl04_rptTopSubMenu_ctl04_linkSubMenu" class="dropdown-item" href="Pages/Resource.aspx?path=Publication/GA/Page1_en.xml">General Assembly Resolutions</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl04_rptTopSubMenu_ctl05_linkSubMenu" class="dropdown-item" href="Pages/Resource.aspx?path=Publication/NV/Page1_en.xml">Notes verbales</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl04_rptTopSubMenu_ctl06_linkSubMenu" class="dropdown-item" href="Pages/Resource.aspx?path=Publication/Regulation/Page1_en.xml">Regulations</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl04_rptTopSubMenu_ctl07_linkSubMenu" class="dropdown-item" href="Pages/Resource.aspx?path=Publication/SGBulletin/Page1_en.xml">Secretary-General Bulletin</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl04_rptTopSubMenu_ctl08_linkSubMenu" class="dropdown-item" href="Pages/Resource.aspx?path=Publication/ModelInstruments/Page1_en.xml">Model Instruments</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl04_rptTopSubMenu_ctl09_linkSubMenu" class="dropdown-item" href="doc/source/ModelCertifyingStatement.pdf" target="_blank">Model Certifying Statement</a>
+                                </li>
+                            
+                                </ul>
+                            
+                    </li>
+                
+                    <li class="nav-item dropdown">
+                        <a id="ctl00_TopMenu_rptTopMenu_ctl05_linkMenu" aria-expanded="false" role="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="true" href="#">Training <span class="fa fa-angle-down caret"></span></a>
+                        
+                                <ul class="dropdown-menu" role="menu">
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl05_rptTopSubMenu_ctl01_linkSubMenu" class="dropdown-item" href="Pages/Training.aspx?path=Training/trainingNY/Page1_en.xml">UN Headquarters</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl05_rptTopSubMenu_ctl02_linkSubMenu" class="dropdown-item" href="Pages/Training.aspx?path=Training/trainingRegional/Page1_en.xml">Regional</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl05_rptTopSubMenu_ctl03_linkSubMenu" class="dropdown-item" href="Pages/Training.aspx?path=Training/LTAssist/Page1_en.xml">Legal Technical Assistance</a>
+                                </li>
+                            
+                                </ul>
+                            
+                    </li>
+                
+                    <li class="nav-item dropdown">
+                        <a id="ctl00_TopMenu_rptTopMenu_ctl06_linkMenu" aria-expanded="false" role="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="true" href="#">Treaty Events <span class="fa fa-angle-down caret"></span></a>
+                        
+                                <ul class="dropdown-menu" role="menu">
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl06_rptTopSubMenu_ctl01_linkSubMenu" class="dropdown-item" href="Pages/TreatyEvents.aspx?path=Treaty/Focus/Page1_en.xml">Current Event</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl06_rptTopSubMenu_ctl02_linkSubMenu" class="dropdown-item" href="Pages/TreatyEvents.aspx?path=Treaty/PastTreaty/Page1_en.xml">Past Events</a>
+                                </li>
+                            
+                                <li>
+                                    <a id="ctl00_TopMenu_rptTopMenu_ctl06_rptTopSubMenu_ctl03_linkSubMenu" class="dropdown-item" href="Pages/TreatyEvents.aspx?path=Treaty/SpecialTreaty/Page1_en.xml">Special Events</a>
+                                </li>
+                            
+                                </ul>
+                            
+                    </li>
+                
+                    </ul>
+                
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</nav>
+
+
+
+        </div>
+        <!-- End of Logo, Search & Navigation Section -->
+        <!-- End of Header Section -->
+        <div class="clearfix"></div>
+        <div>
+            <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+            <div id="ctl00_UpdtProgress" style="display:none;">
+	
+                    <div style="position: fixed; text-align: center; height: 100%; width: 100%; top: 0; right: 0; left: 0; z-index: 9999999; background-color: #ccc; opacity: 0.5; filter: alpha(opacity=50);">
+                        <image  src="../Images/ajax-loader (2).gif" alt="Image Loading.." style="padding: 10px; position: fixed; top: 45%; left: 50%;" />
+                    </div>
+                
+</div>
+            
+
+      <div id="dialog" title="Automated Subscription" class="hidden">
+        <div class='title'>
+
+        </div>
+         <br />
+         <input  type='button' value='Log Out' id='btnYes' />
+         <input type='button' value='Cancel' id='btnNo' />
+    </div>
+
+    <!-- Start of Contentarea Section -->
+    <div class="container contentarea">
+        <!-- Start of Slider Section -->
+        
+<div class="col-sm-7 home-slider">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators -->
+        <!--
+        <div class="carousel-indicators">
+            <button data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
+            <button data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
+            <button data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+            <button data-bs-target="#myCarousel" data-bs-slide-to="3"></button>
+            <button data-bs-target="#myCarousel" data-bs-slide-to="4"></button>
+            <button data-bs-target="#myCarousel" data-bs-slide-to="5"></button>
+        </div>
+        -->
+        <div class="carousel-inner">
+            
+                    <div id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl00_divContainer" class="carousel-item active">
+                        <a id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl00_linkBtnUrl" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$PhotoCarousel$rptPhotoCarousel$ctl00$linkBtnUrl&#39;,&#39;&#39;)"><img src="Images/CarouselImages/Depositary-cropped.jpg" id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl00_imgSlide" alt="Depository" /></a>
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <p id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl00_paraCaption">The Secretary-General of the United Nations is the depositary of more than 600 multilateral treaties.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl01_divContainer" class="carousel-item">
+                        <a id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl01_linkBtnUrl" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$PhotoCarousel$rptPhotoCarousel$ctl01$linkBtnUrl&#39;,&#39;&#39;)"><img src="Images/CarouselImages/Registr-Public.jpg" id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl01_imgSlide" alt="Registration &amp; Publication" /></a>
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <p id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl01_paraCaption">&quot;Every treaty and every international agreement entered into by any Member of the United Nations ... shall as soon as possible be registered with the Secretariat and published by it.&quot; (Article 102 of the Charter of the United Nations)</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl02_divContainer" class="carousel-item">
+                        <a id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl02_linkBtnUrl" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$PhotoCarousel$rptPhotoCarousel$ctl02$linkBtnUrl&#39;,&#39;&#39;)"><img src="/doc/latestCeremony.jpg?a=39947063" id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl02_imgSlide" alt="Latest Ceremony" /></a>
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <p id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl02_paraCaption">Recent Photograph</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl03_divContainer" class="carousel-item">
+                        <a id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl03_linkBtnUrl" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$PhotoCarousel$rptPhotoCarousel$ctl03$linkBtnUrl&#39;,&#39;&#39;)"><img src="Images/CarouselImages/Resources.jpg" id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl03_imgSlide" alt="Resources" /></a>
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <p id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl03_paraCaption">Resources</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl04_divContainer" class="carousel-item">
+                        <a id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl04_linkBtnUrl" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$PhotoCarousel$rptPhotoCarousel$ctl04$linkBtnUrl&#39;,&#39;&#39;)"><img src="Images/CarouselImages/Seminar-2022.jpg" id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl04_imgSlide" alt="Training" /></a>
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <p id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl04_paraCaption">Training in New York</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl05_divContainer" class="carousel-item">
+                        <a id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl05_linkBtnUrl" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$PhotoCarousel$rptPhotoCarousel$ctl05$linkBtnUrl&#39;,&#39;&#39;)"><img src="Images/CarouselImages/TreatyEvent-2022.jpg" id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl05_imgSlide" alt="Treaty Event" /></a>
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <p id="ctl00_ContentPlaceHolder1_PhotoCarousel_rptPhotoCarousel_ctl05_paraCaption">Treaty Event</p>
+                            </div>
+                        </div>
+                    </div>
+                
+        </div>
+        <button class="carousel-control left carousel-control-prev" data-bs-target="#myCarousel" data-bs-slide="prev">
+			<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control right carousel-control-next" data-bs-target="#myCarousel" data-bs-slide="next">
+			<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+    </div>
+</div>
+
+        <!-- End of Slider Section -->
+        <!-- Start of Announcement Section -->
+        <div class="col-sm-5 home-announcement">
+            <!-- Start of Announcement Details -->
+            
+<h4>
+    <span id="ctl00_ContentPlaceHolder1_Announcement_lblAnnouncementHeader">Announcements</span>
+     <!-- hidden temporarily based on Andrei's request -->
+</h4>
+
+<div id="content-1" class="mCustomScrollbar announcements ann-panel">
+    <div id="announcements">
+        <div id="ctl00_ContentPlaceHolder1_Announcement_divContent">
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" /> &nbsp;<b>United Nations Convention on
+          Negotiable Cargo Documents, New York, 15 December 2025</b> </span>
+      </p>
+      <p style="text-align: justify">
+        <img alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CN/2026/CN.91.2026-Eng.pdf"
+            target="_blank&quot;">Issuance of Certified True Copies</a>
+        </span>
+        <br />
+		    <img
+          alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CN/2026/CN.141.2026-Eng.pdf"
+            target="_blank&quot;">Opening for Signature</a>
+        </span>
+        <br />
+		    <img
+          alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Treaties/2025/12/20251215%2011-17%20AM/Ch_X_22.pdf"
+            target="_blank&quot;">Certified True Copy</a>
+        </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">The Convention was adopted by the General Assembly of the
+        United Nations by Resolution <a href="https://docs.un.org/en/A/RES/80/162" target="_blank">80/162</a> at its 64th plenary meeting in New York on 15 December
+        2025. The Convention, also known as the Accra Convention on Negotiable Cargo Documents, shall be open for signature by all States and regional economic integration organizations in Accra (Ghana) on 26 October 2026.
+      </p>
+      <!--
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" /> &nbsp;<b>Special Treaty Event for the UN
+          Convention against Cybercrime at the United Nations Congress on Crime Prevention and
+          Criminal Justice (<b>25 April 2026</b> in Abu Dhabi, United Arab Emirates)</b> </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">A special treaty event will be held on
+        <b>25 April 2026</b> in Abu Dhabi, United Arab Emirates, in the margins of the Fifteenth
+        United Nations Congress on Crime Prevention and Criminal Justice, to provide States wishing
+        to do so with an opportunity to sign the
+        <i>United Nations Convention against Cybercrime; Strengthening International Cooperation for
+          Combating Certain Crimes Committed by Means of Information and Communications Technology
+          Systems and for the Sharing of Evidence in Electronic Form of Serious Crimes</i>, adopted
+        in New York on 24 December 2024, and deposit instruments of ratification, acceptance,
+        approval, or accession.
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">
+        <img alt="" src="../images/arr.png" /> &nbsp;
+        <span style="font-size: 13px">
+          <a
+            href="https://treaties.un.org/doc/source/publications/NV/2026/NV2026_0058_English.pdf"
+            target="_blank&quot;">Note verbale</a>
+        </span>
+      </p>
+      
+      <p style="text-align: justify">
+        <span style="font-size: 13px">States wishing to sign the Convention or deposit instruments
+        of ratification, acceptance, approval, or accession at the special treaty event must notify
+        the Treaty Section of their intention to do so through their Permanent Mission in New York
+        and provide signed copies of full powers and instruments of ratification, acceptance,
+        approval, or accession for verification, by
+        <b>1 April 2026</b>. For further information, please contact the Treaty Section (email:
+        <a href="mailto:treatysection@un.org">treatysection@un.org</a>; telephone: (212) 963-5047).
+      </p>
+      -->
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" /> &nbsp; <b>Agreement under the United Nations
+          Convention on the Law of the Sea on the Conservation and Sustainable Use of Marine
+          Biological Diversity of Areas beyond National Jurisdiction</b>
+        </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">On 19 September 2025, the conditions for the entry into force
+          of the Agreement under the United Nations Convention on the Law of the Sea on the
+          Conservation and Sustainable Use of Marine Biological Diversity of Areas beyond National
+          Jurisdiction (adopted at New York on 19 June 2023) were met. Accordingly, the Agreement,
+          also known as the “BBNJ Agreement”, shall enter into force on <b>17 January 2026.</b> <br />
+          <img
+            alt="" src="../images/arr.png" /> &nbsp; <a
+            href="https://treaties.un.org/doc/Publication/CN/2025/CN.447.2025-Eng.pdf"
+            target="_blank&quot;">C.N.447.2025.TREATIES- XI.10 (Depositary Notification)</a>
+        </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" /> &nbsp;<b>Treaty Event 2025: Eighty Years of
+          Multilateral Treaty Making at the United Nations (23 - 26 September 2025, United Nations
+          Headquarters)
+          </b>
+        </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">This year’s
+        <a href="https://treaties.un.org/Pages/TreatyEvents.aspx?path=Treaty/Focus/Page1_en.xml">Treaty
+          Event </a>will be held from
+        <b>23 to 26 September 2025</b> at the United Nations Headquarters in New York, in
+        conjunction with the general debate of the landmark eightieth session of the General
+        Assembly.
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">The
+        <a href="https://treaties.un.org/Pages/TreatyEvents.aspx?path=Treaty/Focus/Page1_en.xml">Treaty
+          Event </a> will highlight multilateral treaties deposited with the Secretary-General which
+        cover a wide range of areas of global concern, including human rights, disarmament, penal
+        matters, law of the sea, and the environment.
+        The
+        <a href="https://treaties.un.org/Pages/TreatyEvents.aspx?path=Treaty/Focus/Page1_en.xml">Treaty
+          Event </a> may also be used to sign and ratify or accede to any treaty for which the
+        Secretary-General acts as depositary.
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">For more details, please refer to the <img alt=""
+            src="../images/arr.png" />&nbsp;<a
+            href="https://treaties.un.org/doc/source/events/2025/Publication/publication-english.pdf"
+            target="_blank&quot;">2025 Treaty Event publication</a></br>
+        </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" /> &nbsp; <b>United Nations Convention on the
+          International Effects of Judicial Sales of Ships</b>
+        </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">On 21 August 2025, the conditions for the entry into force of
+          the United Nations Convention on the International Effects of Judicial Sales of Ships
+          (adopted at New York on 7 December 2022) were met. Accordingly, the Convention, also known
+          as the “Beijing Convention on the Judicial Sale of Ships”, shall enter into force on <b>17
+          February 2026.</b> <br />
+          <img alt="" src="../images/arr.png" /> &nbsp; <a
+            href="https://treaties.un.org/doc/Publication/CN/2025/CN.415.2025-Eng.pdf"
+            target="_blank&quot;">C.N.415.2025.TREATIES- X.21 (Depositary Notification)</a>
+        </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" /> &nbsp;<b>Special Treaty Event for BBNJ
+          Agreement at the United Nations
+            Ocean Conference (UNOC3)(9 June 2025 in Nice, France)</b>
+        </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">A special treaty event will be held on <b>9 June 2025 </b> in
+          Nice, France, on the margins of the third United Nations Ocean Conference (UNOC3) to
+          provide States wishing to do so with an opportunity to sign the Agreement under the United
+          Nations Convention on the Law of the Sea on the Conservation and Sustainable Use of Marine
+          Biological Diversity of Areas beyond National Jurisdiction, adopted in New York on 19 June
+          2023 (the “BBNJ Agreement”) and deposit instruments of ratification, acceptance or
+          approval. </span>
+      </p>
+
+      <p style="text-align: justify">
+        <span style="font-size: 13px">The BBNJ Agreement special treaty event will take place at <b>7
+          p.m.</b> at the Side event Room 5, Port Lympia, Nice. </span>
+      </p>
+
+      <p style="text-align: justify">
+        <span style="font-size: 13px">States wishing to sign the BBNJ Agreement or deposit
+        instruments of ratification, acceptance, or approval at the special treaty event
+        must notify the Treaty Section of their intention to do so through their Permanent Mission
+        in New York and provide signed copies
+        of full powers and instruments of ratification, acceptance or approval for verification, by
+        <b>30 May 2025.</b>
+      </p>
+
+      <p style="text-align: justify">
+        <span style="font-size: 13px">
+        <img alt="" src="../images/arr.png" /> &nbsp;
+        <span style="font-size: 13px">
+          <a
+            href="https://treaties.un.org/doc/source/publications/NV/2025/2025_ola-ts-dn_dh-English.pdf"
+            target="_blank&quot;">Note verbale - 2025 OLA-TS-DN/DH</a>
+        </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">For further information, please contact the Treaty Section
+          (email: <a href="mailto:treatysection@un.org">treatysection@un.org</a>; telephone: (212)
+          963-5047 </span>
+      </p>
+
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" /> Call for nominations to participate in the
+          Regional Workshop on Treaty Law and Practice for African States, to be held in Addis
+          Ababa, Ethiopia, from 20-22 May 2025. The deadline for registration is 18 April 2025 </span>
+      </p>
+      <p style="text-align: justify">
+        <img alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a
+            href="https://treaties.un.org/doc/source/training/regional/2025/Addis/Note Verbale (E).pdf"
+            target="_blank&quot;">Note verbale</a>
+        </span>
+        <!--
+        <img alt="" src="../images/arr.png" />&nbsp;
+            <span style="font-size: 13px">
+              <a href="https://treaties.un.org/doc/Publication/CN/2025/CN.111.2025-Eng.pdf"
+            target="_blank&quot;">Opening for Signature </a>
+            </span>
+		    -->
+        <br />
+		    <img
+          alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a
+            href="https://treaties.un.org/doc/source/training/regional/2025/Addis/Programme (E).pdf"
+            target="_blank&quot;">Tentative programme</a>
+        </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" />
+          <b>United Nations Convention against Cybercrime; Strengthening International Cooperation
+            for Combating Certain Crimes Committed by Means of Information and Communications
+            Technology Systems and for the Sharing of Evidence in Electronic Form of Serious Crimes
+            , New York, 24 December 2024</b>
+        </span>
+      </p>
+      <p style="text-align: justify">
+        <img alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CN/2025/CN.111.2025-Eng.pdf"
+            target="_blank&quot;">Issuance of Certified True Copies</a>
+        </span>
+        <br />
+        <img
+          alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CN/2025/CN.196.2025-Eng.pdf"
+            target="_blank&quot;">Opening for Signature </a>
+        </span>
+        <br />
+        <img alt=""
+          src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CTC/Ch_XVIII_16.pdf"
+            target="_blank&quot;">Certified
+            True Copy</a>
+        </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">The Convention was adopted by the General Assembly of the
+          United Nations by Resolution 79/243 at its 55th (resumed) plenary meeting in New York on
+          24 December 2024. The Convention shall be open for signature by all States and regional
+          economic integration organizations in Hanoi (Viet Nam) at a date that will be communicated
+          as soon as possible by a subsequent depositary notification.
+        </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" /> &nbsp;Treaty Event 2024: Strengthening the
+          Multilateral Treaty Framework (24 - 27 September 2024, United Nations Headquarters) </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">This year’s Treaty Event will be held from
+        <b>24 to 27 September 2024</b> at the United Nations Headquarters in New York, in
+        conjunction with the general debate of the seventy-ninth session of the General Assembly.
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">The Treaty Event will highlight multilateral treaties
+        deposited with the Secretary-General, promoting in particular the Sustainable Development
+        Goals. These cover a wide range of areas of global concern, including human rights,
+        disarmament, penal matters, law of the sea, and the environment. The Treaty Event may also
+        be used to sign and ratify or accede to any treaty for which the Secretary-General acts as
+        depositary.
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">For more details, please refer to the <img alt=""
+            src="../images/arr.png" />&nbsp;<a
+            href="https://treaties.un.org/doc/source/events/2024/Publication/publication-english.pdf"
+            target="_blank&quot;">2024 Treaty Event publication</a></br>
+        </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" /> &nbsp;General Assembly&nbsp;&nbsp;resolution
+          78/236 of 22 december 2023 - Strengthening and promoting the international treaty
+          framework </span>
+      </p>
+
+      <p style="text-align: justify">
+        <span style="font-size: 13px"> During its seventy-eight session and following the Sixth
+          Committee&#39;s debate on the agenda item entitled &ldquo;Strengthening and promoting the
+          international treaty framework&rdquo;, the General Assembly adopted on 22 December 2023
+          the <b>Resolution 78/236</b>. For more information&nbsp;on this General Assembly
+          resolution, see the following document: <img alt="" src="../images/arr.png" /> &nbsp; <span
+            style="font-size: 13px">
+            <a href="../doc/source/publications/GA_resolutions/2023/A_Res_78_236-Eng.pdf"
+              target="_blank&quot;">A/RES/78/236</a>
+          </span>
+        </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" />&nbsp; Convention on the contract for
+          international carriage of goods by rail, Geneva, 17 November 2023 </span>
+      </p>
+
+      <p style="text-align: justify">
+
+        <img alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CN/2023/CN.510.2023-Eng.pdf"
+            target="_blank&quot;">Issuance of Certified True Copies</a>
+        </span>
+        <br />
+		<img
+          alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CN/2023/CN.511.2023-Eng.pdf"
+            target="_blank&quot;">Opening for Signature </a>
+        </span>
+        <br />
+		<img alt=""
+          src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CTC/Ch_XI_C_8.pdf" target="_blank&quot;">Certified
+        True Copy</a>
+        </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">
+          The Convention on the Contract for International Carriage of Goods by Rail was adopted in
+          Geneva on 17 November 2023 at the seventy-seventh session of the Working Party on Rail
+          Transport of the Inland Transport Committee of the United Nations Economic Commission for
+          Europe (UNECE). The Convention shall be open for signature at the United Nations
+          Headquarters in New York until 31 March 2025 by all States.
+        </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" />&nbsp; Agreement under the United Nations
+          Convention on the Law of the Sea on the Conservation and Sustainable Use of Marine
+          Biological Diversity of Areas beyond National Jurisdiction, New York, 19 June 2023 </span>
+      </p>
+
+      <p style="text-align: justify">
+
+        <img alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CN/2023/CN.202.2023-Eng.pdf"
+            target="_blank&quot;">Issuance of Certified True Copies</a>
+        </span>
+        <br />
+		<img
+          alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CN/2023/CN.203.2023-Eng.pdf"
+            target="_blank&quot;">Opening for Signature </a>
+        </span>
+        <br />
+		<img alt=""
+          src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CTC/Ch_XXI_10.pdf" target="_blank&quot;">Certified
+        True Copy</a>
+        </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px"> The Agreement under the United Nations Convention on the Law
+          of the Sea on the Conservation and Sustainable Use of Marine Biological Diversity of Areas
+          beyond National Jurisdiction was adopted In New York on 19 June 2023 during the further
+          resumed fifth session of the Intergovernmental conference on an international legally
+          binding instrument under the United Nations Convention on the Law of the Sea on the
+          Conservation and Sustainable Use of Marine Biological Diversity of Areas beyond National
+          Jurisdiction. The Agreement shall be open for signature in New York on <b>20 September
+            2023</b> and shall remain open for signature until 20 September 2025. </span>
+      </p>
+
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" />&nbsp; United Nations Convention on the
+          International Effects of Judicial Sales of Ships. New York, 7 December 2022 </span>
+      </p>
+      <p style="text-align: justify">
+
+        <img alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CN/2023/CN.156.2023-Eng.pdf"
+            target="_blank&quot;">Issuance of Certified True Copies</a>
+        </span>
+        <br />
+		<img
+          alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CN/2023/CN.157.2023-Eng.pdf"
+            target="_blank&quot;">Opening for Signature </a>
+        </span>
+        <br />
+		<img alt=""
+          src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a
+            href="https://treaties.un.org/doc/Treaties/2022/12/20221207%2011-11%20AM/CH_%20X-21.pdf"
+            target="_blank&quot;">Certified True Copy</a>
+        </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px"> The United Nations Convention on the International Effects of
+          Judicial Sales of Ships was adopted in New York on <b>7 December 2022 </b>by resolution
+          77/100 during the seventy-seventh session of the General Assembly of the United Nations.
+          The Convention shall be open for signature in Beijing on 5 September 2023, and remain open
+          for signature thereafter at UN Headquarters in New York. </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" /> &nbsp;Treaty Event 2023: Towards universal
+          participation in multilateral environmental agreements for a healthy planet (19 - 22
+          September 2023, United Nations Headquarters) </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">This year’s Treaty Event will be held from
+        <b>19 to 22 September 2023</b> at the United Nations Headquarters in New York, in
+        conjunction with the general debate of the seventy-eighth session of the General Assembly.
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">The Treaty Event will highlight multilateral environmental
+        agreements deposited with the Secretary-General as well as treaties that cover a number of
+        areas of global concern, including human rights, gender equality, the law of the sea, and
+        disarmament. The Treaty Event may be used to sign and ratify or accede to any treaty for
+        which the Secretary-General acts as depositary.
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px">For more details, please refer to the <img alt=""
+            src="../images/arr.png" />&nbsp;<a
+            href="https://treaties.un.org/doc/source/events/2023/Publication/publication-english.pdf"
+            target="_blank&quot;">2023 Treaty Event publication</a></br>
+        </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" /> &nbsp;General Assembly&nbsp;&nbsp;resolution
+          76/120 of 9 December 2021 - amended regulations&nbsp;to give effect to article 102 of
+          the&nbsp;Charter</span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px"> During its seventy-sixth session and following the Sixth
+          Committee's debate on the agenda item on “Strengthening and promoting the international
+          treaty framework”, the General Assembly adopted, on 9 December 2021, resolution 76/120 to
+          which newly amended Regulations were annexed. This fifth amendment became <b> effective on
+          1 February 2022</b> and is available at the following link:<br>&nbsp;<img alt=""
+              src="../images/arr.png" />&nbsp;<a
+              href="../doc/source/publications/NV/2021/Regulations-English-2021.pdf"
+              target="_blank&quot;">LA 41 TR/230/Regulations/2021</a></br>
+        </span>
+      </p>
+
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" />&nbsp; Regional Agreement on Access to
+          Information, Public Participation and Justice in Environmental Matters in Latin America
+          and the Caribbean </span>
+        <br />
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px"> On 22 January 2021, the conditions for the entry into force
+          of the Regional Agreement on Access to Information Public Participation and Justice in
+          Environmental Matters in Latin America and the Caribbean (adopted in Escazu 4 March 2018)
+          were met. Accordingly, the Agreement shall enter into force on <b>22 April 2021</b>. <br />
+          <img
+            alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+            <a href="https://treaties.un.org/doc/Publication/CN/2021/CN.15.2021-Eng.pdf"
+              target="_blank&quot;">C.N.15.2021.TREATIES-XXVII.18 (Depositary Notification)</a>
+          </span>
+        </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" />&nbsp; Framework Agreement on Facilitation of
+          Cross-border Paperless Trade in Asia and the Pacific </span>
+        <br />
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px"> With the deposit on 22 November 2020 of the fifth instrument
+          of ratification, acceptance, approval or accession, the Framework Agreement on
+          Facilitation of Cross-border Paperless Trade in Asia and the Pacific, adopted in Bangkok
+          on 19 May 2016, shall enter into force on <b>20 February 2021</b> , in accordance with its
+          article 19, paragraph 1. <br />
+          <img alt="" src="../images/arr.png" />&nbsp; <span
+            style="font-size: 13px">
+            <a href="https://treaties.un.org/doc/Publication/CN/2020/CN.536.2020-Eng.pdf"
+              target="_blank&quot;">C.N.536.2020.TREATIES-X.20 (Depositary Notification)</a>
+          </span>
+        </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" />&nbsp; Treaty on the Prohibition of Nuclear
+          Weapons </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px"> With the deposit of the fiftieth instrument of ratification
+          or accession on 24 October 2020, the Treaty on the Prohibition of Nuclear Weapons, adopted
+          in New York on 7 July 2017, shall enter into force on <b>22 January 2021</b> , in
+          accordance with its article 15, paragraph 1. <br />
+          <img alt="" src="../images/arr.png" />
+          &nbsp; <span style="font-size: 13px">
+            <a href="https://treaties.un.org/doc/Publication/CN/2020/CN.478.2020-Eng.pdf"
+              target="_blank&quot;">C.N.478.2020.TREATIES-XXVI.9 (Depositary Notification)</a>
+          </span>
+        </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" />&nbsp; United Nations Convention on
+          International Settlement Agreements Resulting from Mediation </span>
+      </p>
+      <p style="text-align: justify">
+        <span style="font-size: 13px"> With the deposit with the Secretary-General on 12 March 2020
+          of the third instrument of ratification, the United Nations Convention on International
+          Settlement Agreements Resulting from Mediation, also known as the “Singapore Convention on
+          Mediation”, shall enter into force on <b>12 September 2020</b> . </span>
+      </p>
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" />&nbsp; Convention on the Facilitation of
+          Border Crossing Procedures for Passengers, Luggage and Load-luggage Carried in
+          International Traffic by Rail. Geneva,&nbsp;Geneva, 22 February 2019 </span>
+      </p>
+
+      <p style="text-align: justify">
+        <img alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CN/2019/CN.126.2019-Eng.pdf"
+            target="_blank&quot;">Issuance of Certified True Copies</a>
+        </span>
+        <br />
+        <img
+          alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Treaties/2019/02/20190222%2012-25%20PM/CH_XI_C_7.pdf"
+            target="_blank&quot;">Certified True Copy</a>
+        </span>
+      </p>
+
+      <p style="text-align: justify">
+        <span style="font-size: 13px"> The Convention was adopted on <b>22 February 2019</b> at the
+          eighty-first session of the Inland Transport Committee of the United Nations Economic
+          Commission for Europe held in Geneva from 19 to 22 February 2019. In accordance with its
+          article 21, the Convention shall be open for signature at the United Nations Headquarters
+          in New York by all States and regional economic integration organizations. </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" />&nbsp; United Nations Convention on
+          International Settlement Agreements Resulting from Mediation. New York,&nbsp;20 December
+          2018 </span>
+      </p>
+
+      <p style="text-align: justify">
+        <img alt="" src="../images/arr.png" /> &nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CN/2019/CN.154.2019-Eng.pdf"
+            target="_blank&quot;">Issuance of Certified True Copies</a>
+        </span>
+        <br />
+        <img
+          alt="" src="../images/arr.png" />&nbsp; <span style="font-size: 13px">
+          <a href="https://treaties.un.org/doc/Publication/CN/2019/CN.155.2019-Eng.pdf"
+            target="_blank&quot;">Opening for Signature - Information</a>
+        </span>
+        <br />
+        <img
+          alt="" src="../images/arr.png" /> &nbsp; <span style="font-size: 13px">
+          <a href="https://www.singaporeconvention.org/resources/videos" target="_blank&quot;">Opening
+        for Signature - Ceremony</a>
+        </span>
+      </p>
+
+      <p style="text-align: justify">
+        <span style="font-size: 13px"> The Convention was adopted on 20 December 2018 by resolution
+          73/198 during the seventy-third session of the General Assembly of the United Nations. The
+          Convention shall be open for signature by all States in Singapore, on <b>7 August 2019</b>
+          , and thereafter at United Nations Headquarters in New York. </span>
+      </p>
+
+      <p style="font-variant: small-caps; text-align: justify">
+        <span style="font-size: 13px">
+          <img alt="" src="../images/bullitino2.gif" /> &nbsp;General Assembly&nbsp;&nbsp;resolution
+          73/210 of 20 december 2018 - amended regulations&nbsp;to give effect to article 102 of
+          the&nbsp;Charter </span>
+      </p>
+
+      <p style="text-align: justify">
+        <span style="font-size: 13px"> During its seventy-third session and following the Sixth
+          Committee&#39;s debate on the agenda item entitled &ldquo;Strengthening and promoting the
+          international treaty framework&rdquo;, the General Assembly adopted on 20 December 2018
+          the Resolution 73/210, to which newly amended Regulations were annexed . This fourth
+          amendment, which became <b>effective on 1 February 2019</b> , adapts the Regulations to
+          developments in the registration practice and information technology, and ensures
+          consistency with regard to the treaty-making practice of the international community. For
+          more information&nbsp;on this latest&nbsp;amendement and its&nbsp;impact on the treaty
+          registration and publication process, see the following document: <img alt=""
+            src="../images/arr.png" /> &nbsp; <span style="font-size: 13px">
+            <a href="../doc/source/publications/NV/2019/Regulations-English-2019.pdf"
+              target="_blank&quot;">LA 41 TR/230/Regulations/2019</a>
+          </span>
+        </span>
+      </p>
+    </div>
+    </div>
+</div>
+
+            <!-- End of Announcement Details -->
+            <p class="automated-subscription-services clearfix">
+                <a id="ctl00_ContentPlaceHolder1_linkSubscription" href="Pages/Login.aspx?lang=_en">Automated Subscription Services</a>
+            </p>
+        </div>
+        <!-- End of Announcement Section -->
+        <!-- Start of Depositary Section -->
+        <div class="col-sm-6 home-depositary">
+            <h4>
+                <span id="ctl00_ContentPlaceHolder1_lblDepositaryHeader" alt=" Depository of Treaties">Depositary of Treaties</span></h4>
+            <p class="hometext text-justify">
+                <img src="../images/img-depositary.jpg" id="imgDepository"  class="home-img-right">
+                <span id="ctl00_ContentPlaceHolder1_lblDepositaryText" style="font-size:15px;">The Secretary-General of the United Nations is the depositary of more than 600 multilateral treaties which cover a broad range of subject matters such as human rights, disarmament and protection of the environment.</span>
+            </p>
+            <ul class="normallist left">
+                <li>
+                    <a id="ctl00_ContentPlaceHolder1_linkStatusOfTreaties" href="Pages/ParticipationStatus.aspx?clang=_en" style="font-weight:bold;">Status of Treaties Deposited with the Secretary-General</a>
+                </li>
+                <li>
+                    <a id="ctl00_ContentPlaceHolder1_linkDepositaryNotification" href="Pages/CNs.aspx?cnTab=tab2&amp;clang=_en">Depositary Notifications</a>
+                </li>
+                <li>
+                    <a id="ctl00_ContentPlaceHolder1_linkCTC" href="Pages/CTCs.aspx?clang=_en">Certified True Copies</a>
+                </li>
+                <li>
+                    <a id="ctl00_ContentPlaceHolder1_linkPhotos" href="Pages/PhotoList.aspx?clang=_en">Photos of Treaty Ceremonies</a>
+                </li>
+                <li>
+                    <a id="ctl00_ContentPlaceHolder1_linkModelInstrument" href="Pages/Content.aspx?path=Publication/ModelInstruments/Page1_en.xml">Model Instruments for Deposit</a> 
+                   
+                </li>
+            </ul>
+            
+            <h3>  
+                <p class="automated-subscription-services clearfix" style="height:32px;line-height:32px;background:#d3d3d3">              
+                <span id="ctl00_ContentPlaceHolder1_lblRecentDevelopmentHeader1" style="font-size:16px;font-weight:normal;">Recent Developments</span>
+                </p>
+            </h3>
+            <div style="height:45px">&nbsp;</div>
+            
+            <div class="col-sm-12 r-pad-0 pad-left">
+                
+
+<h6>
+    <span id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_lblLatestDepositaryNotificationsHeader">Latest Depositary Notifications</span></h6>
+
+        <ul class="normallist no-r-pad no-mar-btm">
+    
+        <li>
+            <a id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl01_lnkCNNumber" href="doc/Publication/CN/2026/CN.506.2026-Eng.pdf" target="_blank">CN.506.2026</a>
+            <span id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl01_lblDate"> - 20/11/2026</span>
+            <span id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl01_lblData" title="Tajikistan - Withdrawal"> - Tajikistan - Withdrawal - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl01_lnkMTDSG" title="Rome Statute of the International Criminal Court" href="/Pages/ViewDetails.aspx?src=TREATY&amp;mtdsg_no=XVIII-10&amp;chapter=18&amp;clang=_en" target="_blank">XVIII-10</a>
+        </li>
+    
+        <li>
+            <a id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl02_lnkCNNumber" href="doc/Publication/CN/2026/CN.505.2026-Eng.pdf" target="_blank">CN.505.2026</a>
+            <span id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl02_lblDate"> - 20/11/2026</span>
+            <span id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl02_lblData" title="Austria - Objection"> - Austria - Objection - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl02_lnkMTDSG" title="International Covenant on Civil and Political Rights" href="/Pages/ViewDetails.aspx?src=TREATY&amp;mtdsg_no=IV-4&amp;chapter=4&amp;clang=_en" target="_blank">IV-4</a>
+        </li>
+    
+        <li>
+            <a id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl03_lnkCNNumber" href="doc/Publication/CN/2026/CN.504.2026-Eng.pdf" target="_blank">CN.504.2026</a>
+            <span id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl03_lblDate"> - 20/11/2026</span>
+            <span id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl03_lblData" title="Finland - Objection"> - Finland - Objection - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl03_lnkMTDSG" title="International Covenant on Civil and Political Rights" href="/Pages/ViewDetails.aspx?src=TREATY&amp;mtdsg_no=IV-4&amp;chapter=4&amp;clang=_en" target="_blank">IV-4</a>
+        </li>
+    
+        <li>
+            <a id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl04_lnkCNNumber" href="doc/Publication/CN/2026/CN.503.2026-Eng.pdf" target="_blank">CN.503.2026</a>
+            <span id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl04_lblDate"> - 20/11/2026</span>
+            <span id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl04_lblData" title="United Kingdom of Great Britain and Northern Ireland - Objection"> - United Kingdom of Great Brita... - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl04_lnkMTDSG" title="International Covenant on Civil and Political Rights" href="/Pages/ViewDetails.aspx?src=TREATY&amp;mtdsg_no=IV-4&amp;chapter=4&amp;clang=_en" target="_blank">IV-4</a>
+        </li>
+    
+        <li>
+            <a id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl05_lnkCNNumber" href="doc/Publication/CN/2026/CN.502.2026-Eng.pdf" target="_blank">CN.502.2026</a>
+            <span id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl05_lblDate"> - 20/11/2026</span>
+            <span id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl05_lblData" title="Bolivia (Plurinational State of) - Accession"> - Bolivia (Plurinational State ... - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_rptDepositaryNotification_ctl05_lnkMTDSG" title="International Convention for the Suppression of Acts of Nuclear Terrorism" href="/Pages/ViewDetails.aspx?src=TREATY&amp;mtdsg_no=XVIII-15&amp;chapter=18&amp;clang=_en" target="_blank">XVIII-15</a>
+        </li>
+    
+        </ul>
+    
+<div class="rows">
+    <a id="ctl00_ContentPlaceHolder1_LatestDepositaryNotifications_lnkMoreCN" class="align-left" href="Pages/CNs.aspx?cnTab=tab1&amp;clang=_en">See more ...</a>
+</div>
+               
+                
+
+<h6>
+    <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_lblLatestCeremoniesHeader">Latest Ceremonies</span></h6>
+
+        <ul class="normallist left no-mar-btm">
+    
+        <li>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl01_lblDate">13/11/2026</span>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl01_lblSeparator"> - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl01_lnkData" title="Lesotho - Acceptance" rel="lightbox[group]" caption="H.E. Mr. Matete Paul Nena, Ambassador Extraordinary and Plenipotentiary, Permanent Representative, Permanent Mission of the Kingdom of Lesotho to the United Nations" href="doc/Treaties/2004/02/20040217%2005-46%20AM/Actions/1794597785518-WS-XXVII-5(and%20-b)-Lesotho-Accession%20and%20Acceptance.jpg">Lesotho - Acceptance</a>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl01_lblSeparator2"> - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl01_lnkMTDSG" title="Amendments to Articles 25 and 26 of the Convention on the Protection and Use of Transboundary Watercourses and International Lakes" href="/Pages/ViewDetails.aspx?src=TREATY&amp;mtdsg_no=XXVII-5-b&amp;chapter=27&amp;clang=_en" target="_blank">XXVII-5-b</a>
+        </li>
+    
+        <li>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl02_lblDate">13/11/2026</span>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl02_lblSeparator"> - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl02_lnkData" title="Lesotho - Accession" rel="lightbox[group]" caption="H.E. Mr. Matete Paul Nena, Ambassador Extraordinary and Plenipotentiary, Permanent Representative, Permanent Mission of the Kingdom of Lesotho to the United Nations" href="doc/Treaties/1992/03/19920317%2005-46%20AM/Actions/1794597572245-WS-XXVII-5(and%20-b)-Lesotho-Accession%20and%20Acceptance.jpg">Lesotho - Accession</a>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl02_lblSeparator2"> - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl02_lnkMTDSG" title="Convention on the Protection and Use of Transboundary Watercourses and International Lakes" href="/Pages/ViewDetails.aspx?src=TREATY&amp;mtdsg_no=XXVII-5&amp;chapter=27&amp;clang=_en" target="_blank">XXVII-5</a>
+        </li>
+    
+        <li>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl03_lblDate">26/10/2026</span>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl03_lblSeparator"> - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl03_lnkData" title="Venezuela (Bolivarian Republic of) - Signature" rel="lightbox[group]" caption="H.E. Mr. Jesús Alberto García, Ambassador Extraordinary and Plenipotentiary of the Bolivarian Republic of Venezuela to the Republic of Benin and the Republic of Ghana" href="doc/Treaties/2025/12/20251215%2011-17%20AM/Actions/1793044073798-WS-UNCITRAL-SC-72-Bolivarian%20Republic%20of%20Venezuela.jpg">Venezuela (Bolivarian Republi...</a>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl03_lblSeparator2"> - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl03_lnkMTDSG" title="United Nations Convention on Negotiable Cargo Documents" href="/Pages/ViewDetails.aspx?src=TREATY&amp;mtdsg_no=X-22&amp;chapter=10&amp;clang=_en" target="_blank">X-22</a>
+        </li>
+    
+        <li>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl04_lblDate">26/10/2026</span>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl04_lblSeparator"> - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl04_lnkData" title="United Republic of Tanzania - Signature" rel="lightbox[group]" caption="H.E. Mr. Mohamed Malick Salum, Director General, Tanzania Shipping Agencies Corporation of the Ministry of Transport, of the United Republic of Tanzania" href="doc/Treaties/2025/12/20251215%2011-17%20AM/Actions/1793044039291-WS-UNCITRAL-SC-71-United%20Republic%20of%20Tanzania.jpg">United Republic of Tanzania -...</a>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl04_lblSeparator2"> - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl04_lnkMTDSG" title="United Nations Convention on Negotiable Cargo Documents" href="/Pages/ViewDetails.aspx?src=TREATY&amp;mtdsg_no=X-22&amp;chapter=10&amp;clang=_en" target="_blank">X-22</a>
+        </li>
+    
+        <li>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl05_lblDate">26/10/2026</span>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl05_lblSeparator"> - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl05_lnkData" title="Togo - Signature" rel="lightbox[group]" caption="H.E. Mr. Awoki B. Panassa, High Commissioner of the Togolese Republic to the Republic of Ghana" href="doc/Treaties/2025/12/20251215%2011-17%20AM/Actions/1793044002714-WS-UNCITRAL-SC-69-Togo.jpg">Togo - Signature</a>
+            <span id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl05_lblSeparator2"> - </span>
+            <a id="ctl00_ContentPlaceHolder1_LatestCeremonies_rptCeremonies_ctl05_lnkMTDSG" title="United Nations Convention on Negotiable Cargo Documents" href="/Pages/ViewDetails.aspx?src=TREATY&amp;mtdsg_no=X-22&amp;chapter=10&amp;clang=_en" target="_blank">X-22</a>
+        </li>
+    
+        </ul>
+    
+<div class="rows">
+    <a id="ctl00_ContentPlaceHolder1_LatestCeremonies_lnkMoreCeremonies" class="align-left" href="Pages/PhotoList.aspx?clang=_en">See more ...</a>
+</div>                
+            </div>
+        </div>
+        <!-- End of Depositary Section -->
+        <!-- Start of Registration & Publication Section -->
+        <div class="col-sm-6 home-registration-and-publication">
+            <h4>
+                <span id="ctl00_ContentPlaceHolder1_lblRegistraionPublication">Registration and Publication of Treaties</span>
+            </h4>
+            <p class="hometext text-justify">
+                <img src="../images/img-registrationandpublication.jpg" id="imgRegPublication" class="home-img-right">
+                <span id="ctl00_ContentPlaceHolder1_Label1" style="font-size:15px;">"Every treaty and every international agreement entered into by any Member of the United Nations ... shall as soon as possible be registered with the Secretariat and published by it." (Article 102 of the Charter of the United Nations).</span>
+            </p>
+            <ul class="normallist left">
+                <li>
+                    <a id="ctl00_ContentPlaceHolder1_linkUNTreatiesSection" href="Pages/AdvanceSearch.aspx?tab=UNTS&amp;clang=_en" style="font-weight:bold;">United Nations Treaty Series</a>
+                </li>
+                <li>
+                    <a id="ctl00_ContentPlaceHolder1_linkMonthlyStatement" href="Pages/MSDatabase.aspx?clang=_en">Monthly Statements</a>
+                </li>
+                <li>
+                    <a id="ctl00_ContentPlaceHolder1_linkCumulativeIndex" href="Pages/CumulativeIndexes.aspx?clang=_en">Cumulative Index</a>
+                </li>
+                <li>
+                    <a id="ctl00_ContentPlaceHolder1_linkLON" href="Pages/LONOnline.aspx?clang=_en">League of Nations Treaty Series</a>
+                </li>
+                <li>
+                    <span id="ctl00_ContentPlaceHolder1_lblChklists" style="color:#24559D;">Checklists</span> - 
+                    <a id="ctl00_ContentPlaceHolder1_linkRegistrationChecklist" href="https://treaties.un.org/doc/source/checklist-E.pdf" target="_blank">Registration</a> / 
+                    <a id="ctl00_ContentPlaceHolder1_linkPublicationChecklist" href="doc/source/PublicationChecklist-E.pdf" target="_blank">Publication</a>
+                </li>
+            </ul>
+            <h3>
+                 <p class="automated-subscription-services clearfix" style="height:32px;line-height:32px;background:#d3d3d3">         
+                    <span id="ctl00_ContentPlaceHolder1_Label2" style="font-size:16px;font-weight:normal;">Recent Developments</span>
+                 </p>
+
+            </h3>
+             <div style="height:45px">&nbsp;</div>   
+            <div  class="col-sm-12 pad-left" style="padding:0px;">
+                 
+
+<h6><span id="ctl00_ContentPlaceHolder1_LatestPublishedTreaties_lblLatestPublishedTreaties">Latest Registered Treaties</span></h6>
+
+        <ul class="list-inline02 left no-mar-btm">
+    
+        <li>            
+            <a id="ctl00_ContentPlaceHolder1_LatestPublishedTreaties_rptPublishedTreaties_ctl01_lnkPdf" title="Bratislava - 01-Jun-2026" href="/Pages/showDetails.aspx?objid=08000002806b5f98" target="_blank">I-59515 - Slovakia and India - Agreement between the Governm...</a>
+        </li>
+    
+        <li>            
+            <a id="ctl00_ContentPlaceHolder1_LatestPublishedTreaties_rptPublishedTreaties_ctl02_lnkPdf" title="Bratislava - 30-Nov-2000" href="/Pages/showDetails.aspx?objid=08000002806b5f77" target="_blank">I-59518 - Slovakia and Croatia - Agreement between the Gover...</a>
+        </li>
+    
+        <li>            
+            <a id="ctl00_ContentPlaceHolder1_LatestPublishedTreaties_rptPublishedTreaties_ctl03_lnkPdf" title="Madrid - 16-Jul-2026, New York - 13-Jul-2026" href="/Pages/showDetails.aspx?objid=08000002806b678f" target="_blank">I-59517 - Spain and United Nations (United Nations Developme...</a>
+        </li>
+    
+        <li>            
+            <a id="ctl00_ContentPlaceHolder1_LatestPublishedTreaties_rptPublishedTreaties_ctl04_lnkPdf" title="New York - 19-Aug-2026" href="/Pages/showDetails.aspx?objid=08000002806b42c2" target="_blank">I-59516 - Republic of Korea and United Nations - Exchange of...</a>
+        </li>
+    
+        <li>            
+            <a id="ctl00_ContentPlaceHolder1_LatestPublishedTreaties_rptPublishedTreaties_ctl05_lnkPdf" title="Geneva - 25-Feb-2026" href="/Pages/showDetails.aspx?objid=080000028069e64b" target="_blank">A-15121 - Multilateral - Amendments to the Agreement on the ...</a>
+        </li>
+    
+        </ul>
+    
+<div class="rows">
+    <a id="ctl00_ContentPlaceHolder1_LatestPublishedTreaties_lnkMoreMS" class="align-left" href="Pages/LatestTreaties.aspx?clang=_en">See more ...</a>
+</div>                
+            </div>
+           <div class="col-lg-7 left pad-left">
+                    
+                 
+
+<h6><span id="ctl00_ContentPlaceHolder1_LatestVolumes_lblLatestVolumesHeader">Latest Volumes of the Treaty Series</span></h6>
+
+        <ul class="list-inline02 left no-mar-btm">
+    
+        <li>
+            <a id="ctl00_ContentPlaceHolder1_LatestVolumes_rptVolume_ctl01_lnkPdf" href="doc/Publication/UNTS/Volume%203237/v3237.pdf" target="_blank">Volume 3237</a>
+            
+        </li>
+    
+        <li>
+            <a id="ctl00_ContentPlaceHolder1_LatestVolumes_rptVolume_ctl02_lnkPdf" href="doc/Publication/UNTS/Volume%203224/v3224.pdf" target="_blank">Volume 3224</a>
+            
+        </li>
+    
+        <li>
+            <a id="ctl00_ContentPlaceHolder1_LatestVolumes_rptVolume_ctl03_lnkPdf" href="doc/Publication/UNTS/Volume%203238/v3238.pdf" target="_blank">Volume 3238</a>
+            
+        </li>
+    
+        <li>
+            <a id="ctl00_ContentPlaceHolder1_LatestVolumes_rptVolume_ctl04_lnkPdf" href="doc/Publication/UNTS/Volume%203219/v3219.pdf" target="_blank">Volume 3219</a>
+            
+        </li>
+    
+        <li>
+            <a id="ctl00_ContentPlaceHolder1_LatestVolumes_rptVolume_ctl05_lnkPdf" href="doc/Publication/UNTS/Volume%203228/v3228.pdf" target="_blank">Volume 3228</a>
+            
+        </li>
+    
+        </ul>
+    
+   <div class="rows">
+        <a id="ctl00_ContentPlaceHolder1_LatestVolumes_lnkMoreMS" class="align-left" href="Pages/LatestVolumes.aspx?clang=_en">See more ...</a>
+    </div>            
+            </div>
+           
+        </div>
+        <!-- End of Registration & Publication Section -->
+    </div>
+    <!-- End of Contentarea Section -->
+
+     <input id="sessionInput" type="hidden" value='' />
+
+
+        </div>
+        <!-- Start of Footer Section -->
+        <div id="ctl00_Footer_div_tout">
+<div class="footer-section">
+<div class="container">
+<div class="col-sm-4">
+<h4>ABOUT</h4>
+
+<ul>
+	<li><a href="https://www.un.org/ola/en/content/div-treaty" target="_blank">Treaty Section</a></li>
+	<li class="text-nowrap"><a href="https://www.un.org/ola/" target="_blank">Office of Legal Affairs</a></li>
+</ul>
+</div>
+
+<div class="col-sm-5">
+<h4>QUICK LINKS</h4>
+
+<ul>
+	<li><a href="../Pages/Login.aspx?lang=_en">Automated Subscription Services</a></li>
+	<li><a href="../Pages/Resource.aspx?path=Publication/TH/Page1_en.xml">Treaty Handbook</a></li>
+	<li><a href="../Pages/Resource.aspx?path=Publication/FC/Page1_en.xml">Final Clauses Handbook</a></li>
+	<li><a href="../Pages/Resource.aspx?path=Publication/SoP/Page1_en.xml">Summary of Practice</a></li>
+</ul>
+</div>
+
+<div class="col-sm-3">
+<h4>HELP</h4>
+
+<ul>
+	<li><a href="../Pages/Overview.aspx?path=overview/faq/page1_en.xml">FAQ</a></li>
+	<li><a href="../doc/source/guide_en.pdf" target="_blank">Website User Guide</a></li>
+	<li><a href="../Pages/Overview.aspx?path=overview/sitemap/page1_en.xml">Sitemap</a></li>
+</ul>
+</div>
+
+<div class="col-sm-12 footer-links">
+<ul>
+	<li><a href="https://www.un.org/en/about-us/copyright" target="_blank">COPYRIGHT</a></li>
+	<li>|</li>
+	<li><a href="https://www.un.org/en/about-us/fraud-alert" target="_blank">FRAUD ALERT</a></li>
+	<li>|</li>
+	<li><a href="https://www.un.org/en/about-us/privacy-notice" target="_blank">PRIVACY NOTICE</a></li>
+	<li>|</li>
+	<li><a href="https://www.un.org/en/about-us/terms-of-use" target="_blank">TERMS OF USE</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+        <!-- End of Footer Section -->
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":1,"dynamicLayout":true}, null, null, $get("ctl00_UpdtProgress"));
+});
+//]]>
+</script>
+</form>
+    <script type="text/javascript">     
+        $(document).ready(function () {            
+            var hdnLangSearch = $("#ctl00_hdnLanguage").val();
+            if (hdnLangSearch == '_en')
+            {
+                $('#txtSearch').removeAttr('value');
+                $('txtSearch').attr('placeholder', 'Search');
+            }
+            else
+            {
+                $('#txtSearch').removeAttr('value');
+                $('#txtSearch').attr('placeholder', 'Recherche');
+            }
+            
+            //if ($(window).width() > 767)
+            {
+                //Open navbar menu items on hover
+                $(".nav li.nav-item.dropdown")
+                    .on("mouseenter",
+                        function () {
+                            $('.dropdown-menu', this).stop(true, true).fadeIn("fast");
+                            $('span', this).toggleClass("fa-angle-down fa-angle-up");
+                            $(this).addClass('open');
+                        }).on("mouseleave",
+                            function () {
+                                $('.dropdown-menu', this).stop(true, true).fadeOut("fast");
+                                $('span', this).toggleClass("fa-angle-down fa-angle-up");
+                                $(this).removeClass('open');
+                                $(this).children("a").removeClass("show");
+                                $(this).children("ul").removeClass("show");
+                        });
+
+                //IR - 20230621 - Bootstrap's default behaviour is to require a click to open and close dropdown (https://markdotto.com/2012/02/27/bootstrap-explained-dropdowns/); the code above has been adjusted to deal with that, no longer needing the code below for "click" event (it was throwing errors anyway)
+                /*
+                $('.nav li.nav-item.dropdown').on('click', function (event) {
+                    $(this).parent().siblings().removeClass('open');
+                    $(this).parent().siblings().children("ul").removeClass('show');
+                    $(this).parent().toggleClass('open');
+                    if ($(this).parent().hasClass("open")) {
+                        $(this).siblings().css("display", "none");
+                        $(this).parent().context.firstElementChild.className = 'fa caret fa-angle-down';
+                        //alert($(this).parent().context.firstElementChild.className);
+                    }
+                    else
+                    {
+                        $(this).siblings().css("display", "block");
+                        $(this).parent().context.firstElementChild.className = 'fa caret fa-angle-up';
+                        //alert($(this).parent().context.firstElementChild.className);
+                    }
+                    //alert($(this).parent().context.firstElementChild);
+                });
+                */
+            }
+            //if ($(window).width() < 767)
+            //{
+            //    alert("test");
+            //    //setTimeout(function () {
+            //    //    $("#ctl00_TopMenu_rptTopMenu_ctl01_linkMenu").attr('href', '#');
+            //    //}, 0);
+            //    //$("a[id$='linkMenu']").attr('href', '#');
+            //    $(".test12").attr('href', '#');
+            //}
+            //else
+            //{
+            //    //alert($("a[id$='linkMenu'].dropdown-toggle"));
+            //    $("a[id$='linkMenu'].dropdown-toggle").removeAttr('href');
+            //    $("a[id$='linkMenu'].dropdown-toggle").click(
+            //          function () {
+            //              alert('1st');
+            //              $('.dropdown-menu', this).stop(true, true).fadeIn("fast");
+            //              $(this).addClass('open');
+            //              $('span', this).toggleClass("fa-angle-down fa-angle-up");
+            //          },
+            //          function () {
+            //              alert('2nd');
+            //              $('.dropdown-menu', this).stop(true, true).fadeOut("fast");
+            //              $(this).removeClass('open');
+            //              $(this).find("ul").show();
+            //              $('span', this).toggleClass("fa-angle-down fa-angle-up");
+            //              //return true;
+            //          });
+            //}
+        });
+
+        //        //alert("1")
+                //$("[id$='linkMenu']").off('click');
+                //$("[id$='linkMenu']").attr("disabled", "disabled");
+                //alert("2");
+                //$(".dropdown").click(
+                //      function () {
+                //          alert("2");
+                //          $('.dropdown-menu', this).stop(true, true).fadeIn("fast");
+                //          $(this).addClass('open');
+                //          $('span', this).toggleClass("fa-angle-down fa-angle-up");
+                //      },
+                //      function () {
+                //          $('.dropdown-menu', this).stop(true, true).fadeOut("fast");
+                //          $(this).removeClass('open');
+                //          $('span', this).toggleClass("fa-angle-down fa-angle-up");
+                //      });
+                //alert("Mobile");
+                //alert($("[id$='linkMenu']").attr('href'));
+                //$("[id$='linkMenu']").removeAttr('href');
+                //alert("Mobile");
+                //alert($(".dropdown-toggle").attr('href'));
+                //$(".dropdown-toggle").removeAttr("href");
+                //$("element[id$='txtTitle']")
+                //$("[id$='txtTitle']")
+                //$('#disableanchor').attr("disabled", "disabled");
+                //$("#anchorid").off('click');
+
+           
+            //else
+            //{
+            //    alert("Mobile")
+            //    $("#ctl00_ctl00_TopMenu_rptTopMenu_ctl02_linkMenu".removeAttr("href"));
+            //}
+                //$("a").removeAttr("href");
+
+
+            //}
+            //else
+            //{
+               
+            
+
+            
+           
+        
+
+        function FullTextSearch() {
+            //alert("start");
+            var txtValue = $("#txtSearch").val();
+            var hdnLang = $("#ctl00_hdnLanguage").val();
+            if (hdnLang.indexOf("_") == 0) {
+                hdnLang = hdnLang.replace("_", "");
+            }
+
+            if ((txtValue != null && txtValue != '')) {
+                //var urlen = escape('url:("treaties.un.org")');
+                //var finalUrl = "http://search.un.org/?" + "query=" + encodeURI(txtValue) + "&fq=" + urlen + "&tpl=un" + "&lang=" + encodeURI(hdnLang);
+                //window.open(finalUrl);                
+                var urlen = escape('url:("treaties.un.org")');
+                //URL as provided by Unite Search via email on 2023-05-25
+                var finalUrl = "https://search.un.org/search?collection=un&currentPageNumber=1&fq=" + urlen + "&q=" + txtValue + "&row=10&sort=relevance&start=1"
+                /*
+                var finalUrl = "http://search.un.org/?" + "query=" + txtValue + "&fq=" + urlen 
+                    finalUrl = finalUrl + "&LtpaToken=b7mLRVDEmWbZCPwMSHW9UChjrzv8xDjUoxbAIsCiIW+KpsZF1El04LWr4AvkuVg5f+zPWPYYd+YKsmqdpwn5V%2F0KDzqotLfvHnLqLlRDfwDsNkMTMRJrh51m%2FyOFCoxOFbAxd6dUE3a2GncAvRAvJ1tzA7jG2rFEuX1DAv+h2XVaMoRhOKr3he0Q27bsrz30Of8eWiqSC1Niz5uKRhygWex9ZGk1Jsa1xyCTi5S6oVzE14F5%2FFhI6wHMa4XSiGtiElp3pqUAw%2F879nwnIET8W6d5nbamnWud6lTAXv2cVjHROynmWk08K8MgzZj1UFiq+Rs57mR3tEfQcQWTSjBzZw%3D%3D"
+                    finalUrl = finalUrl + "&lang=" + encodeURI(hdnLang) + "&tpl=custom" + "&page=1";
+                */
+                window.open(finalUrl);
+                //alert("end");
+                //document.write(finalUrl);
+
+
+
+            }
+        }
+    </script>
+</body>
+</html>

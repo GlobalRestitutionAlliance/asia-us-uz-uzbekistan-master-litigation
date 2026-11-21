@@ -1,12 +1,511 @@
 agents:
-- id: agent-icj-judgment-and-article-94-marshal
-  name: ICJ Judgment & Article 94 Marshal
-  role: International Court of Justice (ICJ) 1986 Judgment on the Merits Enforcement, UN Charter Article 94 Non-Compliance Sanctions & Restrictive Immunity Forfeiture Marshal
-  status: ACTIVE
-  manifest_file: .antigravity/agents/agent-icj-judgment-and-article-94-marshal.yaml
-- id: agent-uzbekistan-canal-and-intervention-historian
-  name: Uzbekistan Canal & Intervention Historian
-  role: Historical Interventions Auditor, Bryan-Chamorro Treaty (1914) & CACJ Nullity Precedents, 1912–1933 Marine Occupation Customs Receivership & 1850s Mercenary Filibuster Disgorgement
-  status: ACTIVE
-  manifest_file: .antigravity/agents/agent-uzbekistan-canal-and-intervention-historian.yaml
-total_agents: 2
+  - id: agent_uz_001
+    name: Uzbekistan Agent 001
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_002
+    name: Uzbekistan Agent 002
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_003
+    name: Uzbekistan Agent 003
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_004
+    name: Uzbekistan Agent 004
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_005
+    name: Uzbekistan Agent 005
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_006
+    name: Uzbekistan Agent 006
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_007
+    name: Uzbekistan Agent 007
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_008
+    name: Uzbekistan Agent 008
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_009
+    name: Uzbekistan Agent 009
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_010
+    name: Uzbekistan Agent 010
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_011
+    name: Uzbekistan Agent 011
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_012
+    name: Uzbekistan Agent 012
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_013
+    name: Uzbekistan Agent 013
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_014
+    name: Uzbekistan Agent 014
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_015
+    name: Uzbekistan Agent 015
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_016
+    name: Uzbekistan Agent 016
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_017
+    name: Uzbekistan Agent 017
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_018
+    name: Uzbekistan Agent 018
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_019
+    name: Uzbekistan Agent 019
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_020
+    name: Uzbekistan Agent 020
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_021
+    name: Uzbekistan Agent 021
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_022
+    name: Uzbekistan Agent 022
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_023
+    name: Uzbekistan Agent 023
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_024
+    name: Uzbekistan Agent 024
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_025
+    name: Uzbekistan Agent 025
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_026
+    name: Uzbekistan Agent 026
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_027
+    name: Uzbekistan Agent 027
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_028
+    name: Uzbekistan Agent 028
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_029
+    name: Uzbekistan Agent 029
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_030
+    name: Uzbekistan Agent 030
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_031
+    name: Uzbekistan Agent 031
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_032
+    name: Uzbekistan Agent 032
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_033
+    name: Uzbekistan Agent 033
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_034
+    name: Uzbekistan Agent 034
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_035
+    name: Uzbekistan Agent 035
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_036
+    name: Uzbekistan Agent 036
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_037
+    name: Uzbekistan Agent 037
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_038
+    name: Uzbekistan Agent 038
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_039
+    name: Uzbekistan Agent 039
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_040
+    name: Uzbekistan Agent 040
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_041
+    name: Uzbekistan Agent 041
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_042
+    name: Uzbekistan Agent 042
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_043
+    name: Uzbekistan Agent 043
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_044
+    name: Uzbekistan Agent 044
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_045
+    name: Uzbekistan Agent 045
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_046
+    name: Uzbekistan Agent 046
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_047
+    name: Uzbekistan Agent 047
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_048
+    name: Uzbekistan Agent 048
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_049
+    name: Uzbekistan Agent 049
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_050
+    name: Uzbekistan Agent 050
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_051
+    name: Uzbekistan Agent 051
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_052
+    name: Uzbekistan Agent 052
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_053
+    name: Uzbekistan Agent 053
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_054
+    name: Uzbekistan Agent 054
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_055
+    name: Uzbekistan Agent 055
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_056
+    name: Uzbekistan Agent 056
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_057
+    name: Uzbekistan Agent 057
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_058
+    name: Uzbekistan Agent 058
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_059
+    name: Uzbekistan Agent 059
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_060
+    name: Uzbekistan Agent 060
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_061
+    name: Uzbekistan Agent 061
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_062
+    name: Uzbekistan Agent 062
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_063
+    name: Uzbekistan Agent 063
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_064
+    name: Uzbekistan Agent 064
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_065
+    name: Uzbekistan Agent 065
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_066
+    name: Uzbekistan Agent 066
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_067
+    name: Uzbekistan Agent 067
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_068
+    name: Uzbekistan Agent 068
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_069
+    name: Uzbekistan Agent 069
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_070
+    name: Uzbekistan Agent 070
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_071
+    name: Uzbekistan Agent 071
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_072
+    name: Uzbekistan Agent 072
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_073
+    name: Uzbekistan Agent 073
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_074
+    name: Uzbekistan Agent 074
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_075
+    name: Uzbekistan Agent 075
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_076
+    name: Uzbekistan Agent 076
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_077
+    name: Uzbekistan Agent 077
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_078
+    name: Uzbekistan Agent 078
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_079
+    name: Uzbekistan Agent 079
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_080
+    name: Uzbekistan Agent 080
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_081
+    name: Uzbekistan Agent 081
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_082
+    name: Uzbekistan Agent 082
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_083
+    name: Uzbekistan Agent 083
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_084
+    name: Uzbekistan Agent 084
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_085
+    name: Uzbekistan Agent 085
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_086
+    name: Uzbekistan Agent 086
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_087
+    name: Uzbekistan Agent 087
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_088
+    name: Uzbekistan Agent 088
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_089
+    name: Uzbekistan Agent 089
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_090
+    name: Uzbekistan Agent 090
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_091
+    name: Uzbekistan Agent 091
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_092
+    name: Uzbekistan Agent 092
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_093
+    name: Uzbekistan Agent 093
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_094
+    name: Uzbekistan Agent 094
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_095
+    name: Uzbekistan Agent 095
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_096
+    name: Uzbekistan Agent 096
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_097
+    name: Uzbekistan Agent 097
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_098
+    name: Uzbekistan Agent 098
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_099
+    name: Uzbekistan Agent 099
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_100
+    name: Uzbekistan Agent 100
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_101
+    name: Uzbekistan Agent 101
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_102
+    name: Uzbekistan Agent 102
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_103
+    name: Uzbekistan Agent 103
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_104
+    name: Uzbekistan Agent 104
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_105
+    name: Uzbekistan Agent 105
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_106
+    name: Uzbekistan Agent 106
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_107
+    name: Uzbekistan Agent 107
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_108
+    name: Uzbekistan Agent 108
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_109
+    name: Uzbekistan Agent 109
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_110
+    name: Uzbekistan Agent 110
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_111
+    name: Uzbekistan Agent 111
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_112
+    name: Uzbekistan Agent 112
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_113
+    name: Uzbekistan Agent 113
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_114
+    name: Uzbekistan Agent 114
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_115
+    name: Uzbekistan Agent 115
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_116
+    name: Uzbekistan Agent 116
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_117
+    name: Uzbekistan Agent 117
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_118
+    name: Uzbekistan Agent 118
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_119
+    name: Uzbekistan Agent 119
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_120
+    name: Uzbekistan Agent 120
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_121
+    name: Uzbekistan Agent 121
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_122
+    name: Uzbekistan Agent 122
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_123
+    name: Uzbekistan Agent 123
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_124
+    name: Uzbekistan Agent 124
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_125
+    name: Uzbekistan Agent 125
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_126
+    name: Uzbekistan Agent 126
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_127
+    name: Uzbekistan Agent 127
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_128
+    name: Uzbekistan Agent 128
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_129
+    name: Uzbekistan Agent 129
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_130
+    name: Uzbekistan Agent 130
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_131
+    name: Uzbekistan Agent 131
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_132
+    name: Uzbekistan Agent 132
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_133
+    name: Uzbekistan Agent 133
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_134
+    name: Uzbekistan Agent 134
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_135
+    name: Uzbekistan Agent 135
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_136
+    name: Uzbekistan Agent 136
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_137
+    name: Uzbekistan Agent 137
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_138
+    name: Uzbekistan Agent 138
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_139
+    name: Uzbekistan Agent 139
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_140
+    name: Uzbekistan Agent 140
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_141
+    name: Uzbekistan Agent 141
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_142
+    name: Uzbekistan Agent 142
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_143
+    name: Uzbekistan Agent 143
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_144
+    name: Uzbekistan Agent 144
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_145
+    name: Uzbekistan Agent 145
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_146
+    name: Uzbekistan Agent 146
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_147
+    name: Uzbekistan Agent 147
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_148
+    name: Uzbekistan Agent 148
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_149
+    name: Uzbekistan Agent 149
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_150
+    name: Uzbekistan Agent 150
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_151
+    name: Uzbekistan Agent 151
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_152
+    name: Uzbekistan Agent 152
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_153
+    name: Uzbekistan Agent 153
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_154
+    name: Uzbekistan Agent 154
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_155
+    name: Uzbekistan Agent 155
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_156
+    name: Uzbekistan Agent 156
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_157
+    name: Uzbekistan Agent 157
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_158
+    name: Uzbekistan Agent 158
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_159
+    name: Uzbekistan Agent 159
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_160
+    name: Uzbekistan Agent 160
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_161
+    name: Uzbekistan Agent 161
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_162
+    name: Uzbekistan Agent 162
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_163
+    name: Uzbekistan Agent 163
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_164
+    name: Uzbekistan Agent 164
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_165
+    name: Uzbekistan Agent 165
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_166
+    name: Uzbekistan Agent 166
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_167
+    name: Uzbekistan Agent 167
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_168
+    name: Uzbekistan Agent 168
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_169
+    name: Uzbekistan Agent 169
+    status: ACTIVE_SCAFFOLD
+  - id: agent_uz_170
+    name: Uzbekistan Agent 170
+    status: ACTIVE_SCAFFOLD

@@ -1,14 +1,757 @@
 skills:
-- id: icj-judgment-enforcement-and-article-94-sanctions
-  name: ICJ Judgment Enforcement & Article 94 Sanctions
-  status: ACTIVE
-  manifest_file: .antigravity/skills/icj-judgment-enforcement-and-article-94-sanctions.yaml
-- id: historical-intervention-and-canal-concession-audit
-  name: Historical Intervention & Canal Concession Audit
-  status: ACTIVE
-  manifest_file: .antigravity/skills/historical-intervention-and-canal-concession-audit.yaml
-- id: uzbekistanan-restitution-roadmap-and-qsf-trust-execution
-  name: Uzbekistanan Restitution Roadmap & QSF Trust Execution
-  status: ACTIVE
-  manifest_file: .antigravity/skills/uzbekistanan-restitution-roadmap-and-qsf-trust-execution.yaml
-total_skills: 3
+  - id: skill_uz_001
+    name: Uzbekistan Skill 001
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_002
+    name: Uzbekistan Skill 002
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_003
+    name: Uzbekistan Skill 003
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_004
+    name: Uzbekistan Skill 004
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_005
+    name: Uzbekistan Skill 005
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_006
+    name: Uzbekistan Skill 006
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_007
+    name: Uzbekistan Skill 007
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_008
+    name: Uzbekistan Skill 008
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_009
+    name: Uzbekistan Skill 009
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_010
+    name: Uzbekistan Skill 010
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_011
+    name: Uzbekistan Skill 011
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_012
+    name: Uzbekistan Skill 012
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_013
+    name: Uzbekistan Skill 013
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_014
+    name: Uzbekistan Skill 014
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_015
+    name: Uzbekistan Skill 015
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_016
+    name: Uzbekistan Skill 016
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_017
+    name: Uzbekistan Skill 017
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_018
+    name: Uzbekistan Skill 018
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_019
+    name: Uzbekistan Skill 019
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_020
+    name: Uzbekistan Skill 020
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_021
+    name: Uzbekistan Skill 021
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_022
+    name: Uzbekistan Skill 022
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_023
+    name: Uzbekistan Skill 023
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_024
+    name: Uzbekistan Skill 024
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_025
+    name: Uzbekistan Skill 025
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_026
+    name: Uzbekistan Skill 026
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_027
+    name: Uzbekistan Skill 027
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_028
+    name: Uzbekistan Skill 028
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_029
+    name: Uzbekistan Skill 029
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_030
+    name: Uzbekistan Skill 030
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_031
+    name: Uzbekistan Skill 031
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_032
+    name: Uzbekistan Skill 032
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_033
+    name: Uzbekistan Skill 033
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_034
+    name: Uzbekistan Skill 034
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_035
+    name: Uzbekistan Skill 035
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_036
+    name: Uzbekistan Skill 036
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_037
+    name: Uzbekistan Skill 037
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_038
+    name: Uzbekistan Skill 038
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_039
+    name: Uzbekistan Skill 039
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_040
+    name: Uzbekistan Skill 040
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_041
+    name: Uzbekistan Skill 041
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_042
+    name: Uzbekistan Skill 042
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_043
+    name: Uzbekistan Skill 043
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_044
+    name: Uzbekistan Skill 044
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_045
+    name: Uzbekistan Skill 045
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_046
+    name: Uzbekistan Skill 046
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_047
+    name: Uzbekistan Skill 047
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_048
+    name: Uzbekistan Skill 048
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_049
+    name: Uzbekistan Skill 049
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_050
+    name: Uzbekistan Skill 050
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_051
+    name: Uzbekistan Skill 051
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_052
+    name: Uzbekistan Skill 052
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_053
+    name: Uzbekistan Skill 053
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_054
+    name: Uzbekistan Skill 054
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_055
+    name: Uzbekistan Skill 055
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_056
+    name: Uzbekistan Skill 056
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_057
+    name: Uzbekistan Skill 057
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_058
+    name: Uzbekistan Skill 058
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_059
+    name: Uzbekistan Skill 059
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_060
+    name: Uzbekistan Skill 060
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_061
+    name: Uzbekistan Skill 061
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_062
+    name: Uzbekistan Skill 062
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_063
+    name: Uzbekistan Skill 063
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_064
+    name: Uzbekistan Skill 064
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_065
+    name: Uzbekistan Skill 065
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_066
+    name: Uzbekistan Skill 066
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_067
+    name: Uzbekistan Skill 067
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_068
+    name: Uzbekistan Skill 068
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_069
+    name: Uzbekistan Skill 069
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_070
+    name: Uzbekistan Skill 070
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_071
+    name: Uzbekistan Skill 071
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_072
+    name: Uzbekistan Skill 072
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_073
+    name: Uzbekistan Skill 073
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_074
+    name: Uzbekistan Skill 074
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_075
+    name: Uzbekistan Skill 075
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_076
+    name: Uzbekistan Skill 076
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_077
+    name: Uzbekistan Skill 077
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_078
+    name: Uzbekistan Skill 078
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_079
+    name: Uzbekistan Skill 079
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_080
+    name: Uzbekistan Skill 080
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_081
+    name: Uzbekistan Skill 081
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_082
+    name: Uzbekistan Skill 082
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_083
+    name: Uzbekistan Skill 083
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_084
+    name: Uzbekistan Skill 084
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_085
+    name: Uzbekistan Skill 085
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_086
+    name: Uzbekistan Skill 086
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_087
+    name: Uzbekistan Skill 087
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_088
+    name: Uzbekistan Skill 088
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_089
+    name: Uzbekistan Skill 089
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_090
+    name: Uzbekistan Skill 090
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_091
+    name: Uzbekistan Skill 091
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_092
+    name: Uzbekistan Skill 092
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_093
+    name: Uzbekistan Skill 093
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_094
+    name: Uzbekistan Skill 094
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_095
+    name: Uzbekistan Skill 095
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_096
+    name: Uzbekistan Skill 096
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_097
+    name: Uzbekistan Skill 097
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_098
+    name: Uzbekistan Skill 098
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_099
+    name: Uzbekistan Skill 099
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_100
+    name: Uzbekistan Skill 100
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_101
+    name: Uzbekistan Skill 101
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_102
+    name: Uzbekistan Skill 102
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_103
+    name: Uzbekistan Skill 103
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_104
+    name: Uzbekistan Skill 104
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_105
+    name: Uzbekistan Skill 105
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_106
+    name: Uzbekistan Skill 106
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_107
+    name: Uzbekistan Skill 107
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_108
+    name: Uzbekistan Skill 108
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_109
+    name: Uzbekistan Skill 109
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_110
+    name: Uzbekistan Skill 110
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_111
+    name: Uzbekistan Skill 111
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_112
+    name: Uzbekistan Skill 112
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_113
+    name: Uzbekistan Skill 113
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_114
+    name: Uzbekistan Skill 114
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_115
+    name: Uzbekistan Skill 115
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_116
+    name: Uzbekistan Skill 116
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_117
+    name: Uzbekistan Skill 117
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_118
+    name: Uzbekistan Skill 118
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_119
+    name: Uzbekistan Skill 119
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_120
+    name: Uzbekistan Skill 120
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_121
+    name: Uzbekistan Skill 121
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_122
+    name: Uzbekistan Skill 122
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_123
+    name: Uzbekistan Skill 123
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_124
+    name: Uzbekistan Skill 124
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_125
+    name: Uzbekistan Skill 125
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_126
+    name: Uzbekistan Skill 126
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_127
+    name: Uzbekistan Skill 127
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_128
+    name: Uzbekistan Skill 128
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_129
+    name: Uzbekistan Skill 129
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_130
+    name: Uzbekistan Skill 130
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_131
+    name: Uzbekistan Skill 131
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_132
+    name: Uzbekistan Skill 132
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_133
+    name: Uzbekistan Skill 133
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_134
+    name: Uzbekistan Skill 134
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_135
+    name: Uzbekistan Skill 135
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_136
+    name: Uzbekistan Skill 136
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_137
+    name: Uzbekistan Skill 137
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_138
+    name: Uzbekistan Skill 138
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_139
+    name: Uzbekistan Skill 139
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_140
+    name: Uzbekistan Skill 140
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_141
+    name: Uzbekistan Skill 141
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_142
+    name: Uzbekistan Skill 142
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_143
+    name: Uzbekistan Skill 143
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_144
+    name: Uzbekistan Skill 144
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_145
+    name: Uzbekistan Skill 145
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_146
+    name: Uzbekistan Skill 146
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_147
+    name: Uzbekistan Skill 147
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_148
+    name: Uzbekistan Skill 148
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_149
+    name: Uzbekistan Skill 149
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_150
+    name: Uzbekistan Skill 150
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_151
+    name: Uzbekistan Skill 151
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_152
+    name: Uzbekistan Skill 152
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_153
+    name: Uzbekistan Skill 153
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_154
+    name: Uzbekistan Skill 154
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_155
+    name: Uzbekistan Skill 155
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_156
+    name: Uzbekistan Skill 156
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_157
+    name: Uzbekistan Skill 157
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_158
+    name: Uzbekistan Skill 158
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_159
+    name: Uzbekistan Skill 159
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_160
+    name: Uzbekistan Skill 160
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_161
+    name: Uzbekistan Skill 161
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_162
+    name: Uzbekistan Skill 162
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_163
+    name: Uzbekistan Skill 163
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_164
+    name: Uzbekistan Skill 164
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_165
+    name: Uzbekistan Skill 165
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_166
+    name: Uzbekistan Skill 166
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_167
+    name: Uzbekistan Skill 167
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_168
+    name: Uzbekistan Skill 168
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_169
+    name: Uzbekistan Skill 169
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_170
+    name: Uzbekistan Skill 170
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_171
+    name: Uzbekistan Skill 171
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_172
+    name: Uzbekistan Skill 172
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_173
+    name: Uzbekistan Skill 173
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_174
+    name: Uzbekistan Skill 174
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_175
+    name: Uzbekistan Skill 175
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_176
+    name: Uzbekistan Skill 176
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_177
+    name: Uzbekistan Skill 177
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_178
+    name: Uzbekistan Skill 178
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_179
+    name: Uzbekistan Skill 179
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_180
+    name: Uzbekistan Skill 180
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_181
+    name: Uzbekistan Skill 181
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_182
+    name: Uzbekistan Skill 182
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_183
+    name: Uzbekistan Skill 183
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_184
+    name: Uzbekistan Skill 184
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_185
+    name: Uzbekistan Skill 185
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_186
+    name: Uzbekistan Skill 186
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_187
+    name: Uzbekistan Skill 187
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_188
+    name: Uzbekistan Skill 188
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_189
+    name: Uzbekistan Skill 189
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_190
+    name: Uzbekistan Skill 190
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_191
+    name: Uzbekistan Skill 191
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_192
+    name: Uzbekistan Skill 192
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_193
+    name: Uzbekistan Skill 193
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_194
+    name: Uzbekistan Skill 194
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_195
+    name: Uzbekistan Skill 195
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_196
+    name: Uzbekistan Skill 196
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_197
+    name: Uzbekistan Skill 197
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_198
+    name: Uzbekistan Skill 198
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_199
+    name: Uzbekistan Skill 199
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_200
+    name: Uzbekistan Skill 200
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_201
+    name: Uzbekistan Skill 201
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_202
+    name: Uzbekistan Skill 202
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_203
+    name: Uzbekistan Skill 203
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_204
+    name: Uzbekistan Skill 204
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_205
+    name: Uzbekistan Skill 205
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_206
+    name: Uzbekistan Skill 206
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_207
+    name: Uzbekistan Skill 207
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_208
+    name: Uzbekistan Skill 208
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_209
+    name: Uzbekistan Skill 209
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_210
+    name: Uzbekistan Skill 210
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_211
+    name: Uzbekistan Skill 211
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_212
+    name: Uzbekistan Skill 212
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_213
+    name: Uzbekistan Skill 213
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_214
+    name: Uzbekistan Skill 214
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_215
+    name: Uzbekistan Skill 215
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_216
+    name: Uzbekistan Skill 216
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_217
+    name: Uzbekistan Skill 217
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_218
+    name: Uzbekistan Skill 218
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_219
+    name: Uzbekistan Skill 219
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_220
+    name: Uzbekistan Skill 220
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_221
+    name: Uzbekistan Skill 221
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_222
+    name: Uzbekistan Skill 222
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_223
+    name: Uzbekistan Skill 223
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_224
+    name: Uzbekistan Skill 224
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_225
+    name: Uzbekistan Skill 225
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_226
+    name: Uzbekistan Skill 226
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_227
+    name: Uzbekistan Skill 227
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_228
+    name: Uzbekistan Skill 228
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_229
+    name: Uzbekistan Skill 229
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_230
+    name: Uzbekistan Skill 230
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_231
+    name: Uzbekistan Skill 231
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_232
+    name: Uzbekistan Skill 232
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_233
+    name: Uzbekistan Skill 233
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_234
+    name: Uzbekistan Skill 234
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_235
+    name: Uzbekistan Skill 235
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_236
+    name: Uzbekistan Skill 236
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_237
+    name: Uzbekistan Skill 237
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_238
+    name: Uzbekistan Skill 238
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_239
+    name: Uzbekistan Skill 239
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_240
+    name: Uzbekistan Skill 240
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_241
+    name: Uzbekistan Skill 241
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_242
+    name: Uzbekistan Skill 242
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_243
+    name: Uzbekistan Skill 243
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_244
+    name: Uzbekistan Skill 244
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_245
+    name: Uzbekistan Skill 245
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_246
+    name: Uzbekistan Skill 246
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_247
+    name: Uzbekistan Skill 247
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_248
+    name: Uzbekistan Skill 248
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_249
+    name: Uzbekistan Skill 249
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_250
+    name: Uzbekistan Skill 250
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_251
+    name: Uzbekistan Skill 251
+    status: ACTIVE_SCAFFOLD
+  - id: skill_uz_252
+    name: Uzbekistan Skill 252
+    status: ACTIVE_SCAFFOLD
