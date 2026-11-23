@@ -1,0 +1,17 @@
+{
+  "url": "https://www.amnesty.org/en/location/europe-and-central-asia/eastern-europe-and-central-asia/uzbekistan/",
+  "final_url": "https://www.amnesty.org/en/location/europe-and-central-asia/eastern-europe-and-central-asia/uzbekistan/",
+  "title": "Amnesty - Uzbekistan",
+  "fetched_at": "2026-11-23T15:27:34.788431Z",
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 110113,
+  "sha256": "f5f365180f712e025eab19abc105087e565d16b5e07f2c8fb50b455012ebf296",
+  "provenance": "direct-http-fetch",
+  "custodian": "GRA-evidence-harvester",
+  "capture_access": "PUBLIC_CAPTURE_UNAUTHENTICATED",
+  "legal_review_status": "PENDING_LEGAL_REVIEW",
+  "note": "Direct harvest capture; pending legal review/authentication.",
+  "substantive": true,
+  "quality_flag": "SUBSTANTIVE_CAPTURE_PENDING_REVIEW"
+}
